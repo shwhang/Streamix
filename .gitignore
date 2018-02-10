@@ -25,4 +25,4 @@ node_modules/
 
 # Ignore webpack files
 bundle.js
-bundle.js.map
+bundle.js.mapnode_modules/
