@@ -20,6 +20,9 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-node_modules/
+# Ignore node modules
+/node_modules
+
+# Ignore webpack files
 bundle.js
 bundle.js.map
