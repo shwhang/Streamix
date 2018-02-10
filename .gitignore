@@ -21,7 +21,7 @@
 .byebug_history
 
 # Ignore node modules
-/node_modules
+node_modules/
 
 # Ignore webpack files
 bundle.js
