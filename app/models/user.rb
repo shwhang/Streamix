@@ -38,7 +38,7 @@ class User < ApplicationRecord
   private
 
   def self.generate_session_token
-    SecureTandom::urlsafe_base64(16)
+    SecureRandom::urlsafe_base64(16)
   end
 
   def ensure_session_token
