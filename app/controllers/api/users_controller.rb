@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
   def new
+    #@user is an instance variable that is available throughout the entire class.
     @user = User.new
   end
 
