@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 import { receieveSessionErrors } from '../actions/sessions_action';
 
 const _nullErrors = Object.freeze({
-  session: [],
+  sessionErrors: [],
 })
 
 const errors = ( state = _nullErrors, action ) => {
@@ -12,7 +12,7 @@ const errors = ( state = _nullErrors, action ) => {
   switch(action.type){
     case: RECEIVE_SESSION_ERRORS:
       const sessionErrors = action.session;
-      return merge({}, { session })
+      return merge({}, { sessionErrors })
     default:
       return state;
   }
