@@ -6,7 +6,7 @@ const _nullErrors = Object.freeze({
   sessionErrors: [],
 })
 
-const errors = ( state = _nullErrors, action ) => {
+const errorsReducer = ( state = _nullErrors, action ) => {
   Object.freeze(state);
 
   switch(action.type){
@@ -17,3 +17,5 @@ const errors = ( state = _nullErrors, action ) => {
       return state;
   }
 }
+
+export default erorrsReducer;
