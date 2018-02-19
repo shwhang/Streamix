@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     @current_user = user
   end
 
-  def logged_in?(user)
+  def logged_in?
     !!current_user
   end
 
@@ -31,5 +31,5 @@ class ApplicationController < ActionController::Base
       render json: {base: ['Invalid Crendentials']}, status: 401
     end
   end
-  
+
 end

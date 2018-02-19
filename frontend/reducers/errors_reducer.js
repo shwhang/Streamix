@@ -18,4 +18,4 @@ const errorsReducer = ( state = _nullErrors, action ) => {
   }
 }
 
-export default erorrsReducer;
+export default errorsReducer;
