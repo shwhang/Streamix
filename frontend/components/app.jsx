@@ -1,10 +1,16 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-import Home from './home/home';
+import HomeContainer from './home/home_container';
+import SessionFormContainer from './session/session_form';
 
 const App = () => (
   <div>
-    <Home />
+    <Switch>
+      <Route exact path="/" component={ HomeContainer } />
+      <Route exact path="/signup" component={ SessionFormContainer } />
+      <Route exact path="/login" component={ SessionFormContainer } />
+    </Switch>
   </div>
 )
 
