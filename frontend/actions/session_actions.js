@@ -13,23 +13,23 @@ export const receiveSessionErrors = errors => ({
   errors
 });
 
-export const signup = user => dispatch => (
-  APIUtil.signup(user).then( user => (
+export const signup = user => dispatch => {
+  return APIUtil.signup(user).then( user => (
       dispatch(receiveCurrentUser(user))
     ), err => (
       dispatch(receiveSessionErrors(err.responseJSON))
     )
   )
-);
+};
 
-export const login = user => dispatch => (
-  APIUtil.login(user).then( user => (
+export const login = user => dispatch => {
+  return APIUtil.login(user).then( user => (
       dispatch(receiveCurrentUser(user))
     ), err => (
       dispatch(receiveSessionErrors(err.responseJSON))
     )
   )
-);
+};
 
 export const logout = () => dispatch => (
   APIUtil.logout().then( user => (
