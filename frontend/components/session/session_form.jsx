@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from '../nav_bar/nav_bar';
+import { Link, withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component{
   constructor(props){
@@ -19,16 +20,12 @@ class SessionForm extends React.Component{
     }
 
     this.updateFormDetails = this.updateFormDetails.bind(this);
-
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
     if(nextProps.loggedIn){
-      // this.props.history.push("/");
-    }
-
-    if(this.props.formType !== nextProps.formType){
-
+      this.props.history.push('/');
     }
   }
 
@@ -45,7 +42,7 @@ class SessionForm extends React.Component{
         formTitle: "Sign Up",
         pathName: "/login",
         linkBlurb: "New to Streamix?",
-        linkText: "Sign up now."
+        linkText: "Sign in now."
       }
     }
   }
@@ -56,8 +53,10 @@ class SessionForm extends React.Component{
     )
   }
 
-  handleChange(){
-
+  handleSubmit(e){
+    e.preventDefault();
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user);
   }
 
   render(){
@@ -67,7 +66,7 @@ class SessionForm extends React.Component{
       <div>
         <NavBar />
 
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <h3>{this.formDetails.formTitle}</h3>
 
           <label>Email</label>
@@ -84,7 +83,16 @@ class SessionForm extends React.Component{
             className="password-textbox"
           />
 
-        <input type="submit" value={this.formDetails.formTitle}/>
+          <input type="submit" value={this.formDetails.formTitle}/>
+
+          <p>
+            {this.formDetails.linkBlurb}
+            <span>
+              <Link to={this.formDetails.pathName}>
+                { this.formDetails.linkText }
+              </Link>
+            </span>
+          </p>
 
         </form>
       </div>
@@ -92,4 +100,4 @@ class SessionForm extends React.Component{
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);

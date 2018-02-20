@@ -1,16 +1,16 @@
 class Api::SessionsController < ApplicationController
   # create new session when users login
   def create
-    user = User.find_by_credentials(
+    @user = User.find_by_credentials(
       params[:user][:email],
       params[:user][:password]
     )
-
-    if user.nil?
+    debugger
+    if @user
+      login(user)
       render "api/users/show"
     else
-      login!(user)
-      redirect_to user_url(user)
+      render json: ["Invalid credentials", status: 401]
     end
   end
 

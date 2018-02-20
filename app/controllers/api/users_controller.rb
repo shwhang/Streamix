@@ -1,14 +1,11 @@
 class Api::UsersController < ApplicationController
-  def new
-    #@user is an instance variable that is available throughout the entire class.
-    @user = User.new
-  end
-
   def create
+    debugger
     @user = User.new(user_params)
 
     if @user.save
-      render json: @user
+      login(@user)
+      render "api/users/show"
     else
       render json: @user.errors.full_meessages, status: 422
     end
@@ -21,6 +18,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.permit(:email, :password)
   end
 end
