@@ -5,6 +5,12 @@ import NavBar from '../nav_bar/nav_bar';
 class Home extends React.Component{
   constructor(props){
     super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e){
+    e.preventDefault();
   }
 
   render(){
@@ -16,8 +22,8 @@ class Home extends React.Component{
         <div className="splash-page-section">
           <h1>See what's Next.</h1>
           <div className="splash-page-buttons">
-            <Link to="">Sign Up for Free</Link>
-            <Link to="">Demo Login</Link>
+            <Link to="/signup">Sign Up for Free</Link>
+            <button onClick={this.handleClick}>Demo Login</button>
           </div>
         </div>
       </div>
