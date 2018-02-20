@@ -10,6 +10,44 @@ class SessionForm extends React.Component{
       password: "",
     }
 
+    this.formDetails = {
+      formTitle: "",
+      buttonText: "",
+      pathName: "",
+      linkBlurb: "",
+      linkText: ""
+    }
+
+    this.updateFormDetails = this.updateFormDetails.bind(this);
+
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.loggedIn){
+      // this.props.history.push("/");
+    }
+
+    if(this.props.formType !== nextProps.formType){
+
+    }
+  }
+
+  updateFormDetails(){
+    if (this.props.formType === "login") {
+      this.formDetails = {
+        formTitle: "Sign In",
+        pathName: "/signup",
+        linkBlurb: "New to Streamix?",
+        linkText: "Sign up now."
+      }
+    } else {
+      this.formDetails = {
+        formTitle: "Sign Up",
+        pathName: "/login",
+        linkBlurb: "New to Streamix?",
+        linkText: "Sign up now."
+      }
+    }
   }
 
   update(property){
@@ -23,12 +61,14 @@ class SessionForm extends React.Component{
   }
 
   render(){
+    this.updateFormDetails();
+
     return (
       <div>
         <NavBar />
 
         <form>
-          <h3>Sign In</h3>
+          <h3>{this.formDetails.formTitle}</h3>
 
           <label>Email</label>
           <input type="text"
@@ -44,7 +84,7 @@ class SessionForm extends React.Component{
             className="password-textbox"
           />
 
-        <input type="submit" value="Sign In"/>
+        <input type="submit" value={this.formDetails.formTitle}/>
 
         </form>
       </div>
