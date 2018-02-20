@@ -5,9 +5,9 @@ class Api::SessionsController < ApplicationController
       params[:user][:email],
       params[:user][:password]
     )
-    debugger
+
     if @user
-      login(user)
+      login(@user)
       render "api/users/show"
     else
       render json: ["Invalid credentials", status: 401]
@@ -19,7 +19,7 @@ class Api::SessionsController < ApplicationController
     @user = current_user
 
     if @user
-      logout!
+      logout
       render "api/users/show"
     else
       render(

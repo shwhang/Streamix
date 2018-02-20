@@ -14,7 +14,9 @@ class Home extends React.Component{
   }
 
   render(){
-    //TODO: Add a different view if user is loggedin
+    if(this.props.currentUser){
+      return <Redirect to="/profiles" />;
+    }
     return (
       <div>
         <NavBar />
