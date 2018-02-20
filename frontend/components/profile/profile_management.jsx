@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import NavBarContainer from '../nav_bar/nav_bar_container';
 
 class ProfileManagement extends React.Component{
   constructor(props){
@@ -9,7 +10,8 @@ class ProfileManagement extends React.Component{
   render(){
     return (
       <div>
-        <h1>Hellow</h1>
+        <NavBarContainer />
+        <h1>Manage Profiles</h1>
       </div>
     )
   }
