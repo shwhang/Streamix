@@ -5,6 +5,11 @@
       user: current_user
     ).html_safe %>
   <% end %>
+
+  window.staticImages = {
+    splashBackground: "<%= asset_path('splash_background.png')%>",
+    sessionBackground: "<%'session_background'%>"
+  }
 </script>
 
 <main id="root"></main>

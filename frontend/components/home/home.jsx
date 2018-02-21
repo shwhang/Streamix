@@ -23,10 +23,19 @@ class Home extends React.Component{
         <NavBarContainer path={this.props.path}/>
 
         <div className="splash-page-section">
-          <h1>See what's Next.</h1>
-          <div className="splash-page-buttons">
-            <Link to="/signup">Sign Up for Free</Link>
-            <button onClick={this.handleClick}>Demo Login</button>
+          <div className="dark-gradient">
+            <article className="splash-page-actions-wrapper">
+              <h1 className="splash-page-header">
+                See what's next.
+              </h1>
+              <h1 className="splash-page-blurb">
+                Watch anywhere. Cancel Anytime.
+              </h1>
+              <div className="splash-page-buttons">
+                <Link to="/signup" className="signup-btn">Sign Up for Free</Link>
+                <button onClick={this.handleClick} className="demo-login-btn">Demo Login</button>
+              </div>
+            </article>
           </div>
         </div>
       </div>
