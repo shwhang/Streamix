@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
+import Footer from './footer';
 
 class Home extends React.Component{
   constructor(props){
@@ -38,6 +39,8 @@ class Home extends React.Component{
             </article>
           </div>
         </div>
+
+        <Footer />
       </div>
     )
   }

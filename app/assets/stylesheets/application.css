@@ -16,5 +16,6 @@
 
 @import "api/reset.scss";
 @import "api/nav_bar.scss";
+@import "api/footer.scss";
 @import "api/home.scss";
 @import "api/sessions.scss"
