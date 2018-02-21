@@ -7,7 +7,6 @@
   background-image: image-url('splash_background.jpeg');
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
   position: relative;
 }
@@ -28,7 +27,6 @@
 
 .splash-page-actions-wrapper {
   bottom: 0;
-  // border: 1px solid lightblue;
   width: auto;
   margin-right: 40px;
   margin-bottom: 60px;
@@ -49,7 +47,6 @@
 }
 
 .splash-page-buttons {
-  // border: 1px solid yellow;
   width: 100%;
   display: flex;
   justify-content: space-around;
