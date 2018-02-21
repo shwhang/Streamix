@@ -15,5 +15,6 @@
  */
 
 @import "api/reset.scss";
-@import "api/home.scss";
 @import "api/nav_bar.scss";
+@import "api/home.scss";
+@import "api/sessions.scss"
