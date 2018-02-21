@@ -33,7 +33,11 @@ class NavBar extends React.Component{
 
     return (
       <nav className="nav-bar-wrapper">
-        <h1 className="logo">Streamix</h1>
+        <h1 className="logo">
+          <Link to="/">
+            Streamix
+          </Link>
+        </h1>
 
         { currentNavBar }
       </nav>
