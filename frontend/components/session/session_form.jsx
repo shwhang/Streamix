@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../nav_bar/nav_bar';
+import NavBarContainer from '../nav_bar/nav_bar_container';
 import { Link, withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component{
@@ -64,7 +64,7 @@ class SessionForm extends React.Component{
 
     return (
       <div>
-        <NavBar />
+        <NavBarContainer path={this.props.processForm}/>
 
         <form onSubmit={this.handleSubmit}>
           <h3>{this.formDetails.formTitle}</h3>

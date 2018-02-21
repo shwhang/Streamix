@@ -6,12 +6,36 @@ class NavBar extends React.Component{
     super(props);
   }
 
+  componentWillReceiveProps(){
+
+  }
+
+  renderHomeNavBar(){
+    return (
+      <Link to="/login">Sign In</Link>
+    )
+  }
+
+  renderProfileNavBar(){
+    return (
+      <button onClick={this.props.logout}>Log out</button>
+    )
+  }
+
   render(){
+    let currentNavBar;
+
+    if(this.props.path === '/'){
+      currentNavBar = this.renderHomeNavBar();
+    } else if(this.props.path === "/profiles") {
+      currentNavBar = this.renderProfileNavBar();
+    }
+
     return (
       <nav>
-        <h1>Streamix</h1>
-      <button onClick={this.props.logout}>Log out</button>
-      <Link to="/login">Sign In</Link>
+        <h1 className="logo">Streamix</h1>
+
+        { currentNavBar }
       </nav>
     )
   }

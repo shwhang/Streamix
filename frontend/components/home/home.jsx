@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import NavBar from '../nav_bar/nav_bar';
+import NavBarContainer from '../nav_bar/nav_bar_container';
 
 class Home extends React.Component{
   constructor(props){
@@ -17,9 +17,10 @@ class Home extends React.Component{
     if(this.props.currentUser){
       return <Redirect to="/profiles" />;
     }
+
     return (
       <div>
-        <NavBar />
+        <NavBarContainer path={this.props.path}/>
 
         <div className="splash-page-section">
           <h1>See what's Next.</h1>
