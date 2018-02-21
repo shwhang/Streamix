@@ -12,7 +12,7 @@ class NavBar extends React.Component{
 
   renderHomeNavBar(){
     return (
-      <Link to="/login">Sign In</Link>
+      <Link to="/login" className="home-sign-in-button">Sign In</Link>
     )
   }
 
