@@ -8,9 +8,8 @@ class ProfileManagement extends React.Component{
   }
 
   render(){
-    debugger
     return (
-      <div>
+      <div className="">
         <NavBarContainer path={this.props.path}/>
         <h1>Manage Profiles</h1>
       </div>

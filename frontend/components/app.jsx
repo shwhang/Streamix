@@ -4,7 +4,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 import HomeContainer from './home/home_container';
 import SessionFormContainer from './session/session_form_container';
-import ProfileManagement from './profile/profile_management';
+import ProfileManagementContainer from './profile/profile_management_container';
 
 
 const App = () => (
@@ -13,7 +13,7 @@ const App = () => (
       <Route exact path="/" component={ HomeContainer } />
       <AuthRoute exact path="/signup" component={ SessionFormContainer } />
       <AuthRoute exact path="/login" component={ SessionFormContainer } />
-      <ProtectedRoute exact path="/profiles" component={ProfileManagement} />
+      <ProtectedRoute exact path="/profiles" component={ProfileManagementContainer} />
     </Switch>
   </div>
 )
