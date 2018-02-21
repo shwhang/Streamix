@@ -1,4 +1,5 @@
 import merge from 'lodash/merge';
+import { combineReducers } from 'redux';
 
 import { RECEIVE_SESSION_ERRORS } from '../actions/session_actions';
 
@@ -11,8 +12,7 @@ const errorsReducer = ( state = _nullErrors, action ) => {
 
   switch(action.type){
     case RECEIVE_SESSION_ERRORS:
-      const session = action.session;
-      return merge({}, { session })
+      return action.errors;
     default:
       return state;
   }

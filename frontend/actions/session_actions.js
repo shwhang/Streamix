@@ -14,25 +14,25 @@ export const receiveSessionErrors = errors => ({
 });
 
 export const signup = user => dispatch => {
-  return APIUtil.signup(user).then( user => (
-      dispatch(receiveCurrentUser(user))
-    ), err => (
+  return APIUtil.signup(user).then( user => {
+      return dispatch(receiveCurrentUser(user))
+    }, err => (
       dispatch(receiveSessionErrors(err.responseJSON))
     )
   )
 };
 
 export const login = user => dispatch => {
-  return APIUtil.login(user).then( user => (
-      dispatch(receiveCurrentUser(user))
-    ), err => (
-      dispatch(receiveSessionErrors(err.responseJSON))
-    )
+  return APIUtil.login(user).then( user => {
+      return dispatch(receiveCurrentUser(user))
+    }, err => {
+      return dispatch(receiveSessionErrors(err.responseJSON))
+    }
   )
 };
 
 export const logout = () => dispatch => {
-  return APIUtil.logout().then( user => (
+  return APIUtil.logout().then((user) => (
     dispatch(receiveCurrentUser(null))
   ))
 };
