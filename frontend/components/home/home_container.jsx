@@ -7,6 +7,7 @@ const mapStateToProps = ({ session }) => ({
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
+  login: user => dispatch(login(user)),
   path: ownProps.location.pathname
 })
 

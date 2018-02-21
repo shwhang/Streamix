@@ -59,6 +59,8 @@ class SessionForm extends React.Component{
     this.props.processForm({ user });
   }
 
+  // TODO: Render Errors for wrong credentials
+
   render(){
     this.updateFormDetails();
 

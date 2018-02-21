@@ -12,6 +12,7 @@ class Home extends React.Component{
 
   handleClick(e){
     e.preventDefault();
+    this.props.login({user: {email: 'saehee@gmail.com', password: 'shibchill'}});
   }
 
   render(){
@@ -32,6 +33,7 @@ class Home extends React.Component{
               <h1 className="splash-page-blurb">
                 Watch anywhere. Cancel Anytime.
               </h1>
+
               <div className="splash-page-buttons">
                 <Link to="/signup" className="signup-btn">Sign Up for Free</Link>
                 <button onClick={this.handleClick} className="demo-login-btn">Demo Login</button>
