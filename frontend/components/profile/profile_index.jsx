@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 
-class ProfileManagement extends React.Component{
+class ProfileIndex extends React.Component{
   constructor(props){
     super(props)
   }
@@ -17,4 +17,4 @@ class ProfileManagement extends React.Component{
   }
 }
 
-export default withRouter(ProfileManagement);
+export default withRouter(ProfileIndex);

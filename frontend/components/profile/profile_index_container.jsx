@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ProfileManagement from './profile_management';
+import ProfileIndex from './profile_index';
 import { withRouter } from 'react-router-dom';
 
 const mapDispatchToProps = (dispath, { location }) => {
@@ -11,4 +11,4 @@ const mapDispatchToProps = (dispath, { location }) => {
 export default withRouter(connect(
   null,
   mapDispatchToProps
-) (ProfileManagement));
+) (ProfileIndex));
