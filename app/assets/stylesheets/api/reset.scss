@@ -1,5 +1,9 @@
 @import "api/colors.scss";
 
+* {
+  box-sizing: border-box;
+}
+
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
 section, img, div, h2, h3, h4, h5, h6, p, form,
