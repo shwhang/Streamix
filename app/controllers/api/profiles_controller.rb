@@ -18,6 +18,10 @@ class Api::ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
   end
 
+  def updated
+
+  end
+
   def destroy
 
   end
