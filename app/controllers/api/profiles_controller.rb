@@ -1,4 +1,4 @@
-class ProfilesController < ApplicationController
+class Api::ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params
     @profile.user_id = current_user.id
@@ -16,14 +16,6 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
-  end
-
-  def update
-
-  end
-
-  def destroy
-
   end
 
   private
