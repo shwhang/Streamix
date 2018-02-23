@@ -18,6 +18,10 @@ class Api::ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
   end
 
+  def destroy
+
+  end
+
   private
 
   def profile_params
