@@ -16,8 +16,8 @@ const App = () => (
       <AuthRoute exact path="/login" component={ SessionFormContainer } />
       <ProtectedRoute exact path="/profiles" component={ProfileIndexContainer} />
       <ProtectedRoute exact path="/manage/profiles" component={ProfileIndexContainer} />
-      <Route exact path ="/manage/add" component={ProfileFormContainer} />
-      <Route exact path ="/manage/edit" component={ProfileFormContainer} />
+      <ProtectedRoute exact path ="/manage/add" component={ProfileFormContainer} />
+      <ProtectedRoute exact path ="/manage/edit" component={ProfileFormContainer} />
 
     </Switch>
   </div>

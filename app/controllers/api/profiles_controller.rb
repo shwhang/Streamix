@@ -1,6 +1,7 @@
 class Api::ProfilesController < ApplicationController
   def create
-    @profile = Profile.new(profile_params
+    @profile = Profile.new(profile_params)
+    debugger
     @profile.user_id = current_user.id
 
     if @profile.save
@@ -18,7 +19,7 @@ class Api::ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
   end
 
-  def updated
+  def update
 
   end
 
