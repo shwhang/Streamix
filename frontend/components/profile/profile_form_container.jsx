@@ -9,10 +9,10 @@ export const mapStateToProps = (state) => (
 )
 
 export const mapDispatchToProps = (dispatch, ownProps) => ({
-
+  path: ownProps.location.pathname
 })
 
 export default withRouter(connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 ) (ProfileForm));

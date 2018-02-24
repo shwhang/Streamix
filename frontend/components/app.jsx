@@ -5,6 +5,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HomeContainer from './home/home_container';
 import SessionFormContainer from './session/session_form_container';
 import ProfileIndexContainer from './profile/profile_index_container';
+import ProfileFormContainer from './profile/profile_form_container';
 
 
 const App = () => (
@@ -15,6 +16,9 @@ const App = () => (
       <AuthRoute exact path="/login" component={ SessionFormContainer } />
       <ProtectedRoute exact path="/profiles" component={ProfileIndexContainer} />
       <ProtectedRoute exact path="/manage/profiles" component={ProfileIndexContainer} />
+      <Route exact path ="/manage/add" component={ProfileFormContainer} />
+      <Route exact path ="/manage/edit" component={ProfileFormContainer} />
+
     </Switch>
   </div>
 )
