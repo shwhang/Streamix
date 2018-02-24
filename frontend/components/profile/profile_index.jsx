@@ -36,8 +36,20 @@ class ProfileIndex extends React.Component{
       <div className="profiles-wrapper">
         <NavBarContainer path={this.props.path}/>
 
-        <div className="profile-index-section">
-          <h1 className="profile-index-title">{this.details.title}</h1>
+        <div className="profiles-index">
+          <h1 className="profiles-index-title">
+            {this.details.title}
+          </h1>
+
+          <div className="profile-options">
+
+            <Link to="/manage/add" className="add-link">
+              <div className="add-profile-icon">
+              </div>
+              <p>Add Profile</p>
+            </Link>
+          </div>
+
 
           <Link to={this.details.buttonLink} className="profile-manage-button">
             {this.details.buttonText}
