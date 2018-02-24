@@ -39,12 +39,14 @@
 
 .add-profile-icon {
   border: 1px solid blue;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   background-image: image-url('add_icon.svg');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 70%;
   background-position: center;
+  border: 6px solid gray;
+  margin-bottom: 10px;
 }
 
 .add-link {
@@ -53,7 +55,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 6px solid gray;
   width: 150px;
   height: 150px;
 }

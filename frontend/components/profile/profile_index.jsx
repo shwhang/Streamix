@@ -43,7 +43,7 @@ class ProfileIndex extends React.Component{
 
           <div className="profile-options">
 
-            <Link to="/manage/add" className="add-link">
+            <Link to="/manage/add" className="profile-link">
               <div className="add-profile-icon">
               </div>
               <p>Add Profile</p>
