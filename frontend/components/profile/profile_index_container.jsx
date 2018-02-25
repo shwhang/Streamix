@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ProfileIndex from './profile_index';
 import { withRouter } from 'react-router-dom';
-import {} from 'profile_actions';
+// import {} from 'profile_actions';ssss
 
 const mapDispatchToProps = (dispath, { location }) => {
   return {
