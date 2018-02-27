@@ -25,6 +25,7 @@ export const signup = user => dispatch => {
 
 export const login = user => dispatch => {
   return APIUtil.login(user).then( user => {
+      dispatch(receiveAllProfiles(user.id));
       return dispatch(receiveCurrentUser(user))
     }, err => {
       return dispatch(receiveSessionErrors(err.responseJSON))

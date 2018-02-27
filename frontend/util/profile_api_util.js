@@ -1,5 +1,5 @@
 export const fetchProfiles = (user_id) => {
-  // debugger
+  debugger
   return $.ajax({
     method: 'GET',
     url: 'api/profiles'
