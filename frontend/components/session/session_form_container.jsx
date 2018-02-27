@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
 import { login, signup } from '../../actions/session_actions';
-import { receiveAllProfiles } from '../../actions/profile_actions';
+import { requestAllProfiles } from '../../actions/profile_actions';
 
 const mapStateToProps = ({ session, errors }) => {
   return {

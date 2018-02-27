@@ -1,5 +1,5 @@
 import * as APIUtil from '../util/session_api_util';
-import { receiveAllProfiles } from './profile_actions';
+import { requestAllProfiles } from './profile_actions';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
@@ -24,13 +24,15 @@ export const signup = user => dispatch => {
 };
 
 export const login = user => dispatch => {
-  return APIUtil.login(user).then( user => {
-      dispatch(receiveAllProfiles(user.id));
+  return APIUtil.login(user)
+    .then( user => {
       return dispatch(receiveCurrentUser(user))
     }, err => {
       return dispatch(receiveSessionErrors(err.responseJSON))
     }
-  )
+  ).then(({currentUser}) => {
+    return dispatch(requestAllProfiles(currentUser.id));
+  })
 };
 
 export const logout = () => dispatch => {

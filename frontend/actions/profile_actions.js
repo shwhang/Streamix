@@ -16,9 +16,9 @@ export const receiveAllProfiles = (profiles) => {
 }
 
 export const requestAllProfiles = user_id => dispatch => {
-  debugger
+
   return APIUtil.fetchProfiles(user_id).then (profiles => {
-      debugger
+
       return dispatch(receiveAllProfiles(profiles))
     }, err => {
       return dispatch(receiveProfileErrors(err.responseJSON))
