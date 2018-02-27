@@ -11,11 +11,11 @@ const _nullProfiles = Object.freeze({
 
 const profilesReducer = (state = _nullProfiles, action) => {
   Object.freeze(state);
-  
+  debugger
   switch(action.type) {
     case RECEIVE_ALL_PROFILES:
-      const allProfiles = action.currentProfile;
-      return merge({}, _nullProfiles, { allProfiles });
+      const allProfiles = action.profiles;
+      return merge({}, _nullProfiles, { allProfiles: allProfiles });
     default:
       return state;
   }

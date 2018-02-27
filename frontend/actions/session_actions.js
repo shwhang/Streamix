@@ -23,6 +23,7 @@ export const signup = user => dispatch => {
   )
 };
 
+// NOTE: create a promise to look for all profiles on login.
 export const login = user => dispatch => {
   return APIUtil.login(user)
     .then( user => {

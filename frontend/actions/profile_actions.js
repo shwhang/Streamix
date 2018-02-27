@@ -9,6 +9,7 @@ export const receiveProfileErrors = errors => ({
 })
 
 export const receiveAllProfiles = (profiles) => {
+  debugger
   return ({
     type: RECEIVE_ALL_PROFILES,
     profiles
@@ -18,7 +19,7 @@ export const receiveAllProfiles = (profiles) => {
 export const requestAllProfiles = user_id => dispatch => {
 
   return APIUtil.fetchProfiles(user_id).then (profiles => {
-
+      debugger
       return dispatch(receiveAllProfiles(profiles))
     }, err => {
       return dispatch(receiveProfileErrors(err.responseJSON))
