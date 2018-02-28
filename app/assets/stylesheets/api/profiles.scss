@@ -15,11 +15,13 @@
 }
 
 .profiles-index {
-  height: 50%;
+  height: 40%;
+  width: 100%;
   border: 1px solid yellow;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 .profiles-index-title {
@@ -31,7 +33,7 @@
 
 .profile-manage-button {
   border: 1px solid gray;
-  padding: 20px;
+  padding: 10px 20px;
   font-size: 25px;
   text-transform: uppercase;
   font-size: 18px;
