@@ -4,18 +4,23 @@ import { Link } from 'react-router-dom';
 class ProfileIndexItem extends React.Component{
   constructor(props){
     super(props);
-    this.profileLink;
+
+    this.profileLink = "";
+  }
+
+  updateProfileItemLink(){
     if(this.props.formType === "/profiles"){
-      this.profileLink = `browse/${props.profile.id}`
+      this.profileLink = `browse/${this.props.profile.id}`
     } else {
-      this.profileLink = `manage/edit/${props.profile.id}`
+      this.profileLink = `edit/${this.props.profile.id}`
     }
   }
 
   render(){
-    debugger
+    this.updateProfileItemLink();
+
     return (
-      <Link to={this.profileLink}>
+      <Link to={this.profileLink} className="profile-index-item">
         <div className="avatar-container">
           <img src={this.props.profile.avatar}  className="avatar-img"/>
         </div>

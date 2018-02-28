@@ -58,11 +58,11 @@ class ProfileIndex extends React.Component{
 
           <div className="profile-options">
             { profiles }
-            { /*<Link to="/manage/add" className="profile-link">
-              <div className="add-profile-icon">
+            <Link to="/manage/add" className="profile-index-item">
+              <div className="add-profile-icon avatar-container">
               </div>
               <p>Add Profile</p>
-            </Link> */}
+            </Link>
           </div>
 
 
