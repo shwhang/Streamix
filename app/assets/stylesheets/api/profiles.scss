@@ -185,3 +185,20 @@
   margin: 5px;
   box-shadow: 1px 3.5px 6px 2px rgba(0, 0, 0, 0.5)
 }
+
+.profile-update-button {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+.profile-update-button, .profile-cancel-button, .profile-delete-button {
+  padding: 10px 20px;
+  margin-right: 20px;
+  text-transform: uppercase;
+}
+
+.profile-cancel-button, .profile-delete-button {
+  border: 1px solid gray;
+  color: gray;
+}

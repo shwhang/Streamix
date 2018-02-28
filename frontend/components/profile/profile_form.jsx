@@ -28,8 +28,8 @@ class ProfileForm extends React.Component {
   renderAddButtons(){
     return (
       <article className="profile-form-buttons">
-        <input type="submit" value="Continue"/>
-        <Link to="/profiles">Cancel</Link>
+        <input type="submit" value="Continue" className="profile-update-button"/>
+        <Link to="/profiles" className="profile-cancel-button">Cancel</Link>
       </article>
     )
   }
@@ -37,9 +37,9 @@ class ProfileForm extends React.Component {
   renderEditButtons(){
     return (
       <article className="profile-form-buttons">
-        <input type="submit" value="Save"/>
-        <Link to="/profiles">Cancel</Link>
-        <button to="/profiles" onClick={this.submitDelete}>Delete Profile</button>
+        <input type="submit" value="Save" className="profile-update-button"/>
+        <Link to="/profiles" className="profile-cancel-button">Cancel</Link>
+        <button to="/profiles" className="profile-delete-button" onClick={this.submitDelete}>Delete Profile</button>
       </article>
     )
   }
@@ -93,6 +93,11 @@ class ProfileForm extends React.Component {
       </div>
     )
   }
+
+  renderAvatarModalBox(){
+
+  }
+
   render() {
     this.renderFormDetails();
 
@@ -107,7 +112,7 @@ class ProfileForm extends React.Component {
           <article className="profile-form-details">
             <div className="avatar-section">
               <div className="default-avatar">
-                <div className="edit-avatar-icon">
+                <div className="edit-avatar-icon" onClick={this.renderAvatarModalBox()}>
                 </div>
               </div>
               {this.avatarModalBox()}
