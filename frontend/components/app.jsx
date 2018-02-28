@@ -17,7 +17,7 @@ const App = () => (
       <ProtectedRoute exact path="/profiles" component={ProfileIndexContainer} />
       <ProtectedRoute exact path="/manage/profiles" component={ProfileIndexContainer} />
       <ProtectedRoute exact path ="/manage/add" component={ProfileFormContainer} />
-      <ProtectedRoute exact path ="/manage/edit" component={ProfileFormContainer} />
+      <ProtectedRoute exact path ="/manage/edit/:id" component={ProfileFormContainer} />
 
     </Switch>
   </div>

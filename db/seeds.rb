@@ -7,6 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Profile.destroy_all
 
 #Users
-demo_user = User.create(email: "saehee@gmail.com", password: "shibchill");
+demoUser = User.create(email: "saehee@gmail.com", password: "shibchill");
+
+#Profiles
+demoProfile1 = Profile.create(
+  name: "Jake",
+  user_id: demoUser.id,
+  avatar: File.open('app/assets/images/avatars/avatar8.png')
+)
+
+demoProfile2 = Profile.create(
+  name: "Marceline",
+  user_id: demoUser.id,
+  avatar: File.open('app/assets/images/avatars/avatar4.png')
+)

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
+import ProfileIndexItem from './profile_index_item';
 
 class ProfileIndex extends React.Component{
   constructor(props){
@@ -11,6 +12,12 @@ class ProfileIndex extends React.Component{
       buttonText: "",
       buttonLink: ""
     }
+
+    props.requestAllProfiles(props.user)
+  }
+
+  componentWillReceiveProps(nextProps){
+
   }
 
   renderPageDetails(){
@@ -32,6 +39,14 @@ class ProfileIndex extends React.Component{
   render(){
     this.renderPageDetails();
 
+    const profiles = this.props.allProfiles.map((profile) => {
+      return <ProfileIndexItem
+          key={`profile-list-item${profile.id}`}
+          profile={profile}
+          formType={this.props.path}
+        />
+    });
+
     return (
       <div className="profiles-wrapper">
         <NavBarContainer path={this.props.path}/>
@@ -42,12 +57,12 @@ class ProfileIndex extends React.Component{
           </h1>
 
           <div className="profile-options">
-
-            <Link to="/manage/add" className="profile-link">
+            { profiles }
+            { /*<Link to="/manage/add" className="profile-link">
               <div className="add-profile-icon">
               </div>
               <p>Add Profile</p>
-            </Link>
+            </Link> */}
           </div>
 
 
