@@ -106,7 +106,10 @@ class ProfileForm extends React.Component {
 
           <article className="profile-form-details">
             <div className="avatar-section">
-              <div className="default-avatar"></div>
+              <div className="default-avatar">
+                <div className="edit-avatar-icon">
+                </div>
+              </div>
               {this.avatarModalBox()}
             </div>
 

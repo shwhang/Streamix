@@ -142,8 +142,8 @@
   border: 1px solid blue;
   height: 125px;
   width: 125px;
-  cursor: pointer;
   margin-right: 20px;
+  position: relative;
 }
 
 .avatar-modal-box{
@@ -166,4 +166,22 @@
 
 .avatar-select-img:hover {
   border: 3px solid white;
+}
+
+.edit-avatar-icon {
+  width: 8%;
+  height: 8%;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-image: image-url('edit_icon.svg');
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+  padding: 10px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  margin: 5px;
+  box-shadow: 1px 3.5px 6px 2px rgba(0, 0, 0, 0.5)
 }
