@@ -5,17 +5,30 @@ import NavBarContainer from '../nav_bar/nav_bar_container';
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      name: ""
+    }
+
     this.form = {
       title: "",
       blurb: "",
       buttons: ""
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  update(property) {
+    return e => this.setState({
+      [property]: e.target.value
+    })
   }
 
   renderAddButtons(){
     return (
       <article className="profile-form-buttons">
-        <Link to="/profiles">Continue</Link>
+        <input type="submit" value="Continue"/>
         <Link to="/profiles">Cancel</Link>
       </article>
     )
@@ -24,9 +37,9 @@ class ProfileForm extends React.Component {
   renderEditButtons(){
     return (
       <article className="profile-form-buttons">
-        <Link to="/profiles">Save</Link>
+        <input type="submit" value="Save"/>
         <Link to="/profiles">Cancel</Link>
-        <Link to="/profiles">Delete Profile</Link>
+        <button to="/profiles" onClick={this.submitDelete}>Delete Profile</button>
       </article>
     )
   }
@@ -47,6 +60,11 @@ class ProfileForm extends React.Component {
     }
   }
 
+  handleSubmit(e){
+    e.preventDefault();
+    // const profile = Object.assign({}, this.state);
+  }
+
   render() {
     this.renderFormDetails();
 
@@ -54,12 +72,19 @@ class ProfileForm extends React.Component {
       <div className="profile-form-container">
         <NavBarContainer />
 
-        <form className="profile-form">
+        <form className="profile-form" onSubmit={this.handleSubmit}>
           <h1 className="profile-form-title">{ this.form.title }</h1>
           <p className="profile-form-blurb">{ this.form.blurb }</p>
 
           <article className="profile-form-details">
             <div className="avatar-section"></div>
+
+            <input type="text"
+              placeholder="Add Profile"
+              value={this.state.name}
+              onChange={this.update('name')}
+              className="profile-name-textbox"
+            />
           </article>
 
           { this.form.buttons }
