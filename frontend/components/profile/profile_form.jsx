@@ -65,6 +65,34 @@ class ProfileForm extends React.Component {
     // const profile = Object.assign({}, this.state);
   }
 
+  avatarModalBox(){
+   let avatars = {
+      avatar1: "https://s3.amazonaws.com/streamix-dev/profiles/avatars/000/000/014/original/avatar8.png",
+      avatar2: "https://s3.amazonaws.com/streamix-dev/profiles/avatars/000/000/015/original/avatar4.png",
+      // avatar3: "",
+      // avatar4: "",
+      // avatar5: "",
+      // avatar6: "",
+      // avatar7: "",
+      // avatar8: "",
+      // avatar9: ""
+    }
+
+    const avatarItems = Object.values(avatars).map((avatar, i) => {
+      return <img
+        src={avatar}
+        alt={`avatar${i}`}
+        key={`avatar-${i}`}
+        className="avatar-select-img"
+      />
+    })
+
+    return(
+      <div className="avatar-modal-box">
+        {avatarItems}
+      </div>
+    )
+  }
   render() {
     this.renderFormDetails();
 
@@ -77,7 +105,10 @@ class ProfileForm extends React.Component {
           <p className="profile-form-blurb">{ this.form.blurb }</p>
 
           <article className="profile-form-details">
-            <div className="avatar-section"></div>
+            <div className="avatar-section">
+              <div className="default-avatar"></div>
+              {this.avatarModalBox()}
+            </div>
 
             <input type="text"
               placeholder="Add Profile"

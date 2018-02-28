@@ -94,7 +94,6 @@
 
 .profile-form {
   width: 40%;
-  height: 40%;
   border: 1px solid yellow;
 }
 
@@ -113,4 +112,49 @@
   width: 100%;
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
+  padding: 20px 0;
+  margin: 20px 0;
+}
+
+.profile-name-textbox{
+  color: white;
+  background-color: gray;
+  font-size: 18px;
+  padding: 10px;
+  font-weight: lighter;
+}
+
+.profile-name-textbox::placeholder{
+  color: white;
+}
+
+// AVATAR MODAL BOX
+.default-avatar {
+  background-image: image-url('avatars/default-avatar.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: 1px solid blue;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+.avatar-modal-box{
+  width: 40%;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.avatar-select-img{
+  width: 25%;
+  height: 25%;
+  border: 3px solid transparent;
+  margin: 3px;
+}
+
+.avatar-select-img:hover {
+  border: 3px solid white;
 }
