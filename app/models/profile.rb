@@ -15,7 +15,4 @@ class Profile < ApplicationRecord
 
   belongs_to :user
   has_one :avatar
-
-  # has_attached_file :avatar, default_url: "<%= asset_path('/avatars/default_avatar.png')%>"
-  # validates_attachment_content_type  :avatar, content_type: /\Aimage\/.*\z/
 end
