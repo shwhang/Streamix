@@ -1,1 +1,1 @@
-json.array! @profiles, :id, :name, :avatar
+json.array! @profiles, :id, :name
