@@ -88,8 +88,13 @@ class ProfileForm extends React.Component {
     )
   }
 
-  renderAvatarModalBox(){
+  renderAvatarModalBox(e){
+    e.preventDefault();
+    
+    const avatarModalBox = document.getElementsByClassName('avatar-modal-box')[0];
+    const avatarModalBoxStyle = avatarModalBox.style.visibility;
 
+    avatarModalBox.style.visibility = (avatarModalBoxStyle === "visible" ? "hidden" : "visible");
   }
 
   render() {
@@ -106,8 +111,8 @@ class ProfileForm extends React.Component {
           <article className="profile-form-details">
             <div className="avatar-section">
               <div className="default-avatar">
-                <div className="edit-avatar-icon" onClick={this.renderAvatarModalBox()}>
-                </div>
+                <button className="edit-avatar-icon" onClick={this.renderAvatarModalBox}>
+                </button>
               </div>
               {this.avatarModalBox()}
             </div>
