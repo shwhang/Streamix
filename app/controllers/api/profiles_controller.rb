@@ -12,7 +12,6 @@ class Api::ProfilesController < ApplicationController
   end
 
   def index
-
     @profiles = Profile.all.where(user_id: current_user.id)
   end
 
