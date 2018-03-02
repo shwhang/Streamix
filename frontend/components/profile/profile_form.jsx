@@ -19,6 +19,10 @@ class ProfileForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillMount(){
+    this.props.requestAllAvatars();
+  }
+
   update(property) {
     return e => this.setState({
       [property]: e.target.value
@@ -66,21 +70,11 @@ class ProfileForm extends React.Component {
   }
 
   avatarModalBox(){
-   let avatars = {
-      avatar1: "https://s3.amazonaws.com/streamix-dev/profiles/avatars/000/000/014/original/avatar8.png",
-      avatar2: "https://s3.amazonaws.com/streamix-dev/profiles/avatars/000/000/015/original/avatar4.png",
-      // avatar3: "",
-      // avatar4: "",
-      // avatar5: "",
-      // avatar6: "",
-      // avatar7: "",
-      // avatar8: "",
-      // avatar9: ""
-    }
+    let avatars = this.props.avatars
 
-    const avatarItems = Object.values(avatars).map((avatar, i) => {
+    const avatarItems = avatars.map((avatar, i) => {
       return <img
-        src={avatar}
+        src={avatar.image}
         alt={`avatar${i}`}
         key={`avatar-${i}`}
         className="avatar-select-img"
