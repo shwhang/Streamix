@@ -11,8 +11,15 @@ class Api::ProfilesController < ApplicationController
     end
   end
 
+  #@avatar_url = Avatar.find(@profile.avatar_id)
   def index
-    @profiles = Profile.all.where(user_id: current_user.id)
+    @profiles = Profile.all.where(user_id: current_user.id).map do |profile|
+      {
+        id: profile.id,
+        name: profile.name,
+        avatar_url: Avatar.find(profile.avatar_id).image.url
+      }
+    end
   end
 
   def show

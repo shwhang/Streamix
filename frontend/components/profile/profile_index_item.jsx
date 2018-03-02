@@ -22,7 +22,7 @@ class ProfileIndexItem extends React.Component{
     return (
       <Link to={this.profileLink} className="profile-index-item">
         <div className="avatar-container">
-          <img src={this.props.profile.avatar}  className="avatar-img"/>
+          <img src={this.props.profile.avatar_url}  className="avatar-img"/>
         </div>
 
         <p>{this.props.profile.name}</p>
