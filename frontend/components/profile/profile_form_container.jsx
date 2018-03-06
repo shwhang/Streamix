@@ -6,10 +6,11 @@ import { requestAllAvatars,
 } from '../../actions/profile_actions'
 
 
-export const mapStateToProps = (state) => (
+export const mapStateToProps = ({ profiles }) => (
   {
-    avatars: state.profiles.avatars,
-    currentProfile: state.profiles.currentProfile
+    avatars: profiles.avatars,
+    defaultAvatar: profiles.avatars[0],
+    currentProfile: profiles.currentProfile
   }
 )
 

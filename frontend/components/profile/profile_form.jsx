@@ -6,6 +6,7 @@ class ProfileForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      placeholder: "",
       name: "",
       avatarId: "",
       avatarUrl: ""
@@ -22,12 +23,32 @@ class ProfileForm extends React.Component {
   }
 
   componentWillMount(){
-    this.props.requestAllAvatars();
+    this.props.requestAllAvatars().then((avatars) => {
+      console.log(avatars)
+    });
 
     if (this.props.path !== '/manage/add') {
       let slashIndex = this.props.path.lastIndexOf('/') + 1;
       let profileId = parseInt(this.props.path.slice(slashIndex));
-      this.props.requestCurrentProfile(profileId);
+
+      this.props.requestCurrentProfile(profileId).then(({profile}) => {
+        this.setState({
+          name: profile.name,
+          avatarId: profile.avatar_id,
+          avatarUrl: profile.avatar_url
+        })
+      })
+    }
+
+  }
+
+  componentWillReceiveProps(nextProps){
+    if (this.props.defaultAvatar !== nextProps.defaultAvatar && this.props.path === '/manage/add') {
+      this.setState({
+        placeholder: "Add Profile",
+        avatarId: nextProps.defaultAvatar.id,
+        avatarUrl: nextProps.defaultAvatar.image
+      })
     }
   }
 
@@ -37,55 +58,36 @@ class ProfileForm extends React.Component {
     })
   }
 
-  renderAddButtons(){
-    return (
-      <article className="profile-form-buttons">
-        <input type="submit" value="Continue" className="profile-update-button"/>
-        <Link to="/profiles" className="profile-cancel-button">Cancel</Link>
-      </article>
-    )
-  }
-
-  renderEditButtons(){
-    return (
-      <article className="profile-form-buttons">
-        <input type="submit" value="Save" className="profile-update-button"/>
-        <Link to="/profiles" className="profile-cancel-button">Cancel</Link>
-        <button to="/profiles" className="profile-delete-button" onClick={this.submitDelete}>Delete Profile</button>
-      </article>
-    )
-  }
-
   renderFormDetails(){
     if (this.props.path === "/manage/add") {
       this.form = {
         title: "Add Profile",
         blurb: "Add a profile for another person watching Streamix.",
-        buttons: this.renderAddButtons()
+        updateButonText: "Continue"
       }
     } else {
       this.form = {
         title: "Edit Profile",
         blurb: "",
-        buttons: this.renderEditButtons()
+        updateButonText: "Save",
+        deleteButton: (<button to="/profiles" className="profile-delete-button" onClick={this.submitDelete}>Delete Profile</button>)
       }
     }
+  }
+
+  renderButtons(){
+    return (
+      <article className="profile-form-buttons">
+        <input type="submit" value={this.form.updateButonText} className="profile-update-button"/>
+        <Link to="/profiles" className="profile-cancel-button">Cancel</Link>
+        { this.form.deleteButton }
+      </article>
+    )
   }
 
   handleSubmit(e){
     e.preventDefault();
     // const profile = Object.assign({}, this.state);
-  }
-
-
-  componentWillReceiveProps(nextProps){
-    if (this.props.currentProfile !== nextProps.currentProfile) {
-      this.setState({
-        name: nextProps.currentProfile.name,
-        avatarId: nextProps.currentProfile.id,
-        avatarUrl: nextProps.currentProfile.avatar_url
-      })
-    }
   }
 
   updateAvatar(e){
@@ -103,7 +105,7 @@ class ProfileForm extends React.Component {
   }
 
   avatarModalBox(){
-    let avatars = this.props.avatars
+    let avatars = this.props.avatars;
 
     const avatarItems = avatars.map((avatar, i) => {
       return <img
@@ -133,6 +135,7 @@ class ProfileForm extends React.Component {
 
   render() {
     this.renderFormDetails();
+
     return (
       <div className="profile-form-container">
         <NavBarContainer />
@@ -149,18 +152,18 @@ class ProfileForm extends React.Component {
                 </button>
               </div>
 
-              {this.avatarModalBox()}
+              { this.avatarModalBox() }
             </div>
 
             <input type="text"
-              placeholder="Add Profile"
+              placeholder={this.state.placeholder}
               value={this.state.name}
               onChange={this.update('name')}
               className="profile-name-textbox"
             />
           </article>
 
-          { this.form.buttons }
+          { this.renderButtons() }
 
         </form>
       </div>

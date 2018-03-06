@@ -21,7 +21,7 @@ const profilesReducer = (state = _nullProfiles, action) => {
       return merge({}, _nullProfiles, { allProfiles: allProfiles });
     case RECEIVE_CURRENT_PROFILE:
       const profile = action.profile;
-      return merge({}, _nullProfiles, { currentProfile: profile });
+      return merge({}, _nullProfiles, { currentProfile: profile, avatars: state.avatars});
     case RECEIVE_ALL_AVATARS:
       const avatars = action.avatars;
       return merge({}, _nullProfiles, { avatars });
