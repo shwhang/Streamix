@@ -15,9 +15,6 @@ const _nullProfiles = Object.freeze({
 
 const profilesReducer = (state = _nullProfiles, action) => {
   Object.freeze(state);
-  if(action.type === REMOVE_PROFILE){
-    debugger
-  }
 
   switch(action.type) {
     case RECEIVE_ALL_PROFILES:
