@@ -1,4 +1,5 @@
 class Api::ProfilesController < ApplicationController
+  # TODO: Limit to 5 profiles
   def create
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
@@ -10,9 +11,7 @@ class Api::ProfilesController < ApplicationController
     end
   end
 
-  #@avatar_url = Avatar.find(@profile.avatar_id)
   def index
-
     @profiles = Profile.all.where(user_id: current_user.id).map do |profile|
       {
         id: profile.id,

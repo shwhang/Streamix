@@ -19,3 +19,11 @@ export const fetchOneProfile = (profile_id) => {
     url: `api/profiles/${profile_id}`
   })
 }
+
+export const createProfile = (profile) => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/profiles',
+    data: { profile }
+  })
+}

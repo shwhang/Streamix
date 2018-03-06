@@ -53,3 +53,9 @@ export const requestCurrentProfile = (profile_id) => dispatch => {
     return dispatch(receiveCurrentProfile(profile))
   })
 }
+
+export const createProfile = (profile) => dispatch => {
+  return APIUtil.createProfile(profile).then (profile => {
+    return dispatch(receiveCurrentProfile(profile))
+  })
+}

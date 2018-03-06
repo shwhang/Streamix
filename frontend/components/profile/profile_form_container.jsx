@@ -3,6 +3,7 @@ import ProfileForm from './profile_form';
 import { withRouter } from 'react-router-dom';
 import { requestAllAvatars,
          requestCurrentProfile,
+         createProfile,
 } from '../../actions/profile_actions'
 
 
@@ -17,7 +18,8 @@ export const mapStateToProps = ({ profiles }) => (
 export const mapDispatchToProps = (dispatch, ownProps) => ({
   path: ownProps.location.pathname,
   requestAllAvatars: () => dispatch(requestAllAvatars()),
-  requestCurrentProfile: (profileId) => dispatch(requestCurrentProfile(profileId))
+  requestCurrentProfile: (profileId) => dispatch(requestCurrentProfile(profileId)),
+  createProfile: (profile) => dispatch(createProfile(profile))
 })
 
 export default withRouter(connect(

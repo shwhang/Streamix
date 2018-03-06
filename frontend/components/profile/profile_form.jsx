@@ -23,9 +23,7 @@ class ProfileForm extends React.Component {
   }
 
   componentWillMount(){
-    this.props.requestAllAvatars().then((avatars) => {
-      console.log(avatars)
-    });
+    this.props.requestAllAvatars();
 
     if (this.props.path !== '/manage/add') {
       let slashIndex = this.props.path.lastIndexOf('/') + 1;
@@ -87,7 +85,16 @@ class ProfileForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    // const profile = Object.assign({}, this.state);
+
+    let profileData = {
+      name: this.state.name,
+      avatar_id: this.state.avatarId
+    }
+
+    const profile = Object.assign({}, profileData);
+    this.props.createProfile(profile).then(() => {
+      this.props.history.push('/profiles')
+    });
   }
 
   updateAvatar(e){
