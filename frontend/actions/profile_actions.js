@@ -68,6 +68,12 @@ export const createProfile = (profile) => dispatch => {
   })
 }
 
+export const updateProfile = (profile) => dispatch => {
+  return APIUtil.updateProfile(profile).then( profile => {
+    return dispatch(receiveCurrentProfile(profile))
+  })
+}
+
 export const deleteProfile = (profile) => dispatch => {
   return APIUtil.destroyProfile(profile).then((profile) => {
     return dispatch(removeProfile(profile));

@@ -28,6 +28,14 @@ export const createProfile = (profile) => {
   })
 }
 
+export const updateProfile = (profile) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `api/profiles/${profile.id}`,
+    data: { profile }
+  })
+}
+
 export const destroyProfile = (profile) => {
   return $.ajax({
     method: 'DELETE',

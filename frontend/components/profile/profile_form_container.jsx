@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { requestAllAvatars,
          requestCurrentProfile,
          createProfile,
+         updateProfile,
          deleteProfile
 } from '../../actions/profile_actions'
 
@@ -16,13 +17,18 @@ export const mapStateToProps = ({ profiles }) => (
   }
 )
 
-export const mapDispatchToProps = (dispatch, ownProps) => ({
-  path: ownProps.location.pathname,
-  requestAllAvatars: () => dispatch(requestAllAvatars()),
-  requestCurrentProfile: (profileId) => dispatch(requestCurrentProfile(profileId)),
-  createProfile: (profile) => dispatch(createProfile(profile)),
-  deleteProfile: (profile) => dispatch(deleteProfile(profile))
-})
+export const mapDispatchToProps = (dispatch, { location }) => {
+  const formType = location.pathname;
+  const processForm = (formType === "/manage/add") ? createProfile : updateProfile;
+  debugger
+  return {
+    path: location.pathname,
+    requestAllAvatars: () => dispatch(requestAllAvatars()),
+    requestCurrentProfile: (profileId) => dispatch(requestCurrentProfile(profileId)),
+    processForm: (profile) => dispatch(processForm(profile)),
+    deleteProfile: (profile) => dispatch(deleteProfile(profile))
+  }
+}
 
 export default withRouter(connect(
   mapStateToProps,

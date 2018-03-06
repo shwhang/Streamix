@@ -87,13 +87,23 @@ class ProfileForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
 
-    let profileData = {
-      name: this.state.name,
-      avatar_id: this.state.avatarId
+    let profileData;
+
+    if(this.props.path === "/manage/add"){
+      profileData = {
+        name: this.state.name,
+        avatar_id: this.state.avatarId
+      }
+    } else {
+      profileData = {
+        id: this.props.currentProfile.id,
+        name: this.state.name,
+        avatar_id: this.state.avatarId
+      }
     }
 
     const profile = Object.assign({}, profileData);
-    this.props.createProfile(profile).then(() => {
+    this.props.processForm(profile).then(() => {
       this.props.history.push('/profiles')
     });
   }
