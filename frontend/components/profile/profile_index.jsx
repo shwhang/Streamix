@@ -51,7 +51,7 @@ class ProfileIndex extends React.Component{
       <div className="profiles-wrapper">
         <NavBarContainer path={this.props.path}/>
 
-        <div className="profiles-index">
+        <div className="profiles-index fadeInDown">
           <h1 className="profiles-index-title">
             {this.details.title}
           </h1>

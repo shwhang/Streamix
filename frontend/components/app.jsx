@@ -15,11 +15,12 @@ const App = () => (
       <AuthRoute exact path="/signup" component={ SessionFormContainer } />
       <AuthRoute exact path="/login" component={ SessionFormContainer } />
       <ProtectedRoute exact path="/profiles" component={ProfileIndexContainer} />
-      <ProtectedRoute exact path="/manage/profiles" component={ProfileIndexContainer} />
+
       <ProtectedRoute exact path ="/manage/add" component={ProfileFormContainer} />
       <ProtectedRoute exact path ="/manage/edit/:id" component={ProfileFormContainer} />
 
     </Switch>
+    <ProtectedRoute exact path="/manage/profiles" component={ProfileIndexContainer} />
   </div>
 )
 
