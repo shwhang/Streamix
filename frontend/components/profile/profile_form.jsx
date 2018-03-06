@@ -5,9 +5,10 @@ import NavBarContainer from '../nav_bar/nav_bar_container';
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props)
-
     this.state = {
-      name: ""
+      name: "",
+      avatarId: "",
+      avatarUrl: ""
     }
 
     this.form = {
@@ -17,10 +18,17 @@ class ProfileForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateAvatar = this.updateAvatar.bind(this);
   }
 
   componentWillMount(){
     this.props.requestAllAvatars();
+
+    if (this.props.path !== '/manage/add') {
+      let slashIndex = this.props.path.lastIndexOf('/') + 1;
+      let profileId = parseInt(this.props.path.slice(slashIndex));
+      this.props.requestCurrentProfile(profileId);
+    }
   }
 
   update(property) {
@@ -69,15 +77,41 @@ class ProfileForm extends React.Component {
     // const profile = Object.assign({}, this.state);
   }
 
+
+  componentWillReceiveProps(nextProps){
+    if (this.props.currentProfile !== nextProps.currentProfile) {
+      this.setState({
+        name: nextProps.currentProfile.name,
+        avatarId: nextProps.currentProfile.id,
+        avatarUrl: nextProps.currentProfile.avatar_url
+      })
+    }
+  }
+
+  updateAvatar(e){
+    e.preventDefault();
+
+    let avatarId = parseInt(e.target.alt.slice(7));
+    let avatarUrl = this.props.avatars.filter((avatar) => {
+      return avatar.id === avatarId
+    })[0];
+
+    this.setState({
+      avatarId: avatarId,
+      avatarUrl: avatarUrl.image
+    });
+  }
+
   avatarModalBox(){
     let avatars = this.props.avatars
 
     const avatarItems = avatars.map((avatar, i) => {
       return <img
         src={avatar.image}
-        alt={`avatar${i}`}
+        alt={`avatar-${avatar.id}`}
         key={`avatar-${i}`}
         className="avatar-select-img"
+        onClick={this.updateAvatar}
       />
     })
 
@@ -90,7 +124,7 @@ class ProfileForm extends React.Component {
 
   renderAvatarModalBox(e){
     e.preventDefault();
-    
+
     const avatarModalBox = document.getElementsByClassName('avatar-modal-box')[0];
     const avatarModalBoxStyle = avatarModalBox.style.visibility;
 
@@ -99,7 +133,6 @@ class ProfileForm extends React.Component {
 
   render() {
     this.renderFormDetails();
-
     return (
       <div className="profile-form-container">
         <NavBarContainer />
@@ -110,10 +143,12 @@ class ProfileForm extends React.Component {
 
           <article className="profile-form-details">
             <div className="avatar-section">
-              <div className="default-avatar">
+              <div className="default-avatar-container">
+                <img src={this.state.avatarUrl} alt="default-avatar-img" className="default-avatar-img"/>
                 <button className="edit-avatar-icon" onClick={this.renderAvatarModalBox}>
                 </button>
               </div>
+
               {this.avatarModalBox()}
             </div>
 

@@ -18,9 +18,9 @@ class ProfileIndexItem extends React.Component{
 
   render(){
     this.updateProfileItemLink();
-
+    
     return (
-      <Link to={this.profileLink} className="profile-index-item">
+      <Link to={this.profileLink} className="profile-index-item" profile={this.props.profile}>
         <div className="avatar-container">
           <img src={this.props.profile.avatar_url}  className="avatar-img"/>
         </div>
