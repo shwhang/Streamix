@@ -4,6 +4,7 @@ import {
   RECEIVE_ALL_AVATARS,
   RECEIVE_ALL_PROFILES,
   RECEIVE_CURRENT_PROFILE,
+  REMOVE_PROFILE
 } from '../actions/profile_actions';
 
 const _nullProfiles = Object.freeze({
@@ -14,6 +15,9 @@ const _nullProfiles = Object.freeze({
 
 const profilesReducer = (state = _nullProfiles, action) => {
   Object.freeze(state);
+  if(action.type === REMOVE_PROFILE){
+    debugger
+  }
 
   switch(action.type) {
     case RECEIVE_ALL_PROFILES:
@@ -25,6 +29,11 @@ const profilesReducer = (state = _nullProfiles, action) => {
     case RECEIVE_ALL_AVATARS:
       const avatars = action.avatars;
       return merge({}, _nullProfiles, { avatars });
+    case REMOVE_PROFILE:
+      const newProfiles = state.allProfiles.filter((profile) => {
+        return profile.id !== action.currentProfile.id
+      });
+      return merge({}, _nullProfiles, { allProfiles: newProfiles, avatars: state.avatars})
     default:
       return state;
   }

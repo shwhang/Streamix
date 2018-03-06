@@ -19,6 +19,7 @@ class ProfileForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmitDelete = this.handleSubmitDelete.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
   }
 
@@ -68,7 +69,7 @@ class ProfileForm extends React.Component {
         title: "Edit Profile",
         blurb: "",
         updateButonText: "Save",
-        deleteButton: (<button to="/profiles" className="profile-delete-button" onClick={this.submitDelete}>Delete Profile</button>)
+        deleteButton: (<button to="/profiles" className="profile-delete-button" onClick={this.handleSubmitDelete}>Delete Profile</button>)
       }
     }
   }
@@ -95,6 +96,14 @@ class ProfileForm extends React.Component {
     this.props.createProfile(profile).then(() => {
       this.props.history.push('/profiles')
     });
+  }
+
+  handleSubmitDelete(e){
+    e.preventDefault();
+
+    this.props.deleteProfile(this.props.currentProfile).then(() => {
+      this.props.history.push('/profiles');
+    })
   }
 
   updateAvatar(e){

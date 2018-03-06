@@ -3,6 +3,7 @@ import * as APIUtil from '../util/profile_api_util';
 export const RECEIVE_ALL_AVATARS = "RECEIVE_ALL_AVATARS";
 export const RECEIVE_ALL_PROFILES = "RECEIVE_ALL_PROFILES";
 export const RECEIVE_CURRENT_PROFILE = "RECEIVE_CURRENT_PROFILE";
+export const REMOVE_PROFILE = "REMOVE_PROFILE";
 export const RECEIVE_PROFILE_ERRORS = "RECEIVE_PROFILE_ERRORS";
 
 
@@ -32,6 +33,13 @@ export const receiveCurrentProfile = (profile) => {
   })
 }
 
+export const removeProfile = (profile) => {
+  return ({
+    type: REMOVE_PROFILE,
+    profile
+  })
+}
+
 
 export const requestAllProfiles = user_id => dispatch => {
   return APIUtil.fetchProfiles(user_id).then (profiles => {
@@ -57,5 +65,11 @@ export const requestCurrentProfile = (profile_id) => dispatch => {
 export const createProfile = (profile) => dispatch => {
   return APIUtil.createProfile(profile).then (profile => {
     return dispatch(receiveCurrentProfile(profile))
+  })
+}
+
+export const deleteProfile = (profile) => dispatch => {
+  return APIUtil.destroyProfile(profile).then((profile) => {
+    return dispatch(removeProfile(profile));
   })
 }

@@ -27,3 +27,10 @@ export const createProfile = (profile) => {
     data: { profile }
   })
 }
+
+export const destroyProfile = (profile) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/profiles/${profile.id}`
+  })
+}

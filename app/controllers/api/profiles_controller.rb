@@ -36,6 +36,11 @@ class Api::ProfilesController < ApplicationController
   end
 
   def destroy
+    @profile = Profile.find(params[:id])
+    if @profile
+      @profile.destroy
+      render json: @profile, status: 200
+    end
 
   end
 

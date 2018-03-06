@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { requestAllAvatars,
          requestCurrentProfile,
          createProfile,
+         deleteProfile
 } from '../../actions/profile_actions'
 
 
@@ -19,7 +20,8 @@ export const mapDispatchToProps = (dispatch, ownProps) => ({
   path: ownProps.location.pathname,
   requestAllAvatars: () => dispatch(requestAllAvatars()),
   requestCurrentProfile: (profileId) => dispatch(requestCurrentProfile(profileId)),
-  createProfile: (profile) => dispatch(createProfile(profile))
+  createProfile: (profile) => dispatch(createProfile(profile)),
+  deleteProfile: (profile) => dispatch(deleteProfile(profile))
 })
 
 export default withRouter(connect(
