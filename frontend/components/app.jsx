@@ -6,6 +6,7 @@ import HomeContainer from './home/home_container';
 import SessionFormContainer from './session/session_form_container';
 import ProfileIndexContainer from './profile/profile_index_container';
 import ProfileFormContainer from './profile/profile_form_container';
+import ProfileContainer from './profile/profile_container';
 
 
 const App = () => (
@@ -18,6 +19,8 @@ const App = () => (
 
       <ProtectedRoute exact path ="/manage/add" component={ProfileFormContainer} />
       <ProtectedRoute exact path ="/manage/edit/:id" component={ProfileFormContainer} />
+
+      <ProtectedRoute exact path="/browse/:id" component={ProfileContainer} />
 
     </Switch>
     <ProtectedRoute exact path="/manage/profiles" component={ProfileIndexContainer} />
