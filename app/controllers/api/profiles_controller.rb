@@ -23,6 +23,7 @@ class Api::ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+
     session[:profile_id] = @profile.id
     render :show
   end

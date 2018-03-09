@@ -4,12 +4,16 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component{
   constructor(props){
     super(props);
+    this.currentNavBar;
   }
 
-  componentWillReceiveProps(){
-
+  componentWillMount(){
+    // debugger;
   }
-
+  //
+  // componentWillReceiveProps(nextProps){
+  //   debugger
+  // }
   renderHomeNavBar(){
     return (
       <Link to="/login" className="home-sign-in-button">Sign In</Link>
@@ -17,17 +21,36 @@ class NavBar extends React.Component{
   }
 
   renderProfileNavBar(){
+    // return (
+    //   <button onClick={this.props.logout}>Log out</button>
+    // )
+
+    let profiles = this.props.allProfiles.filter((profile) => {
+      return profile.id !== this.props.currentProfile.id
+    })
+
+    profiles = profiles.map((profile) => {
+      return (
+        <li key={`profile-list-item-${profile.id}`}>
+          <img src={profile.image} />
+          <p>{profile.name}</p>
+        </li>
+      )
+    })
+
     return (
-      <button onClick={this.props.logout}>Log out</button>
+      <ul>
+        { profiles }
+      </ul>
     )
   }
 
   render(){
+    let currentPath = this.props.path;
     let currentNavBar;
-
-    if(this.props.path === '/'){
+    if (currentPath === '/') {
       currentNavBar = this.renderHomeNavBar();
-    } else if(this.props.path === "/profiles") {
+    } else if (/browse/.test(currentPath)) {
       currentNavBar = this.renderProfileNavBar();
     }
 

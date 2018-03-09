@@ -20,7 +20,7 @@ export const mapStateToProps = ({ profiles }) => (
 export const mapDispatchToProps = (dispatch, { location }) => {
   const formType = location.pathname;
   const processForm = (formType === "/manage/add") ? createProfile : updateProfile;
-  debugger
+  
   return {
     path: location.pathname,
     requestAllAvatars: () => dispatch(requestAllAvatars()),
