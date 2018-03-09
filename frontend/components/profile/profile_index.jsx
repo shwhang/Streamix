@@ -13,11 +13,7 @@ class ProfileIndex extends React.Component{
       buttonLink: ""
     }
 
-    props.requestAllProfiles(props.user)
-  }
-
-  componentWillReceiveProps(nextProps){
-
+    props.requestAllProfiles()
   }
 
   renderPageDetails(){

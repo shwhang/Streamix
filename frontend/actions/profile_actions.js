@@ -41,8 +41,8 @@ export const removeProfile = (profile) => {
 }
 
 
-export const requestAllProfiles = user_id => dispatch => {
-  return APIUtil.fetchProfiles(user_id).then (profiles => {
+export const requestAllProfiles = () => dispatch => {
+  return APIUtil.fetchProfiles().then (profiles => {
       return dispatch(receiveAllProfiles(profiles))
     }, err => {
       return dispatch(receiveProfileErrors(err.responseJSON))
