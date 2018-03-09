@@ -10,8 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_profile
-    debugger
-    @current_profile || Profile.find_by(id: session[:profile_id])
+    @current_profile ||= Profile.find_by(id: session[:profile_id])
   end
 
   def login(user)

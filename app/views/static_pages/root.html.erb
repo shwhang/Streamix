@@ -8,9 +8,9 @@
 
   <% if current_profile %>
     window.currentProfile = <%= render(
-      "api/profiles/_profile.json.jbuilder",
+      "api/profiles/profile.json.jbuilder",
       profile: current_profile
-    )%>
+    ).html_safe%>
   <% end %>
 
   window.staticImages = {

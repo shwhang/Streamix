@@ -12,17 +12,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (window.currentProfile) {
-      preloadedState.profiles = { currentProfile: window.currentProfile }
+      preloadedState.profiles = {
+        currentProfile: window.currentProfile,
+        allProfiles: [],
+        avatars: []
+      }
     }
 
     store = configureStore(preloadedState);
     delete window.currentUser;
     delete window.currentProfile;
+
   } else {
     store = configureStore();
   }
 
-  //Testing
+  //TODO: Remove Testing
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
