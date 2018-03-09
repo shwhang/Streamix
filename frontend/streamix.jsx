@@ -4,12 +4,20 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
-  let store;
+  let store, preloadedState;
 
   if (window.currentUser) {
-    const preloadedState = { session: { currentUser: window.currentUser }}
+    preloadedState = {
+      session: { currentUser: window.currentUser }
+    }
+
+    if (window.currentProfile) {
+      preloadedState.profiles = { currentProfile: window.currentProfile }
+    }
+
     store = configureStore(preloadedState);
     delete window.currentUser;
+    delete window.currentProfile;
   } else {
     store = configureStore();
   }

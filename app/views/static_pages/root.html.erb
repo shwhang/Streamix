@@ -6,6 +6,13 @@
     ).html_safe %>
   <% end %>
 
+  <% if current_profile %>
+    window.currentProfile = <%= render(
+      "api/profiles/_profile.json.jbuilder",
+      profile: current_profile
+    )%>
+  <% end %>
+
   window.staticImages = {
     splashBackground: "<%= asset_path('splash_background.png')%>",
     sessionBackground: "<%= asset_path('session_background')%>",
