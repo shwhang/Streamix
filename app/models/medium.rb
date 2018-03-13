@@ -15,4 +15,5 @@
 #
 
 class Medium < ApplicationRecord
+
 end

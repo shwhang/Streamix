@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313172659) do
+ActiveRecord::Schema.define(version: 20180313174433) do
 
   create_table "avatars", force: :cascade do |t|
     t.string   "name",               null: false
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20180313172659) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_genres_on_name", unique: true
   end
 
   create_table "media", force: :cascade do |t|
