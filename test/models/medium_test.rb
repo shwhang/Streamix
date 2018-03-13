@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: media
+#
+#  id           :integer          not null, primary key
+#  title        :string           not null
+#  year         :integer          not null
+#  mpaa_rating  :string           not null
+#  description  :string           not null
+#  has_episodes :boolean          not null
+#  genre_id     :integer          not null
+#  playlist_id  :integer          not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+require 'test_helper'
+
+class MediumTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end
