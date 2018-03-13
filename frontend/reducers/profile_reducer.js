@@ -19,7 +19,10 @@ const profilesReducer = (state = _nullProfiles, action) => {
   switch(action.type) {
     case RECEIVE_ALL_PROFILES:
       const allProfiles = action.profiles;
-      return merge({}, _nullProfiles, { allProfiles: allProfiles });
+      return merge({}, _nullProfiles, {
+        allProfiles: allProfiles,
+        currentProfile: state.currentProfile
+      });
     case RECEIVE_CURRENT_PROFILE:
       const profile = action.profile;
       return merge({}, _nullProfiles, {

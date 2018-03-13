@@ -9,25 +9,24 @@ import NavBarContainer from '../nav_bar/nav_bar_container';
 class Profile extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-      navbar: null
-    }
+
   }
 
   componentWillMount(){
-    // debugger
     let profileId = parseInt(this.props.match.params.id);
-    this.props.requestAllProfiles();
     this.props.requestCurrentProfile(profileId);
+    this.props.requestAllProfiles();
   }
 
   componentWillReceiveProps(nextProps){
-    if(this.props.allProfiles !== nextProps.allProfiles){
-
+    if(this.props.match.params.id !== nextProps.match.params.id){
+      let profileId = parseInt(nextProps.match.params.id);
+      this.props.requestCurrentProfile(profileId);
     }
   }
 
   render(){
+
     return (
       <div>
         <NavBarContainer path={this.props.match.url} allProfiles={this.props.allProfiles} currentProfile={this.props.currentProfile}/>

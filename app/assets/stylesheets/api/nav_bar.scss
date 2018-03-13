@@ -3,19 +3,22 @@
 .nav-bar-wrapper {
   position: fixed;
   top: 0;
-  height: 12vh;
+  height: 75px;
   z-index: 100;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid white;
 }
 
 .logo {
   color: $logo-red;
-  font-size: 50px;
+  font-size: 3em;
   font-weight: 700;
-  margin-left: 40px;
+  padding: 0 40px;
+  align-self: center;
 }
 
 .home-sign-in-button {
@@ -25,4 +28,70 @@
   margin-right: 40px;
   padding: 10px 20px;
   border-radius: 5px;
+}
+
+// PROFILE LEFT AND RIGHT
+.navbar-logo {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-options {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-options-menu {
+  height: 100%;
+  position:relative;
+}
+
+.avatar-button {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 40px;
+  cursor: pointer;
+}
+
+.current-avatar-img {
+  height: 100%;
+  width: auto;
+  border: 1px solid green;
+}
+
+.triangle-arrow {
+  color: white;
+  font-size: 25px;
+  align-self: center;
+  padding: 0 10px;
+}
+
+//PROFILE DROPDOWN MENU
+.profiles-dropdown-menu {
+  margin-top: 15px;
+  border: 1px solid white;
+  background-color: black;
+  visibility: hidden;
+  position: absolute;
+}
+
+.profile-nav-options {
+  width: auto;
+  // padding: 10px;
+  // height: 100px;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.profile-nav-options-avatar {
+  width: 25%;
 }
