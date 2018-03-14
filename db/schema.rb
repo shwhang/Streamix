@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314111644) do
+ActiveRecord::Schema.define(version: 20180314174449) do
 
   create_table "avatars", force: :cascade do |t|
     t.string   "name",               null: false
@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 20180314111644) do
     t.string   "title",          null: false
     t.string   "description",    null: false
     t.integer  "episode_number", null: false
-    t.integer  "media_id",       null: false
+    t.integer  "medium_id",      null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.index ["media_id"], name: "index_episodes_on_media_id"
+    t.index ["medium_id"], name: "index_episodes_on_medium_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -74,12 +74,12 @@ ActiveRecord::Schema.define(version: 20180314111644) do
   end
 
   create_table "videos", force: :cascade do |t|
-    t.integer  "media_id",   null: false
+    t.integer  "medium_id",  null: false
     t.integer  "episode_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["episode_id"], name: "index_videos_on_episode_id"
-    t.index ["media_id"], name: "index_videos_on_media_id"
+    t.index ["medium_id"], name: "index_videos_on_medium_id"
   end
 
 end
