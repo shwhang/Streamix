@@ -46,6 +46,8 @@ Column Name| Data Type | Details
 -----------|-----------|--------
 id| integer | not null, primary key
 video(url) | string | not null
+video_thumb(url) | string | not null
+video_medium(url) | string | not null
 media_id | integer | not null, foreign key
 episode_id | integer | not null, foreign key
 
@@ -71,4 +73,4 @@ description | string | not null
 media_id | integer | not null, foreign key
 
 //TODO: if medias:has_episodes === true, than medias will have videos through episodes
-//TODO: maybe if media has 0 episodes 
+//TODO: maybe if media has 0 episodes

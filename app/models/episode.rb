@@ -12,8 +12,9 @@
 #
 
 class Episode < ApplicationRecord
-
+  validates :title, :description, :episode_number, presence: true
+  validates :episode_number, numericality: { only_integer: true }
 
   belongs_to :medium
-  has_many :videos
+  # has_many :videos
 end

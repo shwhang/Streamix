@@ -10,6 +10,8 @@
 #
 
 class Video < ApplicationRecord
-  belongs_to :episode
+
+
+  # belongs_to :episode
   belongs_to :medium
 end
