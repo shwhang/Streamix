@@ -12,4 +12,8 @@
 #
 
 class Episode < ApplicationRecord
+
+
+  belongs_to :medium
+  has_many :videos
 end

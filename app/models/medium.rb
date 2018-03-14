@@ -15,5 +15,7 @@
 #
 
 class Medium < ApplicationRecord
-
+  belongs_to :genre
+  has_many :episodes
+  has_many :videos
 end

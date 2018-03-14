@@ -9,4 +9,5 @@
 #
 
 class Genre < ApplicationRecord
+  has_many :media
 end
