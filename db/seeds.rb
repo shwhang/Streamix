@@ -67,3 +67,38 @@ demoProfile2 = Profile.create(
   user_id: demoUser.id,
   avatar_id: avatar6.id
 )
+
+#Genres
+action = Genre.create(name: "action")
+cats = Genre.create(name: "cats")
+horror = Genre.create(name: "horror")
+nature = Genre.create(name: "nature")
+romance = Genre.create(name: "romance")
+travel = Genre.create(name: "travel")
+
+#Medium
+# Medium.create(
+#   title: "",
+#   year: 0,
+#   mpaa_rating: "",
+#   description: "",
+#   has_episodes: false,
+#   genre_id: nil
+# )
+
+#HEADER MEDIUM
+header = Medium.create(
+  title: "Grapefruit",
+  year: 2012,
+  description: "The Fruit. The Color. The Legend. Watch how this grapefruit took the world by storm.",
+  mpaa_rating: "PG-13",
+  has_episodes: false,
+  genre_id: nature.id
+)
+
+# HEADER VIDEO
+file0 = ""
+header_video = Video.create(
+  medium_id: header.id,
+  episode_id: 0
+)
