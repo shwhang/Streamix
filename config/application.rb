@@ -15,7 +15,7 @@ module Streamix
     config.paperclip_defaults = {
       :storage => :s3,
       :s3_credentials => {
-        :bucket => ENV["s3_bucket"],
+        :bucket => ENV["s3_dev_bucket"],
         :access_key_id => ENV["s3_access_key_id"],
         :secret_access_key => ENV["s3_secret_access_key"],
         :s3_region => ENV["s3_region"]
@@ -24,15 +24,3 @@ module Streamix
 
   end
 end
-#
-# Aws.config.update({
-#  region: 'us-east-1',
-#  credentials: Aws::Credentials.new(ENV["s3_access_key_id"], ENV["s3_secret_access_key"]),
-# })
-#
-#cred[:s3_credentials]C
-# Aws::S3::Client.new(
-#   region: ENV["s3_region"],
-#   access_key_id: ENV["s3_access_key_id"],
-#   secret_access_key: ENV["s3_secret_access_key"]
-# )
