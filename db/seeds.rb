@@ -519,3 +519,14 @@ travel8 = Medium.create(
   has_episodes: false,
   genre_id: travel.id
 )
+
+
+# VIDEOS
+action_url1 = "https://s3.amazonaws.com/streamix-pro/videos/action/action1.mp4"
+action_url2 = "https://s3.amazonaws.com/streamix-pro/videos/action/action2.mp4"
+action_url3 = "https://s3.amazonaws.com/streamix-pro/videos/action/action3.mp4"
+action_url4 = "https://s3.amazonaws.com/streamix-pro/videos/action/action4.mp4"
+action_url5 = "https://s3.amazonaws.com/streamix-pro/videos/action/action5.mp4"
+action_url6 = "https://s3.amazonaws.com/streamix-pro/videos/action/action6.mp4"
+action_url7 = "https://s3.amazonaws.com/streamix-pro/videos/action/action7.mp4"
+action_url8 = "https://s3.amazonaws.com/streamix-pro/videos/action/action8.mp4"
