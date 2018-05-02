@@ -520,8 +520,7 @@ travel8 = Medium.create(
   genre_id: travel.id
 )
 
-
-# VIDEOS
+# VIDEOS URL
 action_url1 = "https://s3.amazonaws.com/streamix-pro/videos/action/action1.mp4"
 action_url2 = "https://s3.amazonaws.com/streamix-pro/videos/action/action2.mp4"
 action_url3 = "https://s3.amazonaws.com/streamix-pro/videos/action/action3.mp4"
@@ -530,3 +529,55 @@ action_url5 = "https://s3.amazonaws.com/streamix-pro/videos/action/action5.mp4"
 action_url6 = "https://s3.amazonaws.com/streamix-pro/videos/action/action6.mp4"
 action_url7 = "https://s3.amazonaws.com/streamix-pro/videos/action/action7.mp4"
 action_url8 = "https://s3.amazonaws.com/streamix-pro/videos/action/action8.mp4"
+
+cats_url1 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat1.mp4"
+cats_url2 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat2.mp4"
+cats_url3 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat3.mp4"
+cats_url4 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat4.mp4"
+cats_url5 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat5.mp4"
+cats_url6 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat6.mp4"
+cats_url7 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat7.mp4"
+cats_url8 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat8.mp4"
+
+horror_url1 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror1.mp4"
+horror_url2 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror2.mp4"
+horror_url3 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror3.mp4"
+horror_url4 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror4.mp4"
+horror_url5 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror5.mp4"
+horror_url6 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror6.mp4"
+horror_url7 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror7.mp4"
+horror_url8 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror8.mp4"
+
+nature_url1 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature1.mp4"
+nature_url2 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature2.mp4"
+nature_url3 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature3.mp4"
+nature_url4 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature4.mp4"
+nature_url5 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature5.mp4"
+nature_url6 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature6.mp4"
+nature_url7 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature7.mp4"
+nature_url8 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature8.mp4"
+
+romance_url1 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance1.mp4"
+romance_url2 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance2.mp4"
+romance_url3 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance3.mp4"
+romance_url4 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance4.mp4"
+romance_url5 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance5.mp4"
+romance_url6 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance6.mp4"
+romance_url7 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance7.mp4"
+romance_url8 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance8.mp4"
+
+travel_url1 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel1.mp4"
+travel_url2 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel2.mp4"
+travel_url3 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel3.mp4"
+travel_url4 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel4.mp4"
+travel_url5 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel5.mp4"
+travel_url6 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel6.mp4"
+travel_url7 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel7.mp4"
+travel_url8 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel8.mp4"
+
+# VIDEOS
+action_video1 = Video.new(
+  medium_id: action1,
+  episode_id: 0,
+  video_ur: action_url1
+)
