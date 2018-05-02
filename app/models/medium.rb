@@ -17,7 +17,7 @@
 class Medium < ApplicationRecord
   validates :title, :year, :mpaa_rating, :description, presence: true
   validates :year, numericality: { only_integer: true }
-  validates :has_episodes, exclusion: { in: [true, false] }
+  # validates :has_episodes, exclusion: { in: [true, false] }
 
   belongs_to :genre
   # belongs_to :playlist
