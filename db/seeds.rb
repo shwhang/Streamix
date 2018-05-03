@@ -6,12 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Access AWS for Videos and Video's thumbnails
+s3 = Aws::S3::Resource.new(region: 'us-east-1')
+bucket = s3.bucket("streamix-pro")
+
+
 User.destroy_all
 Profile.destroy_all
 Avatar.destroy_all
 Genre.destroy_all
 Medium.destroy_all
 
+debugger
 # AVATARS
 defaultAvatar= Avatar.create(
   name: "avatar-default",
