@@ -26,22 +26,40 @@ class ProfileForm extends React.Component {
   componentWillMount(){
     this.props.requestAllAvatars();
 
-    if (this.props.path !== '/manage/add') {
-      let slashIndex = this.props.path.lastIndexOf('/') + 1;
-      let profileId = parseInt(this.props.path.slice(slashIndex));
-
-      this.props.requestCurrentProfile(profileId).then(({profile}) => {
-        this.setState({
-          name: profile.name,
-          avatarId: profile.avatar_id,
-          avatarUrl: profile.avatar_url
-        })
-      })
-    }
+    // if (this.props.path !== '/manage/add') {
+    //   let slashIndex = this.props.path.lastIndexOf('/') + 1;
+    //   let profileId = parseInt(this.props.path.slice(slashIndex));
+    //
+    //   this.props.requestCurrentProfile(profileId).then(({profile}) => {
+    //     this.setState({
+    //       name: profile.name,
+    //       avatarId: profile.avatar_id,
+    //       avatarUrl: profile.avatar_url
+    //     })
+    //   })
+    // }
 
   }
 
+  componentDidMount(){
+
+        if (this.props.path !== '/manage/add') {
+          let slashIndex = this.props.path.lastIndexOf('/') + 1;
+          let profileId = parseInt(this.props.path.slice(slashIndex));
+
+          this.props.requestCurrentProfile(profileId).then(({profile}) => {
+            this.setState({
+              name: profile.name,
+              avatarId: profile.avatar_id,
+              avatarUrl: profile.avatar_url
+            })
+          })
+        }
+  }
+
   componentWillReceiveProps(nextProps){
+    // console.log(nextProps.currentProfile.id)
+
     if (this.props.defaultAvatar !== nextProps.defaultAvatar && this.props.path === '/manage/add') {
       this.setState({
         placeholder: "Add Profile",
@@ -103,6 +121,7 @@ class ProfileForm extends React.Component {
     }
 
     const profile = Object.assign({}, profileData);
+
     this.props.processForm(profile).then(() => {
       this.props.history.push('/profiles')
     });
