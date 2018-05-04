@@ -6,18 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Access AWS for Videos and Video's thumbnails
-s3 = Aws::S3::Resource.new(region: 'us-east-1')
-bucket = s3.bucket("streamix-pro")
-
 
 User.destroy_all
 Profile.destroy_all
 Avatar.destroy_all
 Genre.destroy_all
 Medium.destroy_all
+Video.destroy_all
 
-debugger
 # AVATARS
 defaultAvatar= Avatar.create(
   name: "avatar-default",
@@ -573,304 +569,361 @@ travel8 = Medium.create(
   genre_id: travel.id
 )
 
-# VIDEOS URL
-action_url1 = "https://s3.amazonaws.com/streamix-pro/videos/action/action1.mp4"
-action_url2 = "https://s3.amazonaws.com/streamix-pro/videos/action/action2.mp4"
-action_url3 = "https://s3.amazonaws.com/streamix-pro/videos/action/action3.mp4"
-action_url4 = "https://s3.amazonaws.com/streamix-pro/videos/action/action4.mp4"
-action_url5 = "https://s3.amazonaws.com/streamix-pro/videos/action/action5.mp4"
-action_url6 = "https://s3.amazonaws.com/streamix-pro/videos/action/action6.mp4"
-action_url7 = "https://s3.amazonaws.com/streamix-pro/videos/action/action7.mp4"
-action_url8 = "https://s3.amazonaws.com/streamix-pro/videos/action/action8.mp4"
+# Access AWS for Videos and Video's thumbnails
 
-cats_url1 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat1.mp4"
-cats_url2 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat2.mp4"
-cats_url3 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat3.mp4"
-cats_url4 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat4.mp4"
-cats_url5 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat5.mp4"
-cats_url6 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat6.mp4"
-cats_url7 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat7.mp4"
-cats_url8 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat8.mp4"
+def get_thumbnail_urls(video_url, thumbnail_urls)
+  last_slash_idx = video_url.rindex("/")
+  video_tag = Regexp.new(video_url[last_slash_idx + 1...-4]) #removes .mp4 extension
 
-horror_url1 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror1.mp4"
-horror_url2 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror2.mp4"
-horror_url3 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror3.mp4"
-horror_url4 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror4.mp4"
-horror_url5 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror5.mp4"
-horror_url6 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror6.mp4"
-horror_url7 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror7.mp4"
-horror_url8 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror8.mp4"
 
-nature_url1 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature1.mp4"
-nature_url2 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature2.mp4"
-nature_url3 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature3.mp4"
-nature_url4 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature4.mp4"
-nature_url5 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature5.mp4"
-nature_url6 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature6.mp4"
-nature_url7 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature7.mp4"
-nature_url8 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature8.mp4"
+  #grabs all thumbnails with match video name
+  thumbs = thumbnail_urls.select do |thumbnail_url|
+    video_tag.match thumbnail_url
+  end
+  debugger
+  thumbs
+end
 
-romance_url1 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance1.mp4"
-romance_url2 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance2.mp4"
-romance_url3 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance3.mp4"
-romance_url4 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance4.mp4"
-romance_url5 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance5.mp4"
-romance_url6 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance6.mp4"
-romance_url7 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance7.mp4"
-romance_url8 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance8.mp4"
+def createVideos
+  s3 = Aws::S3::Resource.new(region: 'us-east-1')
+  bucket = s3.bucket("streamix-pro").objects
 
-travel_url1 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel1.mp4"
-travel_url2 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel2.mp4"
-travel_url3 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel3.mp4"
-travel_url4 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel4.mp4"
-travel_url5 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel5.mp4"
-travel_url6 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel6.mp4"
-travel_url7 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel7.mp4"
-travel_url8 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel8.mp4"
+  video_urls = []
+  thumbnail_urls = []
 
-# VIDEOS
-action_video1 = Video.create(
-  medium_id: action1.id,
-  episode_id: 0,
-  video_url: action_url1
-)
-action_video2 = Video.create(
-  medium_id: action2.id,
-  episode_id: 0,
-  video_url: action_url2
-)
-action_video3 = Video.create(
-  medium_id: action3.id,
-  episode_id: 0,
-  video_url: action_url3
-)
-action_video4 = Video.create(
-  medium_id: action4.id,
-  episode_id: 0,
-  video_url: action_url4
-)
-action_video5 = Video.create(
-  medium_id: action5.id,
-  episode_id: 0,
-  video_url: action_url5
-)
-action_video6 = Video.create(
-  medium_id: action6.id,
-  episode_id: 0,
-  video_url: action_url6
-)
-action_video7 = Video.create(
-  medium_id: action7.id,
-  episode_id: 0,
-  video_url: action_url7
-)
-action_video8 = Video.create(
-  medium_id: action8.id,
-  episode_id: 0,
-  video_url: action_url8
-)
+  bucket.each do |bucket|
+    url = bucket.key
 
-cats_video1 = Video.create(
-  medium_id: cat1.id,
-  episode_id: 0,
-  video_url: cats_url1
-)
-cats_video2 = Video.create(
-  medium_id: cat2.id,
-  episode_id: 0,
-  video_url: cats_url2
-)
-cats_video3 = Video.create(
-  medium_id: cat3.id,
-  episode_id: 0,
-  video_url: cats_url3
-)
-cats_video4 = Video.create(
-  medium_id: cat4.id,
-  episode_id: 0,
-  video_url: cats_url4
-)
-cats_video5 = Video.create(
-  medium_id: cat5.id,
-  episode_id: 0,
-  video_url: cats_url5
-)
-cats_video6 = Video.create(
-  medium_id: cat6.id,
-  episode_id: 0,
-  video_url: cats_url6
-)
-cats_video7 = Video.create(
-  medium_id: cat7.id,
-  episode_id: 0,
-  video_url: cats_url7
-)
-cats_video8 = Video.create(
-  medium_id: cat8.id,
-  episode_id: 0,
-  video_url: cats_url8
-)
+    if /.mp4/.match url
+      video_urls << url
+    else
+      thumbnail_urls << url
+    end
+  end
 
-horror_video1 = Video.create(
-  medium_id: horror1.id,
-  episode_id: 0,
-  video_url: horror_url1
-)
-horror_video2 = Video.create(
-  medium_id: horror2.id,
-  episode_id: 0,
-  video_url: horror_url2
-)
-horror_video3 = Video.create(
-  medium_id: horror3.id,
-  episode_id: 0,
-  video_url: horror_url3
-)
-horror_video4 = Video.create(
-  medium_id: horror4.id,
-  episode_id: 0,
-  video_url: horror_url4
-)
-horror_video5 = Video.create(
-  medium_id: horror5.id,
-  episode_id: 0,
-  video_url: horror_url5
-)
-horror_video6 = Video.create(
-  medium_id: horror6.id,
-  episode_id: 0,
-  video_url: horror_url6
-)
-horror_video7 = Video.create(
-  medium_id: horror7.id,
-  episode_id: 0,
-  video_url: horror_url7
-)
-horror_video8 = Video.create(
-  medium_id: horror8.id,
-  episode_id: 0,
-  video_url: horror_url8
-)
+  url = "https://s3.amazonaws.com/streamix-pro/"
 
-nature_video1 = Video.create(
-  medium_id: nature1.id,
-  episode_id: 0,
-  video_url: nature_url1
-)
-nature_video2 = Video.create(
-  medium_id: nature2.id,
-  episode_id: 0,
-  video_url: nature_url2
-)
-nature_video3 = Video.create(
-  medium_id: nature3.id,
-  episode_id: 0,
-  video_url: nature_url3
-)
-nature_video4 = Video.create(
-  medium_id: nature4.id,
-  episode_id: 0,
-  video_url: nature_url4
-)
-nature_video5 = Video.create(
-  medium_id: nature5.id,
-  episode_id: 0,
-  video_url: nature_url5
-)
-nature_video6 = Video.create(
-  medium_id: nature6.id,
-  episode_id: 0,
-  video_url: nature_url6
-)
-nature_video7 = Video.create(
-  medium_id: nature7.id,
-  episode_id: 0,
-  video_url: nature_url7
-)
-nature_video8 = Video.create(
-  medium_id: nature8.id,
-  episode_id: 0,
-  video_url: nature_url8
-)
+  genres = Genre.all.map {|genre| genre.name }
 
-romance_video1 = Video.create(
-  medium_id: romance1.id,
-  episode_id: 0,
-  video_url: romance_url1
-)
-romance_video2 = Video.create(
-  medium_id: romance2.id,
-  episode_id: 0,
-  video_url: romance_url2
-)
-romance_video3 = Video.create(
-  medium_id: romance3.id,
-  episode_id: 0,
-  video_url: romance_url3
-)
-romance_video4 = Video.create(
-  medium_id: romance4.id,
-  episode_id: 0,
-  video_url: romance_url4
-)
-romance_video5 = Video.create(
-  medium_id: romance5.id,
-  episode_id: 0,
-  video_url: romance_url5
-)
-romance_video6 = Video.create(
-  medium_id: romance6.id,
-  episode_id: 0,
-  video_url: romance_url6
-)
-romance_video7 = Video.create(
-  medium_id: romance7.id,
-  episode_id: 0,
-  video_url: romance_url7
-)
-romance_video8 = Video.create(
-  medium_id: romance8.id,
-  episode_id: 0,
-  video_url: romance_url8
-)
+  medium = Medium.all.each_with_index do |medium, idx|
+    video_url = video_urls[idx]
 
-travel_video1 = Video.create(
-  medium_id: travel1.id,
-  episode_id: 0,
-  video_url: travel_url1
-)
-travel_video2 = Video.create(
-  medium_id: travel2.id,
-  episode_id: 0,
-  video_url: travel_url2
-)
-travel_video3 = Video.create(
-  medium_id: travel3.id,
-  episode_id: 0,
-  video_url: travel_url3
-)
-travel_video4 = Video.create(
-  medium_id: travel4.id,
-  episode_id: 0,
-  video_url: travel_url4
-)
-travel_video5 = Video.create(
-  medium_id: travel5.id,
-  episode_id: 0,
-  video_url: travel_url5
-)
-travel_video6 = Video.create(
-  medium_id: travel6.id,
-  episode_id: 0,
-  video_url: travel_url6
-)
-travel_video7 = Video.create(
-  medium_id: travel7.id,
-  episode_id: 0,
-  video_url: travel_url7
-)
-travel_video8 = Video.create(
-  medium_id: travel8.id,
-  episode_id: 0,
-  video_url: travel_url8
-)
+    Video.create ( {
+        medium_id: medium.id,
+        episode_id: 0,
+        video_url: url + video_url,
+        thumbnails: url + get_thumbnail_urls(video_url, thumbnail_urls)
+
+    })
+  end
+end
+
+createVideos
+
+# horror_video1 = Video.create(
+#   medium_id: horror1.id,
+#   episode_id: 0,
+#   video_url: horror_url1
+# )
+#
+# # VIDEOS URL
+# action_url1 = "https://s3.amazonaws.com/streamix-pro/videos/action/action1.mp4"
+# action_url2 = "https://s3.amazonaws.com/streamix-pro/videos/action/action2.mp4"
+# action_url3 = "https://s3.amazonaws.com/streamix-pro/videos/action/action3.mp4"
+# action_url4 = "https://s3.amazonaws.com/streamix-pro/videos/action/action4.mp4"
+# action_url5 = "https://s3.amazonaws.com/streamix-pro/videos/action/action5.mp4"
+# action_url6 = "https://s3.amazonaws.com/streamix-pro/videos/action/action6.mp4"
+# action_url7 = "https://s3.amazonaws.com/streamix-pro/videos/action/action7.mp4"
+# action_url8 = "https://s3.amazonaws.com/streamix-pro/videos/action/action8.mp4"
+#
+# cats_url1 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat1.mp4"
+# cats_url2 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat2.mp4"
+# cats_url3 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat3.mp4"
+# cats_url4 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat4.mp4"
+# cats_url5 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat5.mp4"
+# cats_url6 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat6.mp4"
+# cats_url7 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat7.mp4"
+# cats_url8 = "https://s3.amazonaws.com/streamix-pro/videos/cats/cat8.mp4"
+#
+# horror_url1 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror1.mp4"
+# horror_url2 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror2.mp4"
+# horror_url3 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror3.mp4"
+# horror_url4 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror4.mp4"
+# horror_url5 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror5.mp4"
+# horror_url6 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror6.mp4"
+# horror_url7 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror7.mp4"
+# horror_url8 = "https://s3.amazonaws.com/streamix-pro/videos/horror/horror8.mp4"
+#
+# nature_url1 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature1.mp4"
+# nature_url2 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature2.mp4"
+# nature_url3 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature3.mp4"
+# nature_url4 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature4.mp4"
+# nature_url5 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature5.mp4"
+# nature_url6 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature6.mp4"
+# nature_url7 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature7.mp4"
+# nature_url8 = "https://s3.amazonaws.com/streamix-pro/videos/nature/nature8.mp4"
+#
+# romance_url1 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance1.mp4"
+# romance_url2 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance2.mp4"
+# romance_url3 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance3.mp4"
+# romance_url4 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance4.mp4"
+# romance_url5 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance5.mp4"
+# romance_url6 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance6.mp4"
+# romance_url7 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance7.mp4"
+# romance_url8 = "https://s3.amazonaws.com/streamix-pro/videos/romance/romance8.mp4"
+#
+# travel_url1 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel1.mp4"
+# travel_url2 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel2.mp4"
+# travel_url3 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel3.mp4"
+# travel_url4 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel4.mp4"
+# travel_url5 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel5.mp4"
+# travel_url6 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel6.mp4"
+# travel_url7 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel7.mp4"
+# travel_url8 = "https://s3.amazonaws.com/streamix-pro/videos/travel/travel8.mp4"
+#
+# # VIDEOS
+# action_video1 = Video.create(
+#   medium_id: action1.id,
+#   episode_id: 0,
+#   video_url: action_url1
+# )
+# action_video2 = Video.create(
+#   medium_id: action2.id,
+#   episode_id: 0,
+#   video_url: action_url2
+# )
+# action_video3 = Video.create(
+#   medium_id: action3.id,
+#   episode_id: 0,
+#   video_url: action_url3
+# )
+# action_video4 = Video.create(
+#   medium_id: action4.id,
+#   episode_id: 0,
+#   video_url: action_url4
+# )
+# action_video5 = Video.create(
+#   medium_id: action5.id,
+#   episode_id: 0,
+#   video_url: action_url5
+# )
+# action_video6 = Video.create(
+#   medium_id: action6.id,
+#   episode_id: 0,
+#   video_url: action_url6
+# )
+# action_video7 = Video.create(
+#   medium_id: action7.id,
+#   episode_id: 0,
+#   video_url: action_url7
+# )
+# action_video8 = Video.create(
+#   medium_id: action8.id,
+#   episode_id: 0,
+#   video_url: action_url8
+# )
+#
+# cats_video1 = Video.create(
+#   medium_id: cat1.id,
+#   episode_id: 0,
+#   video_url: cats_url1
+# )
+# cats_video2 = Video.create(
+#   medium_id: cat2.id,
+#   episode_id: 0,
+#   video_url: cats_url2
+# )
+# cats_video3 = Video.create(
+#   medium_id: cat3.id,
+#   episode_id: 0,
+#   video_url: cats_url3
+# )
+# cats_video4 = Video.create(
+#   medium_id: cat4.id,
+#   episode_id: 0,
+#   video_url: cats_url4
+# )
+# cats_video5 = Video.create(
+#   medium_id: cat5.id,
+#   episode_id: 0,
+#   video_url: cats_url5
+# )
+# cats_video6 = Video.create(
+#   medium_id: cat6.id,
+#   episode_id: 0,
+#   video_url: cats_url6
+# )
+# cats_video7 = Video.create(
+#   medium_id: cat7.id,
+#   episode_id: 0,
+#   video_url: cats_url7
+# )
+# cats_video8 = Video.create(
+#   medium_id: cat8.id,
+#   episode_id: 0,
+#   video_url: cats_url8
+# )
+#
+# horror_video1 = Video.create(
+#   medium_id: horror1.id,
+#   episode_id: 0,
+#   video_url: horror_url1
+# )
+# horror_video2 = Video.create(
+#   medium_id: horror2.id,
+#   episode_id: 0,
+#   video_url: horror_url2
+# )
+# horror_video3 = Video.create(
+#   medium_id: horror3.id,
+#   episode_id: 0,
+#   video_url: horror_url3
+# )
+# horror_video4 = Video.create(
+#   medium_id: horror4.id,
+#   episode_id: 0,
+#   video_url: horror_url4
+# )
+# horror_video5 = Video.create(
+#   medium_id: horror5.id,
+#   episode_id: 0,
+#   video_url: horror_url5
+# )
+# horror_video6 = Video.create(
+#   medium_id: horror6.id,
+#   episode_id: 0,
+#   video_url: horror_url6
+# )
+# horror_video7 = Video.create(
+#   medium_id: horror7.id,
+#   episode_id: 0,
+#   video_url: horror_url7
+# )
+# horror_video8 = Video.create(
+#   medium_id: horror8.id,
+#   episode_id: 0,
+#   video_url: horror_url8
+# )
+#
+# nature_video1 = Video.create(
+#   medium_id: nature1.id,
+#   episode_id: 0,
+#   video_url: nature_url1
+# )
+# nature_video2 = Video.create(
+#   medium_id: nature2.id,
+#   episode_id: 0,
+#   video_url: nature_url2
+# )
+# nature_video3 = Video.create(
+#   medium_id: nature3.id,
+#   episode_id: 0,
+#   video_url: nature_url3
+# )
+# nature_video4 = Video.create(
+#   medium_id: nature4.id,
+#   episode_id: 0,
+#   video_url: nature_url4
+# )
+# nature_video5 = Video.create(
+#   medium_id: nature5.id,
+#   episode_id: 0,
+#   video_url: nature_url5
+# )
+# nature_video6 = Video.create(
+#   medium_id: nature6.id,
+#   episode_id: 0,
+#   video_url: nature_url6
+# )
+# nature_video7 = Video.create(
+#   medium_id: nature7.id,
+#   episode_id: 0,
+#   video_url: nature_url7
+# )
+# nature_video8 = Video.create(
+#   medium_id: nature8.id,
+#   episode_id: 0,
+#   video_url: nature_url8
+# )
+#
+# romance_video1 = Video.create(
+#   medium_id: romance1.id,
+#   episode_id: 0,
+#   video_url: romance_url1
+# )
+# romance_video2 = Video.create(
+#   medium_id: romance2.id,
+#   episode_id: 0,
+#   video_url: romance_url2
+# )
+# romance_video3 = Video.create(
+#   medium_id: romance3.id,
+#   episode_id: 0,
+#   video_url: romance_url3
+# )
+# romance_video4 = Video.create(
+#   medium_id: romance4.id,
+#   episode_id: 0,
+#   video_url: romance_url4
+# )
+# romance_video5 = Video.create(
+#   medium_id: romance5.id,
+#   episode_id: 0,
+#   video_url: romance_url5
+# )
+# romance_video6 = Video.create(
+#   medium_id: romance6.id,
+#   episode_id: 0,
+#   video_url: romance_url6
+# )
+# romance_video7 = Video.create(
+#   medium_id: romance7.id,
+#   episode_id: 0,
+#   video_url: romance_url7
+# )
+# romance_video8 = Video.create(
+#   medium_id: romance8.id,
+#   episode_id: 0,
+#   video_url: romance_url8
+# )
+#
+# travel_video1 = Video.create(
+#   medium_id: travel1.id,
+#   episode_id: 0,
+#   video_url: travel_url1
+# )
+# travel_video2 = Video.create(
+#   medium_id: travel2.id,
+#   episode_id: 0,
+#   video_url: travel_url2
+# )
+# travel_video3 = Video.create(
+#   medium_id: travel3.id,
+#   episode_id: 0,
+#   video_url: travel_url3
+# )
+# travel_video4 = Video.create(
+#   medium_id: travel4.id,
+#   episode_id: 0,
+#   video_url: travel_url4
+# )
+# travel_video5 = Video.create(
+#   medium_id: travel5.id,
+#   episode_id: 0,
+#   video_url: travel_url5
+# )
+# travel_video6 = Video.create(
+#   medium_id: travel6.id,
+#   episode_id: 0,
+#   video_url: travel_url6
+# )
+# travel_video7 = Video.create(
+#   medium_id: travel7.id,
+#   episode_id: 0,
+#   video_url: travel_url7
+# )
+# travel_video8 = Video.create(
+#   medium_id: travel8.id,
+#   episode_id: 0,
+#   video_url: travel_url8
+# )
