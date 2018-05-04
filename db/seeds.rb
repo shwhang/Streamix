@@ -575,18 +575,16 @@ def get_thumbnail_urls(video_url, thumbnail_urls)
   last_slash_idx = video_url.rindex("/")
   video_tag = Regexp.new(video_url[last_slash_idx + 1...-4]) #removes .mp4 extension
 
-
-  #grabs all thumbnails with match video name
   thumbs = []
-
+  #grabs all thumbnails with match video name
   thumbnail_urls.each do |thumbnail_url|
     if video_tag.match thumbnail_url
-      url = "https://s3.amazonaws.com/streamix-pro/"
-      thumbs << url + thumbnail_url
+      url = "https://s3.amazonaws.com/streamix-pro/" + thumbnail_url
+      thumbs << url
     end
   end
 
-  thumbs
+  thumbs.join(' ')
 end
 
 def createVideos
