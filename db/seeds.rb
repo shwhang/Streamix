@@ -577,10 +577,15 @@ def get_thumbnail_urls(video_url, thumbnail_urls)
 
 
   #grabs all thumbnails with match video name
-  thumbs = thumbnail_urls.select do |thumbnail_url|
-    video_tag.match thumbnail_url
+  thumbs = []
+
+  thumbnail_urls.each do |thumbnail_url|
+    if video_tag.match thumbnail_url
+      url = "https://s3.amazonaws.com/streamix-pro/"
+      thumbs << url + thumbnail_url
+    end
   end
-  debugger
+
   thumbs
 end
 
@@ -612,7 +617,7 @@ def createVideos
         medium_id: medium.id,
         episode_id: 0,
         video_url: url + video_url,
-        thumbnails: url + get_thumbnail_urls(video_url, thumbnail_urls)
+        thumbnails: get_thumbnail_urls(video_url, thumbnail_urls)
 
     })
   end
