@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :profiles, only: [:create, :index, :show, :update, :destroy]
     resources :avatars, only: [:index]
     resources :medias, only: [:create, :index, :show]
+    resources :genres, only: [:index, :show]
   end
 end
