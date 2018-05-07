@@ -7,14 +7,14 @@ const _nullGenres = Object.freeze({
 })
 
 
-const genresReducer = (state = _nullProfiles, action) => {
+const genresReducer = (state = _nullGenres, action) => {
   Object.freeze(state);
 
   switch(action.type) {
     case RECEIVE_ALL_GENRES:
       const allGenres = action.genres;
       debugger
-      return merge({}, _nullProfiles, { allGenres })
+      return merge({}, _nullGenres, { allGenres })
     default:
       return state;
   }
