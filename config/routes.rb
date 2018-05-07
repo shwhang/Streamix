@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :avatars, only: [:index]
     resources :medias, only: [:create, :index, :show]
     resources :genres, only: [:index, :show]
+    resources :videos, only: [:index, :show]
   end
 end
