@@ -1,1 +1,1 @@
-json.array! @genres, :id, :name
+json.array! @genres, :id, :name, :media

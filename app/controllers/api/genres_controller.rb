@@ -10,6 +10,6 @@ class Api::GenresController < ApplicationController
   private
 
   def genre_params
-    params.require(:genre).permit(:name)
+    params.require(:genre).permit(:name, :medias)
   end
 end
