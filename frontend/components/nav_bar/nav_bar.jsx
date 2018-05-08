@@ -40,9 +40,9 @@ class NavBar extends React.Component{
 
     return (
       <div className="navbar-options">
-        <p>
+        {/*<p>
           Browse
-        </p>
+        </p>*/}
 
         <div className="profile-options-menu">
 

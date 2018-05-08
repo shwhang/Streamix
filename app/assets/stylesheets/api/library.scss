@@ -1,4 +1,11 @@
 .library-container {
   border: 1px solid blue;
-  position: relative;
+}
+
+.header-wrapper {
+  border: 1px solid green;
+  height: 40vh;
+  width: 100%;
+  display: block;
+  margin-bottom: 3em;
 }

@@ -23,10 +23,21 @@ class Library extends React.Component {
     return genres;
   }
 
+  renderHeaderVideo(){
+    const header = (
+      <div className="header-wrapper">
+        <h1>header</h1>
+      </div>
+    )
+
+    return header;
+  }
+
   render(){
     const genres = this.renderAllGenres();
     return (
       <div className="library-container">
+        {this.renderHeaderVideo()}
         {genres}
       </div>
     )
