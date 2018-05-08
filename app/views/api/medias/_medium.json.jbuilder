@@ -6,4 +6,4 @@ json.description medium.description
 json.has_episodes medium.has_episodes
 json.genre_id medium.genre_id
 json.playlist_id medium.playlist_id
-json.videos medium.videos
+json.video medium.video

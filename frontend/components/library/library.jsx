@@ -23,14 +23,22 @@ class Library extends React.Component {
     return genres;
   }
 
-  renderHeaderVideo(){
-    const header = (
-      <div className="header-wrapper">
-        <h1>header</h1>
-      </div>
-    )
+  getFirstThumbnail(media_thumbnails){
+    let spaceIdx = media_thumbnails.indexOf(" ");
+    let thumbnail = media_thumbnails.slice(0, spaceIdx);
+    return thumbnail;
+  }
 
-    return header;
+  renderHeaderVideo(){
+    // const headerMedia = this.props.allGenres[0].media[0];
+    //
+    // const header = (
+    //   <div className="header-wrapper">
+    //     {this.getFirstThumbnail(headerMedia.thumbnails)}
+    //   </div>
+    // )
+    //
+    // return header;
   }
 
   render(){

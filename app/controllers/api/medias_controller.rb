@@ -11,7 +11,14 @@ class Api::MediasController < ApplicationController
 
   def index
     #to show only the items for each genre for sub menus.
-    @medias = Medium.all
+    @medias = Medium.all.map do |medium|
+      {
+        medium: medium,
+        video: medium.video
+      }
+    end
+
+
   end
 
   def show
@@ -20,6 +27,6 @@ class Api::MediasController < ApplicationController
 
   private
   def media_params
-    params.require(:medium).permit(:id, :title, :year, :mpaa_rating, :description, :has_episodes, :playlist_id, :genre_id)
+    params.require(:medium).permit(:id, :title, :year, :mpaa_rating, :description, :has_episodes, :playlist_id, :genre_id, :video)
   end
 end

@@ -22,5 +22,6 @@ class Medium < ApplicationRecord
   belongs_to :genre
   # belongs_to :playlist
   has_many :episodes
-  has_many :videos
+  # has_many :videos through episodes
+  has_one :video
 end
