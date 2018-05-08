@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import MediaRow from './media_row';
 
 // TODO: Check if all genres are be loaded on new signup/login
 // TODO: Delete all genres on logout
@@ -53,38 +54,38 @@ class Library extends React.Component {
     return header;
   }
 
-  renderMediaCarouselRow(medias) {
-    const media_row = medias.map((media) => {
-      let video = media.video;
-
-      return (
-        <div
-          className="media-item"
-          key={`media-item-${media.medium.id}`}
-          >
-          <img src={this.getFirstThumbnail(video.thumbnails)}
-          className="media-carousel-img"></img>
-        </div>
-      )
-    })
-
-    return media_row;
-  }
+  // renderMediaCarouselRow(medias) {
+  //   const media_row = medias.slice(4).map((media) => {
+  //     let video = media.video;
+  //
+  //     return (
+  //       <div
+  //         className="media-item"
+  //         key={`media-item-${media.medium.id}`}
+  //         >
+  //         <img src={this.getFirstThumbnail(video.thumbnails)}
+  //         className="media-carousel-img">
+  //
+  //         </img>
+  //       </div>
+  //     )
+  //   })
+  //
+  //   return media_row;
+  // }
 
   renderAllGenres(){
     const genres = this.props.allGenres.map((genre) => {
       return(
         <div key={`genre-list-item-${genre.id}`}
           className="genre-row">
+          
           <h3 className="genre-row-title">
             {genre.name[0].toUpperCase() + genre.name.slice(1)}
           </h3>
 
-          <div className="medias-row">
-            <div className="left-arrow-btn"></div>
-              {this.renderMediaCarouselRow(genre.media)}
-            <div className="right-arrow-btn"></div>
-          </div>
+          <MediaRow getFirstThumbnail={this.getFirstThumbnail} medias={genre.media}/>
+
         </div>
       )
     })
@@ -97,8 +98,8 @@ class Library extends React.Component {
 
     return (
       <div className="library-container">
-        {this.renderHeaderVideo()}
-        {genres}
+        { this.renderHeaderVideo() }
+        { genres }
       </div>
     )
   }

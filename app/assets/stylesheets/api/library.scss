@@ -5,6 +5,7 @@
   align-self: center;
 }
 
+// HEADER VIDEO
 .header-wrapper {
   height: 60vh;
   width: 100%;
@@ -18,8 +19,6 @@
 
 .header-video {
   justify-content: center;
-  // height: 100%;
-  // height: auto;
   margin-top: -50px;
   width: 120%;
   height: auto;
@@ -28,6 +27,8 @@
   position: absolute;
 }
 
+
+// GENRE ROW
 .genre-row {
   width: 95%;
   height: auto;
@@ -42,13 +43,47 @@
   font-size: 20px;
 }
 
+// CAROUSEL
 .medias-row {
   display: flex;
   flex-direction: row;
+  height: 40%;
   border: solid 1px yellow;
   width: 100%;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+  // flex-wrap: wrap;
+}
+
+.media-item {
+  height: 25%;
+  overflow: hidden;
+  border: 1px solid purple;
 }
 
 .media-carousel-img {
-  width: 25%;
+  height: 100%;
+}
+
+
+// CAROUSEL ARROW BUTTONS
+.left-arrow-btn, .right-arrow-btn {
+  height: 100%;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid red;
+  justify-content: center;
+}
+
+.arrow-code {
+  font-size: 4em;
+  padding: 0 10px;
+  margin: 0;
+  border: 1px solid blue;
+  width: auto;
+  cursor: pointer;
+  align-self: center;
 }
