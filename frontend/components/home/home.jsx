@@ -12,7 +12,9 @@ class Home extends React.Component{
 
   handleClick(e){
     e.preventDefault();
-    this.props.login({user: {email: 'saehee@gmail.com', password: 'shibchill'}});
+    this.props.login({user: {email: 'saehee@gmail.com', password: 'shibchill'}}).then((user) => {
+      this.props.requestAllGenres();
+    });
   }
 
   render(){

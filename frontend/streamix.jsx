@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (window.currentUser) {
     preloadedState = {
-      session: { currentUser: window.currentUser }
+      session: {
+        currentUser: window.currentUser,
+      }
     }
 
     if (window.currentProfile) {
@@ -16,6 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
         currentProfile: window.currentProfile,
         allProfiles: [],
         avatars: []
+      }
+    }
+
+    if (window.allGenres) {
+      preloadedState.genres = {
+        allGenres: window.allGenres
       }
     }
 

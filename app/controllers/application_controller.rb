@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :logged_in?, :current_profile
+  helper_method :current_user, :logged_in?, :current_profile, :all_genres
 
   private
 
@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
 
   def current_profile
     @current_profile ||= Profile.find_by(id: session[:profile_id])
+  end
+
+  def all_genres
+    @all_genres ||= Genre.all
   end
 
   def login(user)

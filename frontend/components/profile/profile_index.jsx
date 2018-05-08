@@ -18,7 +18,7 @@ class ProfileIndex extends React.Component{
 
   componentDidUpdate() {
     //TODO: Request all Genres
-    this.props.requestAllGenres();
+    // this.props.requestAllGenres()
   }
 
   renderPageDetails(){

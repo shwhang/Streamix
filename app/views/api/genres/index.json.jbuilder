@@ -1,1 +1,1 @@
-json.array! @genres, :id, :name, :media
+json.array! @genres, partial: 'api/genres/genres', as: :genres

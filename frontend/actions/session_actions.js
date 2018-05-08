@@ -32,9 +32,6 @@ export const login = user => dispatch => {
       return dispatch(receiveSessionErrors(err.responseJSON))
     }
   )
-  // .then(({currentUser}) => {
-  //   return dispatch(requestAllProfiles(currentUser.id));
-  // })
 };
 
 export const logout = () => dispatch => {

@@ -13,6 +13,13 @@
     ).html_safe%>
   <% end %>
 
+  <% if all_genres %>
+    window.allGenres = <%= render(
+      "api/genres/genres.json.jbuilder",
+      genres: all_genres
+    ).html_safe %>
+  <% end %>
+
   window.staticImages = {
     splashBackground: "<%= asset_path('splash_background.png')%>",
     sessionBackground: "<%= asset_path('session_background')%>",
