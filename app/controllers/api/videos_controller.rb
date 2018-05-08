@@ -4,7 +4,7 @@ class Api::VideosController < ApplicationController
   end
 
   def index
-    @videos = Video.all.where(media_id: video_params[:media_id]);
+    @videos = Video.all
     # @videos = Video.all
   end
 
