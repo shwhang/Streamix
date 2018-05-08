@@ -53,11 +53,38 @@ class Library extends React.Component {
     return header;
   }
 
+  renderMediaCarouselRow(medias) {
+    const media_row = medias.map((media) => {
+      let video = media.video;
+
+      return (
+        <div
+          className="media-item"
+          key={`media-item-${media.medium.id}`}
+          >
+          <img src={this.getFirstThumbnail(video.thumbnails)}
+          className="media-carousel-img"></img>
+        </div>
+      )
+    })
+
+    return media_row;
+  }
+
   renderAllGenres(){
     const genres = this.props.allGenres.map((genre) => {
       return(
-        <div key={`genre-list-item-${genre.id}`}>
-          <h1>{genre.name[0].toUpperCase() + genre.name.slice(1)}</h1>
+        <div key={`genre-list-item-${genre.id}`}
+          className="genre-row">
+          <h3 className="genre-row-title">
+            {genre.name[0].toUpperCase() + genre.name.slice(1)}
+          </h3>
+
+          <div className="medias-row">
+            <div className="left-arrow-btn"></div>
+              {this.renderMediaCarouselRow(genre.media)}
+            <div className="right-arrow-btn"></div>
+          </div>
         </div>
       )
     })
