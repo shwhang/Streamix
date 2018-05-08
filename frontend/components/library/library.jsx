@@ -26,19 +26,30 @@ class Library extends React.Component {
   getFirstThumbnail(media_thumbnails){
     let spaceIdx = media_thumbnails.indexOf(" ");
     let thumbnail = media_thumbnails.slice(0, spaceIdx);
+
     return thumbnail;
   }
 
   renderHeaderVideo(){
-    // const headerMedia = this.props.allGenres[0].media[0];
-    //
-    // const header = (
-    //   <div className="header-wrapper">
-    //     {this.getFirstThumbnail(headerMedia.thumbnails)}
-    //   </div>
-    // )
-    //
-    // return header;
+    const headerMedia = this.props.allGenres[3].media[1].medium;
+    const headerVideo = this.props.allGenres[3].media[1].video;
+
+    const thumbnailUrl = this.getFirstThumbnail(headerVideo.thumbnails);
+    const videoUrl = headerVideo.video_url;
+
+    const header = (
+      <div className="header-wrapper">
+        <video
+          autoPlay="autoplay"
+          muted
+          loop
+          className="header-video">
+          <source src={videoUrl} />
+        </video>
+      </div>
+    )
+
+    return header;
   }
 
   render(){
