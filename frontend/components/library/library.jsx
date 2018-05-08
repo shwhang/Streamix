@@ -30,9 +30,21 @@ class Library extends React.Component {
     return thumbnail;
   }
 
+  generateRandomHeader(){
+    // TODO: get a bunch of header videos and add them to videos
+    const allMedias = this.props.allGenres[3].media;
+
+    const numOfMedias = allMedias.length;
+    const randomNum = Math.floor(Math.random() * numOfMedias);
+
+    return allMedias[randomNum];
+  }
+
   renderHeaderVideo(){
-    const headerMedia = this.props.allGenres[3].media[1].medium;
-    const headerVideo = this.props.allGenres[3].media[1].video;
+    const randomVideo = this.generateRandomHeader();
+
+    const headerMedia = randomVideo.medium;
+    const headerVideo = randomVideo.video;
 
     const thumbnailUrl = this.getFirstThumbnail(headerVideo.thumbnails);
     const videoUrl = headerVideo.video_url;
