@@ -11,7 +11,6 @@ const mapStateToProps = ({ session }) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   login: user => dispatch(login(user)),
   requestAllGenres: () => {
-    debugger
       return dispatch(requestAllGenres());
   },
   path: ownProps.location.pathname

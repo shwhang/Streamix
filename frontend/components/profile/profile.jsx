@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
+import LibraryContainer from '../library/library_container';
 
 
 //PROFILES VIEW will hold the navbar with all profiles
@@ -30,6 +31,9 @@ class Profile extends React.Component{
     return (
       <div>
         <NavBarContainer path={this.props.match.url} allProfiles={this.props.allProfiles} currentProfile={this.props.currentProfile}/>
+
+
+        <LibraryContainer />
       </div>
     )
   }
