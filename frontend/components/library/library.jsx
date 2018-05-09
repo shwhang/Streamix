@@ -8,6 +8,10 @@ import MediaRow from './media_row';
 class Library extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      mediaDetails: ""
+    }
   }
 
   getFirstThumbnail(media_thumbnails){
@@ -84,6 +88,8 @@ class Library extends React.Component {
           </h3>
 
           <MediaRow getFirstThumbnail={this.getFirstThumbnail} medias={genre.media} />
+
+          //ADD DETAIL BOX HERE
 
         </div>
       )

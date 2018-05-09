@@ -80,6 +80,9 @@ class MediaRow extends React.Component {
             &#8250;
           </div>
         </div>
+
+
+        // TODO: ADD MEDIA DETAIL BOX HERE ?
       </div>
     )
   }

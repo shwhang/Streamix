@@ -10,7 +10,6 @@ import LibraryContainer from '../library/library_container';
 class Profile extends React.Component{
   constructor(props){
     super(props);
-
   }
 
   componentWillMount(){
