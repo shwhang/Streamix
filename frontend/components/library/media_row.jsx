@@ -5,15 +5,12 @@ class MediaRow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      carousel: false
+      carousel: false,
     }
 
     // this.currentVideos = props.medias.slice(0);
     this.currentVideos = [];
     this.nextVideos = [];
-
-
-
 
     this.handleVideosNavigation = this.handleVideosNavigation.bind(this);
     // Carousel should be passed in as true or false
@@ -21,35 +18,26 @@ class MediaRow extends React.Component {
     // false from genre component
   }
 
-  componentWillMount(){
+  componentWillReceiveProps(nextProps){
 
   }
 
   handleVideosNavigation(e) {
     //Can go left or right
     e.preventDefault();
-    // if(this.currentVideos.length === 0) {
-      let direction = e.target.parentElement.className;
-      let mediasRowNode = e.target.parentNode.parentNode;
-      let mediaItems = mediasRowNode.children[1].children;
 
-      if (this.currentVideos.length === 0){
-        this.currentVideos = Array.prototype.slice.call(mediaItems);
-      }
-    // }
+    // let direction = e.target.parentElement.className;
+    let mediasRowNode = e.target.parentNode.parentNode;
+    let mediaItems = mediasRowNode.children[1].children;
 
-    // debugger
-    // if (/left/.test(direction)) {
-      this.currentVideos.forEach((media, i) => {
-        if(i <= 3) {
-          media.style.display = "none"
-        } else {
-          media.style.display = "block"
-        }
-      })
-    // }
+    if (this.currentVideos.length === 0){
+      this.currentVideos = Array.prototype.slice.call(mediaItems);
+    }
 
-    // let mediaRow = document.getElementsByClassName('medias-row');
+    this.currentVideos.forEach((media, i) => {
+      i <= 3 ? media.style.display = "none" : media.style.display = "block";
+    })
+
     this.currentVideos = this.currentVideos.slice(4).concat(this.currentVideos.slice(0, 4));
   }
 

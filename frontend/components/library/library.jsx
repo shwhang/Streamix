@@ -10,10 +10,6 @@ class Library extends React.Component {
     super(props);
   }
 
-  componentWillMount(){
-
-  }
-
   getFirstThumbnail(media_thumbnails){
     let spaceIdx = media_thumbnails.indexOf(" ");
     let thumbnail = media_thumbnails.slice(0, spaceIdx);
@@ -87,7 +83,7 @@ class Library extends React.Component {
             {genre.name[0].toUpperCase() + genre.name.slice(1)}
           </h3>
 
-          <MediaRow getFirstThumbnail={this.getFirstThumbnail} medias={genre.media}/>
+          <MediaRow getFirstThumbnail={this.getFirstThumbnail} medias={genre.media} />
 
         </div>
       )
