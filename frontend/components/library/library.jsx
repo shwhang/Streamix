@@ -89,8 +89,9 @@ class Library extends React.Component {
 
           <MediaRow getFirstThumbnail={this.getFirstThumbnail} medias={genre.media} />
 
+          {
           //ADD DETAIL BOX HERE
-
+          }
         </div>
       )
     })

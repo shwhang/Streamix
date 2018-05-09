@@ -51,10 +51,17 @@ class MediaRow extends React.Component {
           className="media-item"
           key={`media-item-${media.medium.id}`}
           >
-          <img src={this.props.getFirstThumbnail(video.thumbnails)}
-          className="media-carousel-img">
-
+          <img
+            src={this.props.getFirstThumbnail(video.thumbnails)}
+            className="media-carousel-img">
           </img>
+
+          <div className="play-button">
+          </div>
+
+          <div className="media-details-button">
+            &#x22BF;
+          </div>
         </div>
       )
     })
@@ -82,7 +89,8 @@ class MediaRow extends React.Component {
         </div>
 
 
-        // TODO: ADD MEDIA DETAIL BOX HERE ?
+        {// TODO: ADD MEDIA DETAIL BOX HERE ?
+        }
       </div>
     )
   }
