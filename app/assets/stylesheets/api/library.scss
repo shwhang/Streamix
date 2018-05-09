@@ -73,6 +73,7 @@
 }
 
 .media-item {
+  display: block;
   height: 100%;
   width: 23%;
   padding: 0;
@@ -99,7 +100,7 @@
   // // transform: translateX(-100%);
   // // -webkit-transform: translateX(100%);
   // transform: translate3translate3d(-100%, 0, 0);
-  display: none;
+  // display: none;
 }
 
 .slideright {
@@ -112,10 +113,10 @@
 
 @keyframes slide {
   0% {
-    transform: translate3translate3d(-100%, 0, 0);
+    transform: translateX(0%);
   }
   100% {
-    transform: translate3translate3d(-100%, 0, 0);
+    transform: translateX(-100%);
   }
 }
 

@@ -8,9 +8,13 @@ class MediaRow extends React.Component {
       carousel: false
     }
 
-    this.currentVideos = props.medias.slice(0);
-    this.nextVideos = props.medias.slice(4);
-    // this.currentVideos = props.medias;
+    // this.currentVideos = props.medias.slice(0);
+    this.currentVideos = [];
+    this.nextVideos = [];
+
+
+
+
     this.handleVideosNavigation = this.handleVideosNavigation.bind(this);
     // Carousel should be passed in as true or false
     // true from library component
@@ -24,31 +28,34 @@ class MediaRow extends React.Component {
   handleVideosNavigation(e) {
     //Can go left or right
     e.preventDefault();
-    let direction = e.target.parentElement.className;
-    let mediasRowNode = e.target.parentNode.parentNode;
-    let mediaItems = mediasRowNode.children[1].children;
+    // if(this.currentVideos.length === 0) {
+      let direction = e.target.parentElement.className;
+      let mediasRowNode = e.target.parentNode.parentNode;
+      let mediaItems = mediasRowNode.children[1].children;
 
-    let first = Array.prototype.slice.call(mediaItems).slice(0, 4);
+      if (this.currentVideos.length === 0){
+        this.currentVideos = Array.prototype.slice.call(mediaItems);
+      }
+    // }
 
-    let last = Array.prototype.slice.call(mediaItems).slice(4);
     // debugger
-    if (/left/.test(direction)) {
-      first.forEach((media) => {
-        media.classList.add("slideleft");
+    // if (/left/.test(direction)) {
+      this.currentVideos.forEach((media, i) => {
+        if(i <= 3) {
+          media.style.display = "none"
+        } else {
+          media.style.display = "block"
+        }
       })
+    // }
 
-    } else {
-      last.forEach((media) => {
-        media.classList.add("slideright");
-      })
-    }
-
-    let mediaRow = document.getElementsByClassName('medias-row');
+    // let mediaRow = document.getElementsByClassName('medias-row');
+    this.currentVideos = this.currentVideos.slice(4).concat(this.currentVideos.slice(0, 4));
   }
 
   //Get first thumbnail from props
   renderMediaCarouselRow() {
-    const media_row = this.currentVideos.map((media) => {
+    const media_row = this.props.medias.map((media) => {
       let video = media.video;
 
       return (
