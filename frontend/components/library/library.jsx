@@ -4,6 +4,7 @@ import MediaRow from './media_row';
 
 // TODO: Check if all genres are be loaded on new signup/login
 // TODO: Delete all genres on logout
+// TODO: Create a spinner for loading playlist to ensure genres is fully loaded
 class Library extends React.Component {
   constructor(props) {
     super(props);
@@ -22,6 +23,7 @@ class Library extends React.Component {
 
   generateRandomHeader(){
     // TODO: get a bunch of header videos and add them to videos
+    //allMedias will only contain nature videos
     const allMedias = this.props.allGenres[3].media;
 
     const numOfMedias = allMedias.length;
@@ -76,10 +78,11 @@ class Library extends React.Component {
 
   renderAllGenres(){
     const genres = this.props.allGenres.map((genre) => {
-      return(
+
+      return (
         <div key={`genre-list-item-${genre.id}`}
           className="genre-row">
-          
+
           <h3 className="genre-row-title">
             {genre.name[0].toUpperCase() + genre.name.slice(1)}
           </h3>
