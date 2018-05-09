@@ -8,7 +8,7 @@ class MediaRow extends React.Component {
       carousel: false
     }
 
-    this.currentVideos = props.medias.slice(0, 4);
+    this.currentVideos = props.medias.slice(0);
     this.nextVideos = props.medias.slice(4);
     // this.currentVideos = props.medias;
     this.handleVideosNavigation = this.handleVideosNavigation.bind(this);
@@ -25,8 +25,22 @@ class MediaRow extends React.Component {
     //Can go left or right
     e.preventDefault();
     let direction = e.target.parentElement.className;
-    if (/left/.test(direction)) {
+    let mediasRowNode = e.target.parentNode.parentNode;
+    let mediaItems = mediasRowNode.children[1].children;
 
+    let first = Array.prototype.slice.call(mediaItems).slice(0, 4);
+
+    let last = Array.prototype.slice.call(mediaItems).slice(4);
+    // debugger
+    if (/left/.test(direction)) {
+      first.forEach((media) => {
+        media.classList.add("slideleft");
+      })
+
+    } else {
+      last.forEach((media) => {
+        media.classList.add("slideright");
+      })
     }
 
     let mediaRow = document.getElementsByClassName('medias-row');
@@ -66,7 +80,7 @@ class MediaRow extends React.Component {
           {this.renderMediaCarouselRow()}
         </div>
 
-        <div className="right-arrow-btn">
+        <div className="right-arrow-btn" onClick={this.handleVideosNavigation}>
           <div className="arrow-code">
             &#8250;
           </div>

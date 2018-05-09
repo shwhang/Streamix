@@ -59,6 +59,7 @@
 
 .carousel {
   height: 100%;
+  position: relative;
   // width: 70%;
   flex-grow: 100;
   // border: 2px solid lightblue;
@@ -72,7 +73,6 @@
 }
 
 .media-item {
-  position: relative;
   height: 100%;
   width: 23%;
   padding: 0;
@@ -88,15 +88,46 @@
 }
 
 // VIDEO NAVIGATION SLIDE ANIMATIONS
-.slide-left {
+.slideleft {
   position: absolute;
+  // height: 100%;
+  // width: 23%;
+  animation-duration: 3s;
+  animation-name: slide;
+  animation-iteration-count: 1;
+  // // left: 0;
+  // // transform: translateX(-100%);
+  // // -webkit-transform: translateX(100%);
+  // transform: translate3translate3d(-100%, 0, 0);
+  display: none;
 }
 
-.slide-right {
+.slideright {
+  position: absolute;
+  animation-duration: 3s;
+  animation-name: slide2;
+  animation-iteration-count: 1;
+  display: none;
+}
 
+@keyframes slide {
+  0% {
+    transform: translate3translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3translate3d(-100%, 0, 0);
+  }
 }
 
 
+@keyframes slide2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 // CAROUSEL ARROW BUTTONS
 .left-arrow-btn, .right-arrow-btn {
   height: 100%;
