@@ -56,26 +56,6 @@ class Library extends React.Component {
     return header;
   }
 
-  // renderMediaCarouselRow(medias) {
-  //   const media_row = medias.slice(4).map((media) => {
-  //     let video = media.video;
-  //
-  //     return (
-  //       <div
-  //         className="media-item"
-  //         key={`media-item-${media.medium.id}`}
-  //         >
-  //         <img src={this.getFirstThumbnail(video.thumbnails)}
-  //         className="media-carousel-img">
-  //
-  //         </img>
-  //       </div>
-  //     )
-  //   })
-  //
-  //   return media_row;
-  // }
-
   renderAllGenres(){
     const genres = this.props.allGenres.map((genre) => {
 

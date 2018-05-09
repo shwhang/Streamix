@@ -3,6 +3,8 @@ import { Link, withRouter } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import LibraryContainer from '../library/library_container';
 
+import Footer from '../home/footer';
+
 
 //PROFILES VIEW will hold the navbar with all profiles
 //render the library and pass in the profile likes to the library
@@ -33,6 +35,8 @@ class Profile extends React.Component{
 
 
         <LibraryContainer />
+
+        <Footer />
       </div>
     )
   }
