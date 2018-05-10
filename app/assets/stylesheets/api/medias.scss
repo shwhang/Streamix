@@ -19,10 +19,11 @@
   position: absolute;
   top: 0;
   right: 0;
-  z-index: -1;
+  z-index: 4;
 }
 
 .media-details {
+  position: absolute;
   height: 80%;
   width: 40%;
   border: 1px solid red;
@@ -98,6 +99,7 @@
 }
 
 .modal-gradient {
+  z-index: 20;
   background: rgba(0,0,0,1);
   background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 19%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 38%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.83) 54%, rgba(0,0,0,0.82) 55%, rgba(0,0,0,0.71) 63%, rgba(0,0,0,0.55) 75%, rgba(0,0,0,0) 100%);
   background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(19%, rgba(0,0,0,1)), color-stop(25%, rgba(0,0,0,1)), color-stop(38%, rgba(0,0,0,1)), color-stop(40%, rgba(0,0,0,1)), color-stop(54%, rgba(0,0,0,0.83)), color-stop(55%, rgba(0,0,0,0.82)), color-stop(63%, rgba(0,0,0,0.71)), color-stop(75%, rgba(0,0,0,0.55)), color-stop(100%, rgba(0,0,0,0)));

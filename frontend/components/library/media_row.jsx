@@ -20,7 +20,6 @@ class MediaRow extends React.Component {
     // true from library component
     // false from genre component
 
-
   }
 
   componentWillReceiveProps(nextProps){
@@ -38,14 +37,13 @@ class MediaRow extends React.Component {
     }
 
     this.currentVideos.forEach((media, i) => {
-      i <= 3 ? media.style.display = "none" : media.style.display = "block";
+      i <= 3 ? media.style.display = "none" : media.style.display = "flex";
     })
 
     this.currentVideos = this.currentVideos.slice(4).concat(this.currentVideos.slice(0, 4));
   }
 
-  //Get first thumbnail from props
-
+  //PUT THIS IN ITS OWN COMPONENT
   getMediaItems(){
     const media_row = this.props.medias.map((media) => {
       let video = media.video;
@@ -53,8 +51,7 @@ class MediaRow extends React.Component {
       return (
         <div
           className="media-item"
-          key={`media-item-${media.medium.id}`}
-          >
+          key={`media-item-${media.medium.id}`} >
 
           <img
             src={this.props.getFirstThumbnail(video.thumbnails)}
@@ -120,14 +117,21 @@ class MediaRow extends React.Component {
       media_rows.push(
         <div className="genre-medias-row"
           key={`genre-medias-row-${endIdx}`}>
-          {media_items.slice(startIdx, endIdx)}
+
+          {
+            //EXTRACTS 4 MEDIAS
+          }
+          { media_items.slice(startIdx, endIdx) }
+
+          { this.state.medium }
         </div>
       )
-
       numOfRows--;
       startIdx += 4;
       endIdx += 4;
     }
+
+
 
     return (
       <div className="genre-rows">
@@ -136,16 +140,8 @@ class MediaRow extends React.Component {
     )
   }
 
-  // hideMediaModal(){
-  //   debugger
-  //   this.setState({
-  //     medium: null
-  //   })
-  // }
-
   renderMediaModal(medium){
-    // this.hideMediaModal();
-
+    // debugger
     this.setState({
       medium: (
         <MediaModal medium={medium.medium} video={medium.video} getFirstThumbnail={this.props.getFirstThumbnail}/>

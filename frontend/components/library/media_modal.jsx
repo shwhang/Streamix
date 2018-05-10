@@ -16,6 +16,7 @@ class MediaModal extends React.Component {
   }
 
   componentWillMount() {
+    console.log(this.props.medium)
     let medium = this.props.medium;
     let video = this.props.video;
     this.setState({
@@ -46,40 +47,41 @@ class MediaModal extends React.Component {
   render() {
     return (
       <div className="media-modal-box">
-        <div className="modal-gradient">
-          <div className="media-details">
+        <div className="modal-gradient"> </div>
 
-            <h1 className="media-title">
-              {this.state.title}
-            </h1>
+        <div className="media-details">
 
-            <article className="media-small-details">
-              <p className="year">{this.state.year}</p>
+          <h1 className="media-title">
+            {this.state.title}
+          </h1>
 
-              <p className="mpaa-rating">{this.state.mpaaRating}</p>
-            </article>
+          <article className="media-small-details">
+            <p className="year">{this.state.year}</p>
 
-            <p className="description">
-              {this.state.description}
-            </p>
+            <p className="mpaa-rating">{this.state.mpaaRating}</p>
+          </article>
 
-            <article className="media-modal-buttons">
-              <Link to={`/browse/videos/${this.state.video}`} className="media-play-button">
-                PLAY
-              </Link>
+          <p className="description">
+            {this.state.description}
+          </p>
 
-              <Link to="" className="media-add-button">
-                + MY LIST
-              </Link>
-            </article>
-          </div>
+          <article className="media-modal-buttons">
+            <Link to={`/browse/videos/${this.state.video}`} className="media-play-button">
+              PLAY
+            </Link>
 
-          <ul className="media-modal-options">
-            <li>OVERVIEW</li>
-          </ul>
-
-          <img src={this.state.thumbnail} className="modal-image"></img>
+            <Link to="" className="media-add-button">
+              + MY LIST
+            </Link>
+          </article>
         </div>
+
+        <ul className="media-modal-options">
+          <li>OVERVIEW</li>
+        </ul>
+
+        <img src={this.state.thumbnail} className="modal-image"></img>
+
 
       </div>
     )

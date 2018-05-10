@@ -9,8 +9,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 0;
-  border-bottom: 1px solid white;
   position: fixed;
+  background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 1%, rgba(0,0,0,0.2) 88%, rgba(83,83,83,0.1) 99%, rgba(91,91,91,0.1) 100%);
+  background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 1%,rgba(0,0,0,0.2) 88%,rgba(83,83,83,0.1) 99%,rgba(91,91,91,0.1) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 1%,rgba(0,0,0,0.2) 88%,rgba(83,83,83,0.1) 99%,rgba(91,91,91,0.1) 100%);
+
 }
 
 .logo {
@@ -37,7 +40,6 @@
   height: 100%;
   display: flex;
   align-items: center;
-  border: 1px solid blue;
 }
 
 .navbar-options {
@@ -46,14 +48,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid red;
   flex-grow: 100;
 }
 
 .profile-options-menu {
   height: 100%;
   position: relative;
-  // border: 1px solid yellow;
 }
 
 .avatar-button {
@@ -63,7 +63,6 @@
   margin: 0 60px;
   align-items: center;
   cursor: pointer;
-  border: 1px solid green;
 }
 
 .current-avatar-img {
@@ -113,7 +112,6 @@
 .browse-menu {
   height: 100%;
   position: relative;
-  border: 1px solid yellow;
 }
 .browse-menu-btn {
   height: 100%;

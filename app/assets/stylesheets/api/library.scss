@@ -82,7 +82,6 @@
 
 .media-item {
   position: relative;
-  display: block;
   height: 100%;
   width: 23%;
   padding: 0;
@@ -95,8 +94,8 @@
 }
 
 .media-carousel-img {
-  height: 100%;
-  width: auto;
+  width: 100%;
+  height: auto;
   position: absolute;
   // width: 20%;
 }
