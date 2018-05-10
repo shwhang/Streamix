@@ -8,6 +8,7 @@ import ProfileIndexContainer from './profile/profile_index_container';
 import ProfileFormContainer from './profile/profile_form_container';
 import ProfileContainer from './profile/profile_container';
 import VideoContainer from './video/video_container';
+import GenreShowContainer from './library/genre_show_container';
 
 const App = () => (
   <div>
@@ -24,6 +25,8 @@ const App = () => (
 
 
       <ProtectedRoute exact path="/browse/videos/:id" component={VideoContainer} />
+
+      <ProtectedRoute exact path="/browse/:id/genres/:id" component={GenreShowContainer} />
 
     </Switch>
     <ProtectedRoute exact path="/manage/profiles" component={ProfileIndexContainer} />
