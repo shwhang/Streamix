@@ -18,10 +18,9 @@ class Library extends React.Component {
   }
 
   getFirstThumbnail(media_thumbnails){
-    let spaceIdx = media_thumbnails.indexOf(" ");
-    let thumbnail = media_thumbnails.slice(0, spaceIdx);
+    let thumbs = media_thumbnails.split(" ");
 
-    return thumbnail;
+    return thumbs[1];
   }
 
   generateRandomHeader(){
