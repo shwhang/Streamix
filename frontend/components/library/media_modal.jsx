@@ -46,27 +46,36 @@ class MediaModal extends React.Component {
   render() {
     return (
       <div className="media-modal-box">
-        <div className="media-details">
-          <h1 className="media-title">
-            {this.state.title}
-          </h1>
+        <div className="modal-gradient">
+          <div className="media-details">
 
-          <article>
-            <p>{this.state.year}</p>
-            <p>{this.state.mpaaRating}</p>
-          </article>
+            <h1 className="media-title">
+              {this.state.title}
+            </h1>
 
-          <p>
-            {this.state.description}
-          </p>
+            <article className="media-small-details">
+              <p className="year">{this.state.year}</p>
 
-          <article>
-            <Link to="">PLAY</Link>
-            <Link to="">+ MY LIST</Link>
-          </article>
+              <p className="mpaa-rating">{this.state.mpaaRating}</p>
+            </article>
+
+            <p className="description">
+              {this.state.description}
+            </p>
+
+            <article className="media-modal-buttons">
+              <Link to="" className="media-play-button">PLAY</Link>
+              <Link to="" className="media-add-button">+ MY LIST</Link>
+            </article>
+          </div>
+
+          <ul className="media-modal-options">
+            <li>OVERVIEW</li>
+          </ul>
+
+          <img src={this.state.thumbnail} className="modal-image"></img>
         </div>
 
-        <img src={this.state.thumbnail} className="modal-image"></img>
       </div>
     )
   }
