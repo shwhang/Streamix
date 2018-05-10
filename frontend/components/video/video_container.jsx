@@ -11,7 +11,6 @@ export const mapStateToProps = ({genres}) => ({
 
 export const mapDispatchToProps = (dispatch, ownProps) => ({
   requestOneVideo: (id) => {
-    debugger
     return dispatch(requestOneVideo(id));
   }
 })

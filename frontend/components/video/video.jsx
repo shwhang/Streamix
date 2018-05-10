@@ -9,7 +9,7 @@ class Video extends React.Component {
   componentWillMount() {
     let slashIdx = this.props.match.url.lastIndexOf("/");
     let videoId = this.props.match.url.slice(slashIdx + 1);
-    debugger
+
     this.props.requestOneVideo(parseInt(videoId));
   }
 

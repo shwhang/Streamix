@@ -5,17 +5,20 @@ import {
 } from '../actions/video_actions';
 
 const _nullVideo = Object.freeze({
-  video: null
+  details: null
 })
 
 const videosReducer = (state = _nullVideo, action) => {
   Object.freeze(state);
-  debugger
+
   switch(action.type) {
     case RECEIVE_ONE_VIDEO:
       const video = action.video;
-      return merge( {}, _nullVideo, {
-        video: action.video
-      })
+      
+      return merge( {}, _nullVideo, { details: video})
+    default:
+      return state;
   }
 }
+
+export default videosReducer;
