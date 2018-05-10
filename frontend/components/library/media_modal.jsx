@@ -43,3 +43,5 @@ class MediaModal extends React.Component {
     )
   }
 }
+
+export default MediaModal;

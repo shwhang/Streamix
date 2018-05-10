@@ -52,8 +52,12 @@ class GenreShow extends React.Component {
       <div>
         <NavBarContainer path={this.props.match.url} allProfiles={this.props.allProfiles}/>
 
-        <h3>{this.genre}</h3>
-        { mediasRow }
+        <div className="genre-medias-container">
+          <h3 className="genre-page-title">
+            {this.genre[0].toUpperCase() + this.genre.slice(1)}
+          </h3>
+          { mediasRow }
+        </div>
       </div>
     )
   }

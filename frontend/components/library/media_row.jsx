@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
+import MediaModal from './media_modal';
+
 class MediaRow extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +14,7 @@ class MediaRow extends React.Component {
     this.nextVideos = [];
 
     this.handleVideosNavigation = this.handleVideosNavigation.bind(this);
+    this.renderMediaDetails = this.renderMediaDetails.bind(this);
     // Carousel should be passed in as true or false
     // true from library component
     // false from genre component
@@ -19,6 +22,11 @@ class MediaRow extends React.Component {
 
   componentWillReceiveProps(nextProps){
 
+  }
+
+  renderMediaDetails(e){
+    e.preventDefault();
+    debugger
   }
 
   handleVideosNavigation(e) {
@@ -59,7 +67,7 @@ class MediaRow extends React.Component {
 
             </Link>
 
-          <div className="media-details-button">
+          <div className="media-details-button" onClick={this.renderMediaDetails}>
             &#x22BF;
           </div>
         </div>
@@ -100,30 +108,28 @@ class MediaRow extends React.Component {
   renderMediasForGenrePage(){
     let media_items = this.getMediaItems();
 
-    // media_items.splice(4, 0, "Hello");
-    // debugger;
+    let numOfRows = media_items.length/4;
 
-    let insertIterations = media_items.length/4;
+    let media_rows = []
+    let startIdx = 0;
+    let endIdx = 4;
 
-    let startIdx = 4;
-    let counter = 0
-    while (counter < insertIterations) {
-      media_items.splice(startIdx + counter , 0, (
-        <div
-          key={`media-model-${startIdx + counter}`}
-          className="genre-media-modal"
-          >
-          <p>Hello</p>
+    while (numOfRows > 0) {
+
+      media_rows.push(
+        <div className="genre-medias-row">
+          {media_items.slice(startIdx, endIdx)}
         </div>
-      ))
+      )
 
+      numOfRows--;
       startIdx += 4;
-      counter++;
+      endIdx += 4;
     }
 
     return (
-      <div className="genre-medias-row">
-        {media_items}
+      <div className="genre-rows">
+        {media_rows}
       </div>
     )
   }
