@@ -16,7 +16,7 @@ class Video extends React.Component {
     this.props.requestOneVideo(parseInt(videoId)).then((video) => {
       this.setState({
         video: (
-          <video controls autoPlay width="100%" height="100%" className="video-player">
+          <video controls autoPlay width="100%" height="100%" className="video-player" controlsList="nodownload">
             <source src={video.video.video_url} />
           </video>
         )

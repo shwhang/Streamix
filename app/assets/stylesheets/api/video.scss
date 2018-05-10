@@ -1,3 +1,5 @@
+// TODO: add custom video player controls
+
 .video-container {
   width: 100%;
   height: 100vh;
@@ -34,4 +36,8 @@
   margin: 0;
   transform: rotate(180deg);
   font-size: 30px;
+}
+
+.controls {
+  background-color: green;
 }
