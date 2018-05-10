@@ -11,7 +11,16 @@ class NavBar extends React.Component{
   changeDropDownVisibility(e){
     e.preventDefault();
 
-    const dropDownMenu = document.getElementsByClassName('profiles-dropdown-menu')[0];
+    let buttonType = e.target.parentElement.className;
+
+    let dropDownMenu;
+
+    if(/avatar/.test(buttonType)){
+      dropDownMenu = document.getElementsByClassName('profiles-dropdown-menu')[0];
+    } else {
+      dropDownMenu = document.getElementsByClassName('browse-menu-options')[0];
+    }
+
     dropDownMenu.style.visibility = (dropDownMenu.style.visibility === "hidden" ? "visible" : "hidden")
   }
 
@@ -57,7 +66,7 @@ class NavBar extends React.Component{
     return (
       <div className="navbar-options">
         <div className="browse-menu">
-          <button className="browse-menu-btn">
+          <button className="browse-menu-btn" onClick={this.changeDropDownVisibility}>
             Browse
             <p className="triangle-arrow">
               &#9662;
