@@ -5,10 +5,9 @@ class MediaRow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      carousel: false,
+      carousel: props.carousel,
     }
 
-    // this.currentVideos = props.medias.slice(0);
     this.currentVideos = [];
     this.nextVideos = [];
 
@@ -23,10 +22,8 @@ class MediaRow extends React.Component {
   }
 
   handleVideosNavigation(e) {
-    //Can go left or right
     e.preventDefault();
 
-    // let direction = e.target.parentElement.className;
     let mediasRowNode = e.target.parentNode.parentNode;
     let mediaItems = mediasRowNode.children[1].children;
 
@@ -42,7 +39,8 @@ class MediaRow extends React.Component {
   }
 
   //Get first thumbnail from props
-  renderMediaCarouselRow() {
+
+  getMediaItems(){
     const media_row = this.props.medias.map((media) => {
       let video = media.video;
 
@@ -57,7 +55,7 @@ class MediaRow extends React.Component {
           </img>
 
             <Link to={`/browse/videos/${video.id}`} className="play-button">
-              
+
             </Link>
 
           <div className="media-details-button">
@@ -67,10 +65,11 @@ class MediaRow extends React.Component {
       )
     })
 
-    return media_row;
+    return media_row
   }
+  renderMediaCarouselRow() {
+    let media_row = this.getMediaItems();
 
-  render(){
     return (
       <div className="medias-row">
         <div className="left-arrow-btn" onClick={this.handleVideosNavigation}>
@@ -80,7 +79,7 @@ class MediaRow extends React.Component {
         </div>
 
         <div className="carousel">
-          {this.renderMediaCarouselRow()}
+          { media_row }
         </div>
 
         <div className="right-arrow-btn" onClick={this.handleVideosNavigation}>
@@ -88,10 +87,28 @@ class MediaRow extends React.Component {
             &#8250;
           </div>
         </div>
+      </div>
+    );
+  } 
 
+  renderMediasForGenrePage(){
+    let media_row = this.getMediaItems();
 
-        {// TODO: ADD MEDIA DETAIL BOX HERE ?
-        }
+    return (
+      <div className="genre-medias-row">
+        {media_row}
+      </div>
+    )
+  }
+
+  render(){
+    let mediaRow = (this.state.carousel ? this.renderMediaCarouselRow() : this.renderMediasForGenrePage())
+
+    return (
+      <div>
+
+        { mediaRow }
+
       </div>
     )
   }

@@ -67,7 +67,8 @@ class Library extends React.Component {
             {genre.name[0].toUpperCase() + genre.name.slice(1)}
           </h3>
 
-          <MediaRow getFirstThumbnail={this.getFirstThumbnail} medias={genre.media} />
+          <MediaRow getFirstThumbnail={this.getFirstThumbnail} medias={genre.media}
+            carousel={true} />
 
           {
           //ADD DETAIL BOX HERE
