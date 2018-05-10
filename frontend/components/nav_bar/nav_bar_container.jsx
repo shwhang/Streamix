@@ -4,6 +4,11 @@ import NavBar from './nav_bar';
 import { logout } from '../../actions/session_actions';
 import { receiveAllProfiles } from '../../actions/profile_actions';
 
+const mapStateToProps = ({genres, profiles}) => ({
+    genres: genres.allGenres,
+    currentProfile: profiles.currentProfile
+})
+
 const mapDispatchToProps = (dispatch, ownProps) => {
   // TODO: CODEREVIEW for logout
   return {
@@ -14,6 +19,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 ) (NavBar);

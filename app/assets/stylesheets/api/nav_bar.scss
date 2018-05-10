@@ -3,7 +3,7 @@
 .nav-bar-wrapper {
   top: 0;
   height: 8%;
-  z-index: 100;
+  z-index: 500;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -19,6 +19,7 @@
   font-weight: 700;
   padding: 0 40px;
   align-self: center;
+
 }
 
 .home-sign-in-button {
@@ -36,6 +37,7 @@
   height: 100%;
   display: flex;
   align-items: center;
+  border: 1px solid blue;
 }
 
 .navbar-options {
@@ -44,7 +46,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  // border: 1px solid red;
+  border: 1px solid red;
+  flex-grow: 100;
 }
 
 .profile-options-menu {
@@ -57,9 +60,10 @@
   height: 100%;
   display: flex;
   flex-direction: row;
-  margin: 0 40px;
+  margin: 0 60px;
   align-items: center;
   cursor: pointer;
+  border: 1px solid green;
 }
 
 .current-avatar-img {
@@ -76,23 +80,65 @@
 
 //PROFILE DROPDOWN MENU
 .profiles-dropdown-menu {
-  margin-top: 15px;
   border: 1px solid white;
   background-color: black;
   visibility: hidden;
   position: absolute;
+  margin-right: 40px;
+  text-align: center;
+  font-weight: lighter;
 }
 
 .profile-nav-options {
   width: auto;
   // padding: 10px;
   // height: 100px;
-  border: 1px solid gray;
+  border-bottom: 1px solid gray;
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 10px 20px;
 }
 
 .profile-nav-options-avatar {
   width: 25%;
+  margin-right: 10px;
+}
+
+.logout-button {
+  padding: 10px 0;
+}
+//BROWSE MENU
+
+.browse-menu {
+  height: 100%;
+  position: relative;
+  border: 1px solid yellow;
+}
+.browse-menu-btn {
+  height: 100%;
+  margin-left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid purple;
+}
+
+.browse-menu-btn:hover {
+  color: red;
+}
+
+.browse-menu-options {
+  position: absolute;
+  border: 1px solid lightblue;
+  background-color: black;
+  padding: 20px 40px;
+  font-weight: 100;
+}
+
+.genres-title {
+  font-size: 20px;
+}
+.genre-option-link {
+  padding: 15px 0;
 }

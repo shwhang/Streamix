@@ -23,8 +23,8 @@ class Library extends React.Component {
 
   generateRandomHeader(){
     // TODO: get a bunch of header videos and add them to videos
-    //allMedias will only contain nature videos
-    const allMedias = this.props.allGenres[3].media;
+    //allMedias will only contain travel videos
+    const allMedias = this.props.allGenres[5].media;
 
     const numOfMedias = allMedias.length;
     const randomNum = Math.floor(Math.random() * numOfMedias);

@@ -38,11 +38,40 @@ class NavBar extends React.Component{
       )
     })
 
+
+    let genres = this.props.genres.map((genre) => {
+      console.log(genre.id)
+      return (
+          <Link
+            to={`/browse/${this.props.currentProfile.id}/genres/${genre.id}`}
+            key={`genre-nav-item${genre.id}`}
+            className="genre-option-link"
+            >
+
+            <li>
+              {genre.name[0].toUpperCase() + genre.name.slice(1)}
+            </li>
+          </Link>
+      )
+    })
+
     return (
       <div className="navbar-options">
-        {/*<p>
-          Browse
-        </p>*/}
+        <div className="browse-menu">
+          <button className="browse-menu-btn">
+            Browse
+            <p className="triangle-arrow">
+              &#9662;
+            </p>
+          </button>
+
+          <ul className="browse-menu-options">
+            <li>
+              <p>Genres</p>
+            </li>
+            {genres}
+          </ul>
+        </div>
 
         <div className="profile-options-menu">
 
@@ -56,7 +85,7 @@ class NavBar extends React.Component{
            <ul className="profiles-dropdown-menu">
              { profiles }
              <li>
-               <button onClick={this.props.logout}>
+               <button onClick={this.props.logout} className="logout-button">
                  Logout
                </button>
              </li>
