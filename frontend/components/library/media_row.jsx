@@ -49,6 +49,7 @@ class MediaRow extends React.Component {
           className="media-item"
           key={`media-item-${media.medium.id}`}
           >
+
           <img
             src={this.props.getFirstThumbnail(video.thumbnails)}
             className="media-carousel-img">
@@ -67,6 +68,7 @@ class MediaRow extends React.Component {
 
     return media_row
   }
+
   renderMediaCarouselRow() {
     let media_row = this.getMediaItems();
 
@@ -87,16 +89,41 @@ class MediaRow extends React.Component {
             &#8250;
           </div>
         </div>
+
+        {
+          //PUT MEDIA DETAILS
+        }
       </div>
     );
-  } 
+  }
 
   renderMediasForGenrePage(){
-    let media_row = this.getMediaItems();
+    let media_items = this.getMediaItems();
+
+    // media_items.splice(4, 0, "Hello");
+    // debugger;
+
+    let insertIterations = media_items.length/4;
+
+    let startIdx = 4;
+    let counter = 0
+    while (counter < insertIterations) {
+      media_items.splice(startIdx + counter , 0, (
+        <div
+          key={`media-model-${startIdx + counter}`}
+          className="genre-media-modal"
+          >
+          <p>Hello</p>
+        </div>
+      ))
+
+      startIdx += 4;
+      counter++;
+    }
 
     return (
       <div className="genre-medias-row">
-        {media_row}
+        {media_items}
       </div>
     )
   }
