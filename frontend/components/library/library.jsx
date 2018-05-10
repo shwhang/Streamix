@@ -58,15 +58,6 @@ class Library extends React.Component {
     return header;
   }
 
-  //
-  // renderMediaDetails(medium){
-  //   // debugger
-  //   this.setState({
-  //     medium: medium.medium,
-  //     video: medium.video
-  //   })
-  //
-  // }
 
   renderAllGenres(){
     const genres = this.props.allGenres.map((genre) => {

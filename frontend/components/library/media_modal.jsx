@@ -23,7 +23,7 @@ class MediaModal extends React.Component {
       year: medium.year,
       mpaaRating: medium.mpaa_rating,
       description: medium.description,
-      video: video.video_url,
+      video: video.id,
       thumbnail: this.props.getFirstThumbnail(video.thumbnails)
     })
   }
@@ -37,7 +37,7 @@ class MediaModal extends React.Component {
         year: medium.year,
         mpaaRating: medium.mpaa_rating,
         description: medium.description,
-        video: video.video_url,
+        video: video.id,
         thumbnail: this.props.getFirstThumbnail(video.thumbnails)
       })
     }
@@ -64,8 +64,13 @@ class MediaModal extends React.Component {
             </p>
 
             <article className="media-modal-buttons">
-              <Link to="" className="media-play-button">PLAY</Link>
-              <Link to="" className="media-add-button">+ MY LIST</Link>
+              <Link to={`/browse/videos/${this.state.video}`} className="media-play-button">
+                PLAY
+              </Link>
+
+              <Link to="" className="media-add-button">
+                + MY LIST
+              </Link>
             </article>
           </div>
 
