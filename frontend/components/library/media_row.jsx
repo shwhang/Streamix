@@ -56,11 +56,10 @@ class MediaRow extends React.Component {
             className="media-carousel-img">
           </img>
 
-            {
-              // Add Video Link
-            }
-            <div className="play-button">
-            </div>
+            <Link to={`/browse/videos/${video.id}`}>
+              <div className="play-button">
+              </div>
+            </Link>
 
           <div className="media-details-button">
             &#x22BF;

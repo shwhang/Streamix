@@ -5,9 +5,11 @@ import { requestOneVideo } from '../../actions/video_actions';
 
 import Video from './video';
 
-export const mapStateToProps = ({genres}) => ({
-  videos: genres.allGenres
-})
+export const mapStateToProps = ({profiles, video}) => {
+  return {
+  video: video.details,
+  currentProfile: profiles.currentProfile
+}}
 
 export const mapDispatchToProps = (dispatch, ownProps) => ({
   requestOneVideo: (id) => {
