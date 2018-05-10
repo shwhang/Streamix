@@ -47,7 +47,6 @@ class GenreShow extends React.Component {
     while (numOfRows > 0) {
       let medias = this.medias.slice(startIdx, endIdx);
 
-      debugger
       rows.push(
           <MediaRow
             medias={medias}

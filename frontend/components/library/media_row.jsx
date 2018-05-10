@@ -77,6 +77,7 @@ class MediaRow extends React.Component {
   renderMediaCarouselRow() {
     let media_row = this.getMediaItems();
 
+
     return (
       <div className="medias-row">
 
@@ -98,7 +99,6 @@ class MediaRow extends React.Component {
           </div>
         </div>
 
-        { this.state.medium }
       </div>
     );
   }
@@ -114,7 +114,6 @@ class MediaRow extends React.Component {
 
 
   renderMediaModal(medium){
-    console.log(medium)
     this.setState({
       medium: (
         <MediaModal medium={medium.medium} video={medium.video} getFirstThumbnail={this.props.getFirstThumbnail}/>
