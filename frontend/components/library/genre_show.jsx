@@ -31,6 +31,17 @@ class GenreShow extends React.Component {
     this.medias = this.filterGenreMedias(genreId);
   }
 
+
+  componentWillReceiveProps(nextProps){
+    if(this.props.match.url !== nextProps.match.url) {
+      let url = nextProps.match.url;
+      let slashIdx = url.lastIndexOf("/");
+      let genreId = parseInt(url.slice(slashIdx + 1));
+
+      this.medias = this.filterGenreMedias(genreId);
+    }
+  }
+
   getFirstThumbnail(media_thumbnails){
     let spaceIdx = media_thumbnails.indexOf(" ");
     let thumbnail = media_thumbnails.slice(0, spaceIdx);

@@ -45,10 +45,9 @@ class NavBar extends React.Component{
           <Link
             to={`/browse/${this.props.currentProfile.id}/genres/${genre.id}`}
             key={`genre-nav-item${genre.id}`}
-            className="genre-option-link"
             >
 
-            <li>
+            <li className="genre-option-link">
               {genre.name[0].toUpperCase() + genre.name.slice(1)}
             </li>
           </Link>
@@ -67,7 +66,7 @@ class NavBar extends React.Component{
 
           <ul className="browse-menu-options">
             <li>
-              <p>Genres</p>
+              <p>GENRES</p>
             </li>
             {genres}
           </ul>
