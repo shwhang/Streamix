@@ -16,7 +16,6 @@ class MediaModal extends React.Component {
   }
 
   componentWillMount() {
-    console.log(this.props.medium)
     let medium = this.props.medium;
     let video = this.props.video;
     this.setState({

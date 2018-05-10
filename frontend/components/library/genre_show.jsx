@@ -38,15 +38,36 @@ class GenreShow extends React.Component {
     return thumbnail;
   }
 
+
+  renderMediasInRowsOf4(){
+    let rows = [];
+    let numOfRows = this.medias.length/4;
+    let startIdx = 0, endIdx = 4;
+
+    while (numOfRows > 0) {
+      let medias = this.medias.slice(startIdx, endIdx);
+
+      debugger
+      rows.push(
+          <MediaRow
+            medias={medias}
+            carousel={false}
+            getFirstThumbnail={this.getFirstThumbnail}
+            key={`genre-media-row-${numOfRows}`}
+            />
+      )
+
+      numOfRows--;
+      startIdx += 4;
+      endIdx += 4;
+    }
+
+    return rows;
+  }
+
   render(){
 
-    let mediasRow = (
-        <MediaRow
-          getFirstThumbnail={this.getFirstThumbnail}
-          carousel={false}
-          medias={this.medias}
-          />
-      )
+    let mediasRow = this.renderMediasInRowsOf4();
 
     return (
       <div>

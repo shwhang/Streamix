@@ -104,44 +104,17 @@ class MediaRow extends React.Component {
   }
 
   renderMediasForGenrePage(){
-    let media_items = this.getMediaItems();
-
-    let numOfRows = media_items.length/4;
-
-    let media_rows = []
-    let startIdx = 0;
-    let endIdx = 4;
-
-    while (numOfRows > 0) {
-
-      media_rows.push(
-        <div className="genre-medias-row"
-          key={`genre-medias-row-${endIdx}`}>
-
-          {
-            //EXTRACTS 4 MEDIAS
-          }
-          { media_items.slice(startIdx, endIdx) }
-
-          { this.state.medium }
-        </div>
-      )
-      numOfRows--;
-      startIdx += 4;
-      endIdx += 4;
-    }
-
-
-
-    return (
-      <div className="genre-rows">
-        {media_rows}
+    let medias = this.getMediaItems();
+    return(
+      <div className="genre-medias-row">
+        {medias}
       </div>
     )
   }
 
+
   renderMediaModal(medium){
-    // debugger
+    console.log(medium)
     this.setState({
       medium: (
         <MediaModal medium={medium.medium} video={medium.video} getFirstThumbnail={this.props.getFirstThumbnail}/>
@@ -158,6 +131,7 @@ class MediaRow extends React.Component {
 
         { mediaRow }
 
+        {this.state.medium}
       </div>
     )
   }
