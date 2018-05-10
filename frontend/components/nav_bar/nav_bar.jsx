@@ -40,7 +40,7 @@ class NavBar extends React.Component{
 
 
     let genres = this.props.genres.map((genre) => {
-      console.log(genre.id)
+
       return (
           <Link
             to={`/browse/${this.props.currentProfile.id}/genres/${genre.id}`}
