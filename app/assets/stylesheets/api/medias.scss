@@ -1,3 +1,28 @@
 // Place all the styles related to the API::Medias controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//MEDIA MODAL
+.media-modal-box{
+  width: 100%;
+  float: left;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  z-index: -3;
+}
+
+.modal-image {
+  height: auto;
+  width: 60%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.media-details {
+  height: 100%;
+  z-index: 15;
+}

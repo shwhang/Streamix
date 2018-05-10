@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+
 import MediaRow from './media_row';
+import MediaModal from './media_modal';
 
 // TODO: Check if all genres are be loaded on new signup/login
 // TODO: Delete all genres on logout
@@ -10,7 +12,8 @@ class Library extends React.Component {
     super(props);
 
     this.state = {
-      mediaDetails: ""
+      medium: null,
+      video: null
     }
   }
 
@@ -56,6 +59,16 @@ class Library extends React.Component {
     return header;
   }
 
+  //
+  // renderMediaDetails(medium){
+  //   // debugger
+  //   this.setState({
+  //     medium: medium.medium,
+  //     video: medium.video
+  //   })
+  //
+  // }
+
   renderAllGenres(){
     const genres = this.props.allGenres.map((genre) => {
 
@@ -68,11 +81,9 @@ class Library extends React.Component {
           </h3>
 
           <MediaRow getFirstThumbnail={this.getFirstThumbnail} medias={genre.media}
-            carousel={true} />
+          carousel={true}
+          />
 
-          {
-          //ADD DETAIL BOX HERE
-          }
         </div>
       )
     })

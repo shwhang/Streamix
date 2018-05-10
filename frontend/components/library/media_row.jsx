@@ -8,25 +8,23 @@ class MediaRow extends React.Component {
     super(props);
     this.state = {
       carousel: props.carousel,
+      medium: null
     }
 
     this.currentVideos = [];
     this.nextVideos = [];
 
     this.handleVideosNavigation = this.handleVideosNavigation.bind(this);
-    this.renderMediaDetails = this.renderMediaDetails.bind(this);
+    this.renderMediaModal = this.renderMediaModal.bind(this);
     // Carousel should be passed in as true or false
     // true from library component
     // false from genre component
+
+
   }
 
   componentWillReceiveProps(nextProps){
 
-  }
-
-  renderMediaDetails(e){
-    e.preventDefault();
-    debugger
   }
 
   handleVideosNavigation(e) {
@@ -67,7 +65,9 @@ class MediaRow extends React.Component {
 
             </Link>
 
-          <div className="media-details-button" onClick={this.renderMediaDetails}>
+          <div className="media-details-button" onClick={() => {
+              this.renderMediaModal(media)
+            }}>
             &#x22BF;
           </div>
         </div>
@@ -82,25 +82,26 @@ class MediaRow extends React.Component {
 
     return (
       <div className="medias-row">
-        <div className="left-arrow-btn" onClick={this.handleVideosNavigation}>
-          <div className="arrow-code">
-            &#8249;
-          </div>
-        </div>
 
         <div className="carousel">
-          { media_row }
-        </div>
+          <div className="left-arrow-btn" onClick={this.handleVideosNavigation}>
+            <div className="arrow-code">
+              &#8249;
+            </div>
+          </div>
 
-        <div className="right-arrow-btn" onClick={this.handleVideosNavigation}>
-          <div className="arrow-code">
-            &#8250;
+          <div className="media-items">
+            { media_row }
+          </div>
+
+          <div className="right-arrow-btn" onClick={this.handleVideosNavigation}>
+            <div className="arrow-code">
+              &#8250;
+            </div>
           </div>
         </div>
 
-        {
-          //PUT MEDIA DETAILS
-        }
+        { this.state.medium }
       </div>
     );
   }
@@ -117,7 +118,8 @@ class MediaRow extends React.Component {
     while (numOfRows > 0) {
 
       media_rows.push(
-        <div className="genre-medias-row">
+        <div className="genre-medias-row"
+          key={`genre-medias-row-${endIdx}`}>
           {media_items.slice(startIdx, endIdx)}
         </div>
       )
@@ -132,6 +134,24 @@ class MediaRow extends React.Component {
         {media_rows}
       </div>
     )
+  }
+
+  // hideMediaModal(){
+  //   debugger
+  //   this.setState({
+  //     medium: null
+  //   })
+  // }
+
+  renderMediaModal(medium){
+    // this.hideMediaModal();
+
+    this.setState({
+      medium: (
+        <MediaModal medium={medium.medium} video={medium.video} getFirstThumbnail={this.props.getFirstThumbnail}/>
+      )
+    })
+
   }
 
   render(){
