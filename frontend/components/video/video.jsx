@@ -16,7 +16,7 @@ class Video extends React.Component {
     this.props.requestOneVideo(parseInt(videoId)).then((video) => {
       this.setState({
         video: (
-          <video controls autoPlay width="100%" height="100%">
+          <video controls autoPlay width="100%" height="100%" className="video-player">
             <source src={video.video.video_url} />
           </video>
         )
@@ -28,8 +28,9 @@ class Video extends React.Component {
     return(
       <div className="video-container">
 
-        <Link to={`/browse/${this.props.currentProfile.id}`}>
-          &#10140;
+        <Link to={`/browse/${this.props.currentProfile.id}`}
+          className="back-to-profile-btn-container">
+          <p className="profile-arrow-btn">&#10140;</p>
         </Link>
         {this.state.video}
       </div>
