@@ -7,7 +7,7 @@ import SessionFormContainer from './session/session_form_container';
 import ProfileIndexContainer from './profile/profile_index_container';
 import ProfileFormContainer from './profile/profile_form_container';
 import ProfileContainer from './profile/profile_container';
-
+import VideoContainer from './video/video_container';
 
 const App = () => (
   <div>
@@ -21,6 +21,9 @@ const App = () => (
       <ProtectedRoute exact path ="/manage/edit/:id" component={ProfileFormContainer} />
 
       <ProtectedRoute exact path="/browse/:id" component={ProfileContainer} />
+
+
+      <ProtectedRoute exact path="/browse/videos/:id" component={VideoContainer} />
 
     </Switch>
     <ProtectedRoute exact path="/manage/profiles" component={ProfileIndexContainer} />
