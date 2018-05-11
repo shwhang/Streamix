@@ -16,6 +16,8 @@ class MediaRow extends React.Component {
 
     this.handleVideosNavigation = this.handleVideosNavigation.bind(this);
     this.renderMediaModal = this.renderMediaModal.bind(this);
+
+    this.removeMediaModal = this.removeMediaModal.bind(this);
     // Carousel should be passed in as true or false
     // true from library component
     // false from genre component
@@ -24,6 +26,14 @@ class MediaRow extends React.Component {
 
   componentWillReceiveProps(nextProps){
 
+  }
+
+
+
+  removeMediaModal(){
+    this.setState({
+      medium: null
+    })
   }
 
   handleVideosNavigation(e) {
@@ -116,10 +126,11 @@ class MediaRow extends React.Component {
   renderMediaModal(medium){
     this.setState({
       medium: (
-        <MediaModal medium={medium.medium} video={medium.video} getFirstThumbnail={this.props.getFirstThumbnail}/>
+        <MediaModal medium={medium.medium} video={medium.video}
+          getFirstThumbnail={this.props.getFirstThumbnail}
+          removeMediaModal={this.removeMediaModal}/>
       )
     })
-
   }
 
   render(){

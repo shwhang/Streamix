@@ -15,6 +15,8 @@ class Library extends React.Component {
       medium: null,
       video: null
     }
+
+    // this.removeMediaModal = this.removeMediaModal.bind(this)
   }
 
   getFirstThumbnail(media_thumbnails){
@@ -57,7 +59,6 @@ class Library extends React.Component {
 
     return header;
   }
-
 
   renderAllGenres(){
     const genres = this.props.allGenres.map((genre) => {

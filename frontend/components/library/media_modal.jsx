@@ -27,6 +27,12 @@ class MediaModal extends React.Component {
       thumbnail: this.props.getFirstThumbnail(video.thumbnails)
     })
   }
+
+  exitModal(e){
+    e.preventDefault();
+    this.props.removeMediaModal();
+  }
+
   componentWillReceiveProps(nextProps) {
     if(this.props.medium !== nextProps.medium) {
       let medium = nextProps.medium;
@@ -50,6 +56,9 @@ class MediaModal extends React.Component {
 
         <div className="media-details">
 
+          <div onClick={this.exitModal.bind(this)}>
+            <p className="exit-modal-button">x</p>
+          </div>
           <h1 className="media-title">
             {this.state.title}
           </h1>

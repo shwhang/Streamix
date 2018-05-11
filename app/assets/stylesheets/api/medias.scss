@@ -111,3 +111,11 @@
   height: 100%;
   position: absolute;
 }
+
+.exit-modal-button {
+  font-size: 100px;
+  color: gray;
+  position: absolute;
+  z-index: 100;
+  cursor: pointer;
+}
