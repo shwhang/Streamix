@@ -52,13 +52,13 @@ class MediaModal extends React.Component {
   render() {
     return (
       <div className="media-modal-box">
+        <div onClick={this.exitModal.bind(this)}>
+          <p className="exit-modal-button">x</p>
+        </div>
         <div className="modal-gradient"> </div>
 
         <div className="media-details">
 
-          <div onClick={this.exitModal.bind(this)}>
-            <p className="exit-modal-button">x</p>
-          </div>
           <h1 className="media-title">
             {this.state.title}
           </h1>
