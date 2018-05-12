@@ -15,8 +15,6 @@ class Library extends React.Component {
       medium: null,
       video: null
     }
-
-    // this.removeMediaModal = this.removeMediaModal.bind(this)
   }
 
   getFirstThumbnail(media_thumbnails){
@@ -26,8 +24,6 @@ class Library extends React.Component {
   }
 
   generateRandomHeader(){
-    // TODO: get a bunch of header videos and add them to videos
-    //allMedias will only contain travel videos
     const allMedias = this.props.allGenres[5].media;
 
     const numOfMedias = allMedias.length;
@@ -47,6 +43,29 @@ class Library extends React.Component {
 
     const header = (
       <div className="header-wrapper">
+        <div className="gradient-wrapper">
+
+        </div>
+        <article className="header-details">
+          <h1 className="header-title">
+            {headerMedia.title}
+          </h1>
+
+          <p className="header-description">
+            {headerMedia.description}
+          </p>
+
+          <article className="media-modal-buttons">
+            <Link to={`/browse/videos/${headerVideo.id}`} className="media-play-button">
+              PLAY
+            </Link>
+
+            <Link to="" className="media-add-button">
+              + MY LIST
+            </Link>
+          </article>
+        </article>
+
         <video
           autoPlay="autoplay"
           muted
