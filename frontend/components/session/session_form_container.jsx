@@ -17,6 +17,9 @@ const mapDispatchToProps = (dispatch, { location }) => {
 
   return {
     processForm: user => dispatch(processForm(user)),
+    requestAllGenres: () => {
+        return dispatch(requestAllGenres());
+    },
     formType,
   };
 };
