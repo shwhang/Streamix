@@ -1,1 +1,8 @@
-json.array! @genres, partial: 'api/genres/genres', as: :genres
+json.array! @genres do |genre|
+  json.id genre.id
+  json.name genre.name
+  json.media genre.media do |media|
+    json.medium media
+    json.video media.video
+  end
+end
