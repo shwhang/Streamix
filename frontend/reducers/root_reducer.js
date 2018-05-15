@@ -12,7 +12,6 @@ const rootReducer = combineReducers({
   genres,
   video,
   errors,
-
 })
 
 export default rootReducer;

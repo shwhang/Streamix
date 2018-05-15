@@ -9,7 +9,9 @@ const _nullGenres = Object.freeze({
 
 const genresReducer = (state = _nullGenres, action) => {
   Object.freeze(state);
+  if(action.allGenres) {
 
+  }
   switch(action.type) {
     case RECEIVE_ALL_GENRES:
       const allGenres = action.allGenres;
