@@ -91,8 +91,14 @@ class NavBar extends React.Component{
            </div>
            <ul className="profiles-dropdown-menu">
              { profiles }
-             <li>
-               <button onClick={this.props.logout} className="logout-button">
+
+             <Link to="/profiles" className="profile-nav-options">
+                <li>
+                 Manage Profiles
+               </li>
+             </Link>
+             <li className="profile-nav-options logout-button" >
+               <button onClick={this.props.logout}>
                  Logout
                </button>
              </li>

@@ -80,7 +80,7 @@
 
 //PROFILE DROPDOWN MENU
 .profiles-dropdown-menu {
-  border: 1px solid white;
+  border: 1px solid gray;
   background-color: black;
   visibility: hidden;
   position: absolute;
@@ -93,11 +93,11 @@
   width: auto;
   // padding: 10px;
   // height: 100px;
-  border-bottom: 1px solid gray;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px 20px;
+  padding: 12px 20px;
+  font-size: 12px;
 }
 
 .profile-nav-options-avatar {
@@ -106,13 +106,12 @@
 }
 
 .logout-button {
-  padding: 10px 0;
+  border-top: 1px solid gray;
+  padding-bottom: 10px;
 }
 //BROWSE MENU
-
 .browse-menu {
   height: 100%;
-  // border: 1px solid green;
 }
 
 .browse-menu-btn {
