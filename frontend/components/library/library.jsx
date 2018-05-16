@@ -10,14 +10,15 @@ class Library extends React.Component {
 
     this.state = {
       medium: null,
-      video: null
+      video: null,
+      videoPlayer: null
     }
   }
 
   getFirstThumbnail(media_thumbnails){
     let thumbs = media_thumbnails.split(" ");
 
-    return thumbs[1];
+    return thumbs[Math.floor(thumbs.length/2)];
   }
 
   generateRandomHeader(){
@@ -29,15 +30,32 @@ class Library extends React.Component {
     return allMedias[randomNum];
   }
 
+  componentWillMount() {
+    this.getHeaderVideo();
+  }
+
+  getHeaderVideo(){
+    let randomMedium = this.generateRandomHeader();
+    let headerMedia = randomMedium.medium;
+    let headerVideo = randomMedium.video;
+
+    let thumbnailUrl = this.getFirstThumbnail(headerVideo.thumbnails);
+    let videoUrl = headerVideo.video_url;
+
+    this.setState({
+      medium: headerMedia,
+      video: headerVideo
+    })
+  }
+
+
+  componentWillReceiveProps(nextProps){
+    if(this.props.match.params.id !== nextProps.match.params.id){
+      this.getHeaderVideo();
+    }
+  }
+
   renderHeaderVideo(){
-    const randomVideo = this.generateRandomHeader();
-
-    const headerMedia = randomVideo.medium;
-    const headerVideo = randomVideo.video;
-
-    const thumbnailUrl = this.getFirstThumbnail(headerVideo.thumbnails);
-    const videoUrl = headerVideo.video_url;
-
     const header = (
       <div className="header-wrapper">
         <div className="gradient-wrapper">
@@ -45,15 +63,15 @@ class Library extends React.Component {
         </div>
         <article className="header-details">
           <h1 className="header-title">
-            {headerMedia.title}
+            {this.state.medium.title}
           </h1>
 
           <p className="header-description">
-            {headerMedia.description}
+            {this.state.medium.description}
           </p>
 
           <article className="media-modal-buttons">
-            <Link to={`/browse/videos/${headerVideo.id}`} className="media-play-button">
+            <Link to={`/browse/videos/${this.state.video.id}`} className="media-play-button">
               PLAY
             </Link>
 
@@ -63,14 +81,13 @@ class Library extends React.Component {
           </article>
         </article>
 
-        {//Remount video tag w/ new source
-        }
         <video
           autoPlay="autoplay"
           muted
           loop
-          className="header-video">
-          <source src={videoUrl} />
+          className="header-video"
+          key={`header-video-${this.state.video.id}`}>
+          <source src={this.state.video.video_url} />
         </video>
       </div>
     )
