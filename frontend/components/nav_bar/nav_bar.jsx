@@ -47,7 +47,6 @@ class NavBar extends React.Component{
       )
     })
 
-
     let genres = this.props.genres.map((genre) => {
 
       return (

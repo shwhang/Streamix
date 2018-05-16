@@ -11,7 +11,6 @@ const mapStateToProps = ({genres, profiles}) => ({
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  // TODO: CODEREVIEW for logout
   return {
     logout: () => dispatch(logout()).then(() => {
       dispatch(receiveAllProfiles([]))

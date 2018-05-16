@@ -4,9 +4,10 @@ import Profile from './profile';
 
 import { requestCurrentProfile, requestAllProfiles } from '../../actions/profile_actions';
 
-export const mapStateToProps = ({ profiles }) => ({
+export const mapStateToProps = ({ profiles, genres }) => ({
   currentProfile: profiles.currentProfile,
-  allProfiles: profiles.allProfiles
+  allProfiles: profiles.allProfiles,
+  genres: genres.allGenres
 });
 
 export const mapDispatchToProps = (dispatch, ownProps) => ({
