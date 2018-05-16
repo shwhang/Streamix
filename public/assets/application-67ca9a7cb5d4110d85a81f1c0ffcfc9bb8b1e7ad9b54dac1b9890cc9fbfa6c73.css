@@ -1,0 +1,1155 @@
+/* line 1, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/footer.scss */
+footer {
+  text-align: center;
+  color: gray;
+  margin-top: 60px;
+}
+
+/* line 7, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/footer.scss */
+.contact-blurb {
+  height: 10vh;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* line 16, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/footer.scss */
+.contact-section {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+}
+
+/* line 26, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/footer.scss */
+.contact-section li {
+  width: 100%;
+  border-right: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 34, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/footer.scss */
+.contact-section li:last-child {
+  border: none;
+}
+
+/* line 39, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/footer.scss */
+.contact-link {
+  width: 100%;
+  height: 100px;
+}
+
+/* line 44, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/footer.scss */
+.contact-img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100px;
+}
+
+/* line 52, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/footer.scss */
+.github-img {
+  background-image: url(/assets/contact/github-2a4d69b7dab08c61e98a57456fe03a6d11dea314569d748a9c861a5f7337df1c.png);
+}
+
+/* line 56, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/footer.scss */
+.portfolio-img {
+  background-image: url(/assets/contact/portfolio-e14665b41e4c2fc4cd9548372e08e287b1e3737ae1b689cfc7d7b878a723da71.png);
+}
+
+/* line 60, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/footer.scss */
+.linkedin-img {
+  background-image: url(/assets/contact/linkedin-d9425758a9ba9a71aced58f01e6ae576f7d10ebcae2434e948924bbecc65cb68.png);
+}
+
+/* line 64, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/footer.scss */
+.email-img {
+  background-image: url(/assets/contact/mail-83e7d26fa3594ae42f4ca7aaa0b5e77b48565916b774af06b2da6280780b4ded.png);
+}
+
+/* line 68, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/footer.scss */
+.contact-detail {
+  padding-top: 20px;
+  font-weight: light;
+}
+
+/* line 73, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/footer.scss */
+.copyright-blurb {
+  padding: 100px 0 20px;
+  font-size: 12px;
+  text-align: center;
+}
+/* line 5, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/genres.scss */
+.genre-medias-container {
+  padding: 10% 0 20%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+/* line 14, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/genres.scss */
+.genre-page-title {
+  width: 90%;
+  margin: auto;
+  padding: 15px 0;
+  font-size: 25px;
+}
+
+/* line 22, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/genres.scss */
+.genre-medias-row {
+  margin: auto;
+  margin-top: 30px;
+  height: 20vh;
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  flex-grow: 100;
+}
+
+/* line 36, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/genres.scss */
+.genre-medias-row .media-item {
+  position: relative;
+  height: 100%;
+  float: left;
+}
+
+/* line 42, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/genres.scss */
+.genre-medias-row img {
+  height: 100%;
+  width: auto;
+}
+
+/* line 47, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/genres.scss */
+.genre-media-modal {
+  width: 100%;
+  border: 1px solid yellow;
+}
+/* line 3, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/home.scss */
+.splash-page-section {
+  height: 90vh;
+  width: 100%;
+  top: 0;
+  background-image: url(/assets/splash_background-91fc88d7854498c1b7b06066ccf67e9ea21b8a3a2870d9fef51d4cc05da8925f.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* line 14, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/home.scss */
+.dark-gradient {
+  height: 100%;
+  width: 100%;
+  background: rgba(248, 80, 50, 0);
+  background: -moz-linear-gradient(-45deg, rgba(248, 80, 50, 0) 0%, rgba(92, 87, 87, 0.24) 21%, rgba(0, 0, 0, 0.54) 47%, rgba(0, 0, 0, 0.74) 65%, black 90%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(248, 80, 50, 0)), color-stop(21%, rgba(92, 87, 87, 0.24)), color-stop(47%, rgba(0, 0, 0, 0.54)), color-stop(65%, rgba(0, 0, 0, 0.74)), color-stop(90%, black));
+  background: -webkit-linear-gradient(-45deg, rgba(248, 80, 50, 0) 0%, rgba(92, 87, 87, 0.24) 21%, rgba(0, 0, 0, 0.54) 47%, rgba(0, 0, 0, 0.74) 65%, black 90%);
+  background: -o-linear-gradient(-45deg, rgba(248, 80, 50, 0) 0%, rgba(92, 87, 87, 0.24) 21%, rgba(0, 0, 0, 0.54) 47%, rgba(0, 0, 0, 0.74) 65%, black 90%);
+  background: -ms-linear-gradient(-45deg, rgba(248, 80, 50, 0) 0%, rgba(92, 87, 87, 0.24) 21%, rgba(0, 0, 0, 0.54) 47%, rgba(0, 0, 0, 0.74) 65%, black 90%);
+  background: linear-gradient(135deg, rgba(248, 80, 50, 0) 0%, rgba(92, 87, 87, 0.24) 21%, rgba(0, 0, 0, 0.54) 47%, rgba(0, 0, 0, 0.74) 65%, black 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#000000', GradientType=1 );
+}
+
+/* line 27, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/home.scss */
+.splash-page-actions-wrapper {
+  bottom: 0;
+  width: auto;
+  margin-right: 40px;
+  margin-bottom: 60px;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  text-align: center;
+}
+
+/* line 38, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/home.scss */
+.splash-page-header {
+  font-size: 70px;
+  font-weight: 500;
+}
+
+/* line 43, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/home.scss */
+.splash-page-blurb {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+/* line 48, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/home.scss */
+.splash-page-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+  padding-top: 20px;
+}
+
+/* line 56, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/home.scss */
+.signup-btn, .demo-login-btn {
+  background: #e50914;
+  padding: 10px 0;
+  width: 40%;
+  text-align: center;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+/* line 1, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.library-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+/* line 8, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.header-wrapper {
+  height: 60vh;
+  width: 100%;
+  display: block;
+  margin-bottom: 3em;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 18, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.gradient-wrapper {
+  z-index: 10;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  background: -moz-linear-gradient(left, black 0%, rgba(0, 0, 0, 0.46) 50%, rgba(0, 0, 0, 0) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, black), color-stop(50%, rgba(0, 0, 0, 0.46)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background: -webkit-linear-gradient(left, black 0%, rgba(0, 0, 0, 0.46) 50%, rgba(0, 0, 0, 0) 100%);
+  background: -o-linear-gradient(left, black 0%, rgba(0, 0, 0, 0.46) 50%, rgba(0, 0, 0, 0) 100%);
+  background: -ms-linear-gradient(left, black 0%, rgba(0, 0, 0, 0.46) 50%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0.46) 50%, rgba(0, 0, 0, 0) 100%);
+  position: absolute;
+}
+
+/* line 34, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.header-details {
+  height: auto;
+  z-index: 20;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-left: 40px;
+  padding-bottom: 60px;
+}
+
+/* line 45, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.header-title {
+  font-size: 4.5em;
+  padding-bottom: 20px;
+}
+
+/* line 50, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.header-description {
+  line-height: 140%;
+}
+
+/* line 53, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.header-video {
+  justify-content: center;
+  margin-top: -50px;
+  width: 120%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+}
+
+/* line 65, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.genre-row {
+  width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+/* line 71, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.genre-row-title {
+  width: 90%;
+  padding: 20px 0;
+  font-size: 20px;
+  margin-left: 45px;
+}
+
+/* line 80, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.medias-row {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 86, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.carousel {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* line 96, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.media-items {
+  height: 100%;
+  position: relative;
+  flex-grow: 100;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* line 108, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.media-item {
+  position: relative;
+  height: 100%;
+  width: 24%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* line 124, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.media-carousel-img {
+  height: 100%;
+  flex-grow: 100;
+  position: absolute;
+}
+
+/* line 131, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.play-button {
+  background-image: url(/assets/play_icon-3e00be7744c05928e7780b754ba467bee52e20702b9aa8e0ca174a534fd62438.png);
+  background-repeat: none;
+  background-position: center;
+  background-size: contain;
+  height: 60px;
+  width: 60px;
+  z-index: 500;
+  background-repeat: no-repeat;
+  position: absolute;
+  border-radius: 50%;
+  align-self: center;
+  border: 5px solid white;
+  cursor: pointer;
+}
+
+/* line 147, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.play-button:hover {
+  background-color: red;
+}
+
+/* line 152, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.media-details-button {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  font-size: 30px;
+  z-index: 100;
+  align-self: center;
+  transform: rotate(45deg);
+}
+
+/* line 163, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.media-details-button:hover {
+  color: red;
+  cursor: pointer;
+}
+
+/* line 169, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.left-arrow-btn, .right-arrow-btn {
+  height: 100%;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 178, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/library.scss */
+.arrow-code {
+  font-size: 4em;
+  padding: 0 10px;
+  margin: 0;
+  width: auto;
+  cursor: pointer;
+  align-self: center;
+}
+/* line 6, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.media-modal-box {
+  height: 350px;
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+}
+
+/* line 16, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.modal-image {
+  height: auto;
+  width: 70%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 4;
+}
+
+/* line 25, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.media-details {
+  position: absolute;
+  height: 80%;
+  width: 40%;
+  z-index: 40;
+  font-weight: lighter;
+  font-size: 12px;
+  padding: 50px;
+}
+
+/* line 35, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.media-title {
+  font-size: 40px;
+  font-weight: bolder;
+  padding-bottom: 10px;
+}
+
+/* line 40, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.media-small-details {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+/* line 45, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.year {
+  font-weight: bold;
+  padding-right: 5px;
+  display: inline-block;
+}
+
+/* line 51, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.mpaa-rating {
+  padding: 1px 5px;
+  border: 1px solid gray;
+  display: inline-block;
+}
+
+/* line 57, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.description {
+  line-height: 125%;
+}
+
+/* line 61, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.media-modal-buttons {
+  margin: 20px 0;
+  font-weight: bolder;
+  z-index: 100;
+}
+
+/* line 67, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.media-modal-buttons a {
+  padding: 5px 20px;
+  border-radius: 2px;
+}
+
+/* line 72, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.media-play-button {
+  background-color: red;
+  border: 1px solid red;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* line 79, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.media-add-button {
+  border: 1px solid white;
+}
+
+/* line 83, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.media-modal-options {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 100;
+}
+
+/* line 95, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.media-modal-options li {
+  padding: 5px 0;
+  border-bottom: 4px solid red;
+}
+
+/* line 100, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.modal-gradient {
+  z-index: 20;
+  background: black;
+  background: -moz-linear-gradient(left, black 0%, black 19%, black 25%, black 38%, black 40%, rgba(0, 0, 0, 0.83) 54%, rgba(0, 0, 0, 0.82) 55%, rgba(0, 0, 0, 0.71) 63%, rgba(0, 0, 0, 0.55) 75%, rgba(0, 0, 0, 0) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, black), color-stop(19%, black), color-stop(25%, black), color-stop(38%, black), color-stop(40%, black), color-stop(54%, rgba(0, 0, 0, 0.83)), color-stop(55%, rgba(0, 0, 0, 0.82)), color-stop(63%, rgba(0, 0, 0, 0.71)), color-stop(75%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background: -webkit-linear-gradient(left, black 0%, black 19%, black 25%, black 38%, black 40%, rgba(0, 0, 0, 0.83) 54%, rgba(0, 0, 0, 0.82) 55%, rgba(0, 0, 0, 0.71) 63%, rgba(0, 0, 0, 0.55) 75%, rgba(0, 0, 0, 0) 100%);
+  background: -o-linear-gradient(left, black 0%, black 19%, black 25%, black 38%, black 40%, rgba(0, 0, 0, 0.83) 54%, rgba(0, 0, 0, 0.82) 55%, rgba(0, 0, 0, 0.71) 63%, rgba(0, 0, 0, 0.55) 75%, rgba(0, 0, 0, 0) 100%);
+  background: -ms-linear-gradient(left, black 0%, black 19%, black 25%, black 38%, black 40%, rgba(0, 0, 0, 0.83) 54%, rgba(0, 0, 0, 0.82) 55%, rgba(0, 0, 0, 0.71) 63%, rgba(0, 0, 0, 0.55) 75%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to right, black 0%, black 19%, black 25%, black 38%, black 40%, rgba(0, 0, 0, 0.83) 54%, rgba(0, 0, 0, 0.82) 55%, rgba(0, 0, 0, 0.71) 63%, rgba(0, 0, 0, 0.55) 75%, rgba(0, 0, 0, 0) 100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/* line 114, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/medias.scss */
+.exit-modal-button {
+  font-size: 3em;
+  color: gray;
+  position: absolute;
+  right: 0;
+  z-index: 100;
+  padding: 20px 40px;
+  cursor: pointer;
+}
+/* line 3, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.nav-bar-wrapper {
+  top: 0;
+  height: 8%;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  position: fixed;
+  background: -moz-linear-gradient(top, black 0%, black 1%, rgba(0, 0, 0, 0.2) 88%, rgba(83, 83, 83, 0.1) 99%, rgba(91, 91, 91, 0.1) 100%);
+  background: -webkit-linear-gradient(top, black 0%, black 1%, rgba(0, 0, 0, 0.2) 88%, rgba(83, 83, 83, 0.1) 99%, rgba(91, 91, 91, 0.1) 100%);
+  background: linear-gradient(to bottom, black 0%, black 1%, rgba(0, 0, 0, 0.2) 88%, rgba(83, 83, 83, 0.1) 99%, rgba(91, 91, 91, 0.1) 100%);
+}
+
+/* line 19, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.logo {
+  color: #e50914;
+  font-size: 3em;
+  font-weight: 700;
+  padding-left: 40px;
+  align-self: center;
+}
+
+/* line 28, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.home-sign-in-button {
+  font-size: 14px;
+  font-weight: 200;
+  background-color: #e50914;
+  margin-right: 40px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* line 38, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.navbar-logo {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* line 45, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.navbar-options {
+  height: 100%;
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* line 55, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.profile-options-menu {
+  height: 100%;
+  position: relative;
+}
+
+/* line 60, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.avatar-button {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 60px;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* line 69, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.current-avatar-img {
+  height: 65%;
+  width: auto;
+}
+
+/* line 74, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.triangle-arrow {
+  color: white;
+  font-size: 25px;
+  align-self: center;
+  padding: 0 10px;
+}
+
+/* line 82, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.profiles-dropdown-menu {
+  border: 1px solid gray;
+  background-color: black;
+  visibility: hidden;
+  position: absolute;
+  margin-right: 40px;
+  text-align: center;
+  font-weight: lighter;
+}
+
+/* line 92, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.profile-nav-options {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 20px;
+  font-size: 12px;
+}
+
+/* line 103, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.profile-nav-options-avatar {
+  width: 25%;
+  margin-right: 10px;
+}
+
+/* line 108, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.logout-button {
+  border-top: 1px solid gray;
+  padding-bottom: 10px;
+}
+
+/* line 113, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.browse-menu {
+  height: 100%;
+}
+
+/* line 117, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.browse-menu-btn {
+  height: 100%;
+  margin-left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 126, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.browse-menu-btn:hover {
+  color: red;
+}
+
+/* line 130, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.browse-menu-options {
+  visibility: hidden;
+  position: absolute;
+  background-color: black;
+  padding: 20px 40px;
+  font-weight: 100;
+}
+
+/* line 138, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.genres-title {
+  font-size: 20px;
+}
+
+/* line 141, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.genre-option-link {
+  padding: 3px 0;
+}
+
+/* line 145, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/nav_bar.scss */
+.genre-option-link:hover {
+  border-bottom: 3px solid red;
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    margin: auto;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 18, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.fadeInDown {
+  animation-name: fadeInDown;
+  animation-duration: 2s;
+}
+
+/* line 23, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profiles-wrapper {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 33, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profiles-index {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* line 42, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profiles-index-title {
+  width: 100%;
+  font-size: 50px;
+  padding: 20px 0;
+}
+
+/* line 48, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profile-manage-button {
+  border: 1px solid gray;
+  padding: 10px 20px;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 300;
+  color: gray;
+  margin-top: 40px;
+}
+
+/* line 59, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profile-options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 67, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.avatar-container {
+  height: 125px;
+  width: 125px;
+  border: 4px solid gray;
+  margin-bottom: 10px;
+  color: gray;
+}
+
+/* line 75, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.avatar-container:hover {
+  border-color: white;
+}
+
+/* line 79, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profile-index-item {
+  color: gray;
+  margin: 0 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* line 87, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.add-profile-icon:hover {
+  background-color: white;
+}
+
+/* line 91, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.add-profile-icon {
+  border: 4px solid gray;
+  background-image: url(/assets/add_icon-5b30b8b586f1ba4634c0daf3c5f7ac1ac45fe0fd2f810b71754f2c0de91cbea9.svg);
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+}
+
+/* line 101, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profile-form-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* line 110, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profile-form {
+  width: 40%;
+  position: relative;
+}
+
+/* line 115, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profile-form-title {
+  width: 100%;
+  font-size: 60px;
+}
+
+/* line 120, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profile-form-blurb {
+  font-size: 18px;
+  color: gray;
+  padding-top: 10px;
+}
+
+/* line 126, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profile-form-details {
+  width: 100%;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding: 20px 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* line 138, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profile-name-textbox {
+  color: white;
+  background-color: gray;
+  font-size: 18px;
+  padding: 10px;
+  font-weight: lighter;
+  width: 100%;
+}
+
+/* line 147, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profile-name-textbox::placeholder {
+  color: white;
+}
+
+/* line 152, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.default-avatar-container {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  position: relative;
+}
+
+/* line 159, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.default-avatar-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 164, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.avatar-modal-box {
+  position: absolute;
+  width: 30%;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: black;
+  visibility: hidden;
+  box-sizing: border-box;
+}
+
+/* line 178, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.avatar-select-img {
+  width: 25%;
+  height: 25%;
+  border: 3px solid transparent;
+  cursor: pointer;
+}
+
+/* line 185, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.avatar-select-img:hover {
+  border: 3px solid white;
+}
+
+/* line 189, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.edit-avatar-icon {
+  width: 8%;
+  height: 8%;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-image: url(/assets/edit_icon-51cfb4ffd38ef5d651381648dd3ae337eecf55c0ab3ff99a89b8dd806a9e3d88.svg);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+  padding: 10px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  margin: 5px;
+  box-shadow: 1px 3.5px 6px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* line 207, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profile-update-button {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+/* line 213, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profile-update-button, .profile-cancel-button, .profile-delete-button {
+  padding: 10px 20px;
+  margin-right: 20px;
+  text-transform: uppercase;
+}
+
+/* line 219, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/profiles.scss */
+.profile-cancel-button, .profile-delete-button {
+  border: 1px solid gray;
+  color: gray;
+}
+/* line 3, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/reset.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 7, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/reset.scss */
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, h3, h4, h5, h6, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+/* line 25, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/reset.scss */
+ul {
+  list-style: none;
+}
+
+/* line 29, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 35, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/reset.scss */
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 50, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/reset.scss */
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Clearfix */
+/* line 56, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/reset.scss */
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 62, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/reset.scss */
+body {
+  background-color: #262525;
+  color: white;
+  font-family: Helvetica;
+}
+/* line 3, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/sessions.scss */
+.session-form-container {
+  height: 90vh;
+  width: 100%;
+  top: 0;
+  background-image: url(/assets/session_background-eb4aeb3d9aa071c34a02ed18490c9c8cc337e35fce2153a57813a2798b1f1100.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 17, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/sessions.scss */
+.session-form {
+  background-color: #f3f3f3;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: 20%;
+  border-radius: 3px;
+}
+
+/* line 27, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/sessions.scss */
+.session-form-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* line 32, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/sessions.scss */
+.email-textbox, .password-textbox {
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px;
+  margin: 5px 0 10px;
+}
+
+/* line 40, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/sessions.scss */
+.email-textbox:focus, .password-textbox:focus {
+  border: 1px solid red;
+}
+
+/* line 44, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/sessions.scss */
+.session-form-button {
+  background-color: #e50914;
+  color: white;
+  padding: 10px 0;
+  width: 100%;
+  font-size: 18px;
+  text-transform: uppercase;
+  align-self: center;
+  text-align: center;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+/* line 57, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/sessions.scss */
+.session-option {
+  border-top: 1px inset gray;
+  padding-top: 20px;
+}
+
+/* line 62, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/sessions.scss */
+.session-option a {
+  color: #0080ff;
+}
+/* line 1, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/spinner.scss */
+.loader-container {
+  height: 90vh;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 10, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/spinner.scss */
+#loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid red;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* line 3, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/video.scss */
+.video-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+/* line 13, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/video.scss */
+.back-to-profile-btn-container {
+  border: 5px solid white;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 30px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* line 28, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/video.scss */
+.back-to-profile-btn-container:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+/* line 33, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/video.scss */
+.profile-arrow-btn {
+  padding: 0;
+  margin: 0;
+  transform: rotate(180deg);
+  font-size: 30px;
+}
+
+/* line 40, /Users/sarrininja/Desktop/Streamix/app/assets/stylesheets/api/video.scss */
+.controls {
+  background-color: green;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+@import "api/reset.scss";
+@import "api/nav_bar.scss";
+@import "api/footer.scss";
+@import "api/home.scss";
+@import "api/sessions.scss"
