@@ -8,6 +8,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  video_url  :string
+#  thumbnails :string           default(""), not null
 #
 
 class Video < ApplicationRecord

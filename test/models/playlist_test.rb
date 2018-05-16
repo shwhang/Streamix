@@ -1,19 +1,17 @@
 # == Schema Information
 #
-# Table name: videos
+# Table name: playlists
 #
 #  id         :integer          not null, primary key
-#  medium_id  :integer          not null
-#  episode_id :integer          not null
+#  profile_id :integer          not null
+#  medium_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  video_url  :string
-#  thumbnails :string           default(""), not null
 #
 
 require 'test_helper'
 
-class VideoTest < ActiveSupport::TestCase
+class PlaylistTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

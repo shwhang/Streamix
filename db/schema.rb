@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180514201740) do
+ActiveRecord::Schema.define(version: 20180516151203) do
 
   create_table "avatars", force: :cascade do |t|
     t.string   "name",               null: false
@@ -51,6 +51,15 @@ ActiveRecord::Schema.define(version: 20180514201740) do
     t.datetime "updated_at",   null: false
     t.index ["genre_id"], name: "index_media_on_genre_id"
     t.index ["playlist_id"], name: "index_media_on_playlist_id"
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.integer  "profile_id", null: false
+    t.integer  "medium_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["medium_id"], name: "index_playlists_on_medium_id"
+    t.index ["profile_id"], name: "index_playlists_on_profile_id"
   end
 
   create_table "profiles", force: :cascade do |t|

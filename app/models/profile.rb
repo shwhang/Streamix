@@ -15,4 +15,5 @@ class Profile < ApplicationRecord
 
   belongs_to :user
   has_one :avatar
+  has_one :playlist
 end

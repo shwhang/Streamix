@@ -24,4 +24,5 @@ class Medium < ApplicationRecord
   has_many :episodes
   # has_many :videos through episodes
   has_one :video
+  has_many :profiles
 end
