@@ -1,3 +1,3 @@
 # Streamix
 
-[Live Demo]
+[Live Demo][https://watch-streamix.herokuapp.com]
