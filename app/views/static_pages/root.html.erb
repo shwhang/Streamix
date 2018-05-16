@@ -14,6 +14,7 @@
   <% end %>
 
   <% if all_genres %>
+
     window.allGenres = <%= render(
       "api/genres/genres.json.jbuilder",
       genres: all_genres

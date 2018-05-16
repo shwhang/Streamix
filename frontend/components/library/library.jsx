@@ -4,9 +4,6 @@ import { Link, withRouter } from 'react-router-dom';
 import MediaRow from './media_row';
 import MediaModal from './media_modal';
 
-// TODO: Check if all genres are be loaded on new signup/login
-// TODO: Delete all genres on logout
-// TODO: Create a spinner for loading playlist to ensure genres is fully loaded
 class Library extends React.Component {
   constructor(props) {
     super(props);
@@ -66,6 +63,8 @@ class Library extends React.Component {
           </article>
         </article>
 
+        {//Remount video tag w/ new source
+        }
         <video
           autoPlay="autoplay"
           muted
