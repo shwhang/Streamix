@@ -33,7 +33,7 @@ Users are given the capability to manage multiple profile accounts. Using a CRUD
 ![Profile Mangement](docs/images/profile_management.png)
 
 Users can choose an avatar for each profile.
-![Avatar Selection](docs/images/avatar_selection.png)
+![Avatar Selection](docs/images/avatar_selection.png | height=100 width=auto)
 
 The form for adding a profile and editing a profile is a reusable component and will switch based on the route the user is on.
 ![Profile Edit Form](docs/images/profile_edit_form.png)
@@ -51,4 +51,4 @@ Each profile has a library of mediums/videos that are shared amongst all other p
 
 ##### Browse by Genre
 Using the navigation bar's browse menu, users can browse videos by genre.
-![Genre Show](docs/image/genre_show.png)
+![Genre Show](docs/images/genre_show.png)
