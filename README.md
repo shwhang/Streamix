@@ -33,7 +33,8 @@ Users are given the capability to manage multiple profile accounts. Using a CRUD
 ![Profile Mangement](docs/images/profile_management.png)
 
 Users can choose an avatar for each profile.
-![Avatar Selection]<img src="docs/images/avatar_selection.png" height="100" width=auto/>
+
+<img src="docs/images/avatar_selection.png" height="300" width=auto/>
 
 The form for adding a profile and editing a profile is a reusable component and will switch based on the route the user is on.
 ![Profile Edit Form](docs/images/profile_edit_form.png)
