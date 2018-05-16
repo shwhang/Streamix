@@ -25,11 +25,6 @@ class MediaRow extends React.Component {
 
   }
 
-  componentWillReceiveProps(nextProps){
-
-  }
-
-
 
   removeMediaModal(){
     this.setState({
@@ -61,7 +56,8 @@ class MediaRow extends React.Component {
       return (
         <MediaItem medium={medium}
           key={`medium-item-${medium.medium.id}`}
-          getFirstThumbnail={this.props.getFirstThumbnail} />
+          getFirstThumbnail={this.props.getFirstThumbnail}
+          renderMediaModal={this.renderMediaModal.bind(this)} />
       )
     })
 
