@@ -71,6 +71,3 @@ id | integer | not null, primary key
 title | string | not null
 description | string | not null
 media_id | integer | not null, foreign key
-
-//TODO: if medias:has_episodes === true, than medias will have videos through episodes
-//TODO: maybe if media has 0 episodes

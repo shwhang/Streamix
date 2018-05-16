@@ -5,7 +5,6 @@ export const fetchAvatars = () => {
   })
 }
 
-// TODO: Remove user_id arg
 export const fetchProfiles = (user_id) => {
   return $.ajax({
     method: 'GET',
