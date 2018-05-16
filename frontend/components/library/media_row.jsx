@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 import MediaModal from './media_modal';
+import MediaItem from './media_item';
 
 class MediaRow extends React.Component {
   constructor(props) {
@@ -55,29 +56,12 @@ class MediaRow extends React.Component {
 
   //PUT THIS IN ITS OWN COMPONENT
   getMediaItems(){
-    const media_row = this.props.medias.map((media) => {
-      let video = media.video;
-
+    const media_row = this.props.medias.map((medium) =>
+     {
       return (
-        <div
-          className="media-item"
-          key={`media-item-${media.medium.id}`} >
-
-          <img
-            src={this.props.getFirstThumbnail(video.thumbnails)}
-            className="media-carousel-img">
-          </img>
-
-            <Link to={`/browse/videos/${video.id}`} className="play-button">
-
-            </Link>
-
-          <div className="media-details-button" onClick={() => {
-              this.renderMediaModal(media)
-            }}>
-            &#x22BF;
-          </div>
-        </div>
+        <MediaItem medium={medium}
+          key={`medium-item-${medium.medium.id}`}
+          getFirstThumbnail={this.props.getFirstThumbnail} />
       )
     })
 
