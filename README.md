@@ -4,7 +4,7 @@
 
 ### Overview
 Streamix is a single page application inspired by the popular cross-platform streaming app, Netflix.
-
+![Home Page](docs/images/home.png)
 
 ### Features
 - Sign in/Sign up
@@ -22,7 +22,9 @@ Uses the AWS Elastic Transcoder pipeline to transcode all videos to web-safe for
 Check out the [AWS Lambda Function](docs/elastic_transcoder_lambda.js).
 
 ##### Users can Sign In or Sign Up
+Employed the BCrypt ruby gem to hash map and salt all passwords for secure sign in and sign up.
 
+![Session](docs/images/session_form.png)
 
 
 ##### Profile Management
@@ -31,7 +33,7 @@ Users are given the capability to manage multiple profile accounts. Using a CRUD
 ![Profile Mangement](docs/images/profile_management.png)
 
 Users can choose an avatar for each profile.
-![Avatar Selection](docs/images/avatar_selection)
+![Avatar Selection](docs/images/avatar_selection.png)
 
 The form for adding a profile and editing a profile is a reusable component and will switch based on the route the user is on.
 ![Profile Edit Form](docs/images/profile_edit_form.png)
@@ -43,6 +45,10 @@ The same navigation bar is used across all pages, but will render something diff
 ![Profile](docs/images/library_navbar.png)
 
 ##### Library of Mediums
-Regardless of how many profiles a user has, the videos will be shared amongst all profiles. This limits the number of ajax requests being made to the backend.
+Each profile has a library of mediums/videos that are shared amongst all other profiles. By sharing the mediums, this limits the amount of ajax requests made to the backend. Profile users are also allowed to switch profiles through the navigation bar. Each medium is listed under a genre and uses a carousel to navigate through the list of mediums under that genre.
 
 ![Library](docs/images/header.png)
+
+##### Browse by Genre
+Using the navigation bar's browse menu, users can browse videos by genre.
+![Genre Show](docs/image/genre_show.png)
