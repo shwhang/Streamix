@@ -20,9 +20,7 @@ class Medium < ApplicationRecord
   # validates :has_episodes, exclusion: { in: [true, false] }
 
   belongs_to :genre
-  # belongs_to :playlist
   has_many :episodes
-  # has_many :videos through episodes
   has_one :video
-  has_many :profiles
+  has_many :playlists
 end
