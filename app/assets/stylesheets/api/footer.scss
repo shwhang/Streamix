@@ -35,6 +35,12 @@ footer {
   border: none;
 }
 
+
+.contact-link {
+  width: 100%;
+  height: 100px;
+}
+
 .contact-img {
   background-size: contain;
   background-repeat: no-repeat;
@@ -60,11 +66,12 @@ footer {
 }
 
 .contact-detail {
-  padding-top: 10px;
+  padding-top: 20px;
   font-weight: light;
 }
 
 .copyright-blurb {
-  padding: 60px 0 20px;
+  padding: 100px 0 20px;
   font-size: 12px;
+  text-align: center;
 }
