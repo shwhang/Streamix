@@ -53,3 +53,7 @@ Each profile has a library of mediums/videos that are shared amongst all other p
 ##### Browse by Genre
 Using the navigation bar's browse menu, users can browse videos by genre.
 ![Genre Show](docs/images/genre_show.png)
+
+
+##### TODO: MVPs
+- Get streamix up and running
